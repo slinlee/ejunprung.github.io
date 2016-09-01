@@ -1,21 +1,25 @@
 ---
 layout: all
 ---
-<section class="section-lg home-alt bg-img" id="home">
-    <div class="bg-overlay-gradient bg-overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="home-wrapper text-center">
-                    <p class="text-muted">Deep Learning for Java</p>
-                    <h1>Open-source, distributed, deep-learning library for the JVM</h1>
-                    <a href="./quickstart" class="btn btn-custom">Quickstart</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- Banner -->
+<div class="banner banner-full-height overlay-black" style="background-image: url(assets/img/banner1.jpg);">
+  <div class="container text-center">
+    <h1>Deep Learning for Java</h1>
+    <h5>Open-source, distributed, deep-learning library for the JVM</h5>
+    <br><br><br><br>
+    <p><a class="btn btn-white btn-xl btn-outline" href="#" role="button"> Quickstart </a></p>
+  </div>
 
+  <ul class="social-icons">
+    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+  </ul>
+</div>
+<!-- End Banner -->
+
+</header>
 
 <section class="section bg-white" id="what">
   <div class="container">
@@ -119,7 +123,7 @@ layout: all
       <div class="col-sm-12">
         <h2 class="title">Learn More</h2>
         <p class="title-alt">If you have any questions, please join <a href="https://gitter.im/deeplearning4j/deeplearning4j">us on Gitter</a>; for premium support, <a href="http://www.skymind.io/contact?__hstc=39244156.7eec9b993358e4a3012e6ae058032a20.1463443629313.1463499823977.1463501969633.5&amp;__hssc=39244156.11.1463501969633&amp;__hsfp=37206261">contact us at Skymind</a>. <a href="http://nd4j.org/">ND4J is the Java-based scientific computing engine</a> powering our matrix operations. On large matrices, our benchmarks show <a href="http://nd4j.org/benchmarking">it runs roughly twice as fast as Numpy</a>.</p>
-        
+
         <div class="row text-left">
           <div class="col-sm-6">
               <div class="question-box">
@@ -144,7 +148,7 @@ layout: all
                   <p><span><b>A. </b></span>Deeplearning4j includes both a distributed, multi-threaded deep-learning framework and a normal single-threaded deep-learning framework. Training takes place in the cluster, which means it can process massive amounts of data quickly. Nets are trained in parallel via <a href="./iterativereduce.html">iterative reduce</a>, and they are equally compatible with <b>Java</b>, <a href="http://nd4j.org/scala.html"><b>Scala</b></a> and <a href="https://github.com/wildermuthn/d4lj-iris-example-clj/blob/master/src/dl4j_clj_example/core.clj"><b>Clojure</b></a> Deeplearning4j's role as a modular component in an open stack makes it the first deep-learning framework adapted for a <a href="http://microservices.io/patterns/microservices.html">micro-service architecture</a>.</p>
               </div>
           </div>
-            
+
         </div>
       </div> <!-- end Col -->
     </div>
@@ -166,7 +170,7 @@ layout: all
           <li><a href="./convolutionalnets.html">Convolutional Nets</a> (images)</li>
           <li><a href="../lstm.html">Long Short-Term Memory Networks and RNNs</a></li>
           <li><a href="./tutorials.html">DL4J Tutorials Index</a></li>
-          
+
         </ul>
       </div>
 
