@@ -1,4 +1,4 @@
 ---
-layout: theindex
+layout: home
 title: Home
 ---
