@@ -45,7 +45,28 @@
     </nav>
     <!-- End Top Nav -->
 
-    {{ content }}
+    <!-- Banner -->
+    <div class="banner banner-full-height overlay-black" style="background-image: url(assets/img/banner1.jpg);">
+      <div class="container text-center">
+        <h1>Online Documentation Template</h1>
+        <h5><strong>TheDocs</strong> reduce the burden of developing documentation for your next product.</h5>
+        <br><br><br><br>
+        <p><a class="btn btn-white btn-xl btn-outline" href="#getting_started" role="button"> Getting Started </a></p>
+      </div>
+
+      <ul class="social-icons">
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+      </ul>
+    </div>
+    <!-- End Banner -->
+
+  </header>
+
+  {{ content }}
 
   {% include footer.html %}
+
 </html>
