@@ -10773,11 +10773,11 @@ body[data-spy] {
 .sidenav a.active,.sidenav a:hover {
   text-decoration: none;
   opacity: 1;
-  color: #526069;
+  color: #74cae0;
 }
 
 .sidenav a.active {
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .sidenav>li>a {
@@ -10786,7 +10786,7 @@ body[data-spy] {
 }
 
 .sidenav>li>a.active,.sidenav>li>a:hover {
-  color: #526069;
+  color: #74cae0;
 }
 
 .sidenav>li {
