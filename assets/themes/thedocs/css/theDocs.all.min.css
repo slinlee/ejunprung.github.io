@@ -4464,7 +4464,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 
 @media (min-width:768px) {
   .container-fluid>.navbar-collapse,.container-fluid>.navbar-header,.container>.navbar-collapse,.container>.navbar-header {
-    margin-right: 0;
+    margin-right: 70px;
     margin-left: 0;
   }
 }
