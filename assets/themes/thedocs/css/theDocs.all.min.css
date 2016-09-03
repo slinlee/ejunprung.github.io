@@ -4480,6 +4480,12 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
   }
 }
 
+@media (min-width:768px) {
+  .github-ribbon {
+    display: none;
+  }
+}
+
 .navbar-fixed-bottom,.navbar-fixed-top {
   position: fixed;
   right: 0;
