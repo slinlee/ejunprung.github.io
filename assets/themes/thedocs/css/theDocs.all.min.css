@@ -4480,7 +4480,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
   }
 }
 
-@media (min-width:768px) {
+@media (max-width:768px) {
   .github-ribbon {
     display: none;
   }
