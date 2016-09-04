@@ -39,14 +39,15 @@ layout: article
   <img src="/img/mlp_mnist_single_layer_example_setup.png"><br><br>
   <p>In this file, we will configure the neural network, train a model and evaluate the results. It will be helpful to view this code alongside the tutorial.</p>
   <h3>Setting Variables</h3>
-  <pre class="line-numbers"><code class="language-markup">
+  <div class="code-window"><code class="language-java">
     final int numRows = 28; // The number of rows of a matrix.
     final int numColumns = 28; // The number of columns of a matrix.
     int outputNum = 10; // Number of possible outcomes (e.g. labels 0 through 9).
     int batchSize = 128; // How many examples to fetch with each step.
     int rngSeed = 123; // This random-number generator applies a seed to ensure that the same initial weights are used when training. We’ll explain why this matters later.
-    int numEpochs = 15; // An epoch is a complete pass through a given dataset. 
-  </code></pre>
+    int numEpochs = 15; // An epoch is a complete pass through a given dataset.
+  </code>
+  </div>
 </section>
 
 <section>
