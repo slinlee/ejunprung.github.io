@@ -1,7 +1,9 @@
 ---
-layout: all
 title: Home
 ---
+<!-- Top Navigation -->
+<header class="site-header navbar-fullwidth navbar-transparent">
+  {% include navigation.html %}
 <!-- Banner -->
 <div class="banner banner-full-height overlay-black" style="background-image: url(assets/themes/thedocs/img/home_hero.jpeg);">
   <div class="container text-center">
@@ -16,8 +18,8 @@ title: Home
     <li><a class="github-button" href="https://github.com/deeplearning4j/deeplearning4j/fork" data-icon="octicon-repo-forked" data-style="mega" data-count-href="/deeplearning4j/deeplearning4j/network" data-count-api="/repos/deeplearning4j/deeplearning4j#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork deeplearning4j/deeplearning4j on GitHub">Fork</a></li>
     <li><a class="github-button" href="https://github.com/deeplearning4j/deeplearning4j" data-icon="octicon-eye" data-style="mega" data-count-href="/deeplearning4j/deeplearning4j/watchers" data-count-api="/repos/deeplearning4j/deeplearning4j#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch deeplearning4j/deeplearning4j on GitHub">Watch</a></li>
 <!-- End Banner -->
-
 </header>
+<!-- END Top Navigation -->
 
 <main class="container">
   <div class="row">
@@ -248,3 +250,5 @@ title: Home
     <!-- END Main content -->
   </div>
 </main>
+
+{% include footer.html %}
