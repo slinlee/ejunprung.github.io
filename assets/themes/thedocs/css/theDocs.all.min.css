@@ -10292,7 +10292,7 @@ body[data-spy] {
 }
 
 .main-content>section {
-  padding-bottom: 50px;
+  padding-bottom: 0px;
 }
 
 .main-content>section:last-child {
