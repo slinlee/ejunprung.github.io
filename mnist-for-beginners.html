@@ -15,9 +15,8 @@ layout: article
     <li><a href="#evaluating">Evaluating The Results</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
   </ol>
-  <p>Estimated time to completion is 30 minutes.</p>
 </header>
-
+  <p>Estimated time to completion is 30 minutes.</p>
 <section>
   <h2 id="introduction">Introduction</h2>
   <img src="/img/mnist_render.png"><br><br>
@@ -60,9 +59,22 @@ layout: article
 
 <section>
   <h2 id="building">Building Our Neural Network</h2>
-  <img src="/img/mnist_render.png"><br>
-  <p>MNIST is a database containing images of handwritten digits, with each image labeled by integer. It is used to benchmark the performance of machine learning algorithms. Deep learning performs quite well on MNIST, achieving more than 99.7% accuracy.</p>
-  <p>We will use MNIST to train a neural network to look at each image and predict the digit. The first step is to install Deeplearning4j.</p>
+  <p>We’ll build a feedforward neural network based off a <a href="http://jmlr.org/proceedings/papers/v9/glorot10a/glorot10a.pdf" target="_blank">paper by Xavier Glorot and Yoshua Bengio</a>. For our purposes, we’ll start with a basic example with only one hidden layer. However, as a rule of thumb, the deeper your network (i.e. the more layers), the more complexity and nuance it can capture to produce accurate results.</p>
+  <img src="/img/onelayer.png"><br><br>
+  <p>Keep this image in mind, because this is what we’re constructing, a single layer neural network.</p>
+  <h3>Setting Hyperparameters</h3>
+  <p>For any neural network you build in Deeplearning4j, the foundation is the <a href="http://deeplearning4j.org/neuralnet-configuration.html" target="_blank">NeuralNetConfiguration class</a>. This is where you configure hyperparameters, the quantities that define the architecture and how the algorithm learns. Intuitively, each hyperparameter is like one ingredient in a meal, a meal that can go very right, or very wrong… Luckily, you can adjust hyperparameters if they don’t produce the right results.</p>
+  <div class="code-window"><code class="language-java">
+    MultiLayerConfiguration conf = new NeuralNetConfiguration.Builder()
+            .seed(rngSeed)
+            .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
+            .iterations(1)
+            .learningRate(0.006)
+            .updater(Updater.NESTEROVS).momentum(0.9)
+            .regularization(true).l2(1e-4)
+            .list()
+  </code></div>
+  <h4>.seed(rngSeed)</h4>
 </section>
 
 <section>
