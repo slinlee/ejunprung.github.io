@@ -2,18 +2,32 @@
 title: MNIST for Beginners
 layout: article
 ---
-  <header>
-    <h1>Boxed sidebar</h1>
-    <p>To give you more layout varieties, we implemented a full-width layout with a fixed sidebar on left/right. Also, this sidebar has two color variations.</p>
-    <ol class="toc">
-      <li><a href="#page_layout">Page Layout</a></li>
-      <li><a href="#variations">Variations</a></li>
-    </ol>
-  </header>
 
-  <section>
-    <h2 id="page_layout">Page Layout</h2>
-    <p>Please consider that this layout has a bit different html structure that other layouts.</p>
+<header>
+  <h1>MNIST for Beginners</h1>
+  <p>In this tutorial, we’ll classify the MNIST dataset, the “Hello World” of machine learning.</p>
+  <ol class="toc">
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#mnist-dataset">The MNIST Dataset</a></li>
+    <li><a href="#configuring">Configuring the MNIST Example</a></li>
+    <li><a href="#building">Building Our Neural Network</a></li>
+    <li><a href="#training">Training Your Model</a></li>
+    <li><a href="#evaluating">Evaluating The Results</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ol>
+</header>
+
+<section>
+  <h2 id="introduction">Introduction</h2>
+  <img src="/img/mnist_render.png">
+  <p>MNIST is a database containing images of handwritten digits, with each image labeled by integer. It is used to benchmark the performance of machine learning algorithms. Deep learning performs quite well on MNIST, achieving more than 99.7% accuracy.</p>
+  <p>We will use MNIST to train a neural network to look at each image and predict the digit. The first step is to install Deeplearning4j.</p>
+</section>
+
+
+<section>
+  <h2 id="page_layout">Page Layout</h2>
+  <p>Please consider that this layout has a bit different html structure that other layouts.</p>
 
 <pre class="line-numbers"><code class="language-markup">
 &lt;!DOCTYPE html&gt;
@@ -58,33 +72,4 @@ layout: article
 &lt;/html&gt;
 </code></pre>
 
-  </section>
-
-
-  <section>
-    <h2 id="variations">Variations</h2>
-    <p>You can place this sidebar in left or right side of your page. By default it's left-sided, but you can simply add <code>sidebar-right</code> class to the <code>.sidebar-boxed</code> tag.</p>
-
-    <p>Also, by adding <code>sidebar-dark</code> class to the <code>.sidebar-boxed</code> you can change the color of the sidebar.</p>
-
-    <h3>Try it</h3>
-
-    <div class="btn-group" data-toggle="buttons">
-      <label id="sb-left-side" class="btn btn-primary active">
-        <input type="radio" name="options" autocomplete="off" checked> Left sided (default)
-      </label>
-      <label id="sb-right-side" class="btn btn-primary">
-        <input type="radio" name="options" autocomplete="off"> Right sided
-      </label>
-    </div>
-
-    <div class="btn-group" data-toggle="buttons">
-      <label id="sb-skin-light" class="btn btn-primary active">
-        <input type="radio" name="options" autocomplete="off" checked> Light skin (default)
-      </label>
-      <label id="sb-skin-dark" class="btn btn-primary">
-        <input type="radio" name="options" autocomplete="off"> Dark skin
-      </label>
-    </div>
-
-  </section>
+</section>
