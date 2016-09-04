@@ -10928,6 +10928,11 @@ body[data-spy] {
   text-align: center;
 }
 
+.sidebar-boxed .sidebar-brand>img {
+  display: inline-block;
+  max-height: 36px;
+}
+
 .sidebar-boxed .sidenav a.active:before,.sidebar-boxed .sidenav>li>ul:before {
   display: none;
 }
