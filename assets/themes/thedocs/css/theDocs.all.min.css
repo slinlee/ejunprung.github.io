@@ -11983,7 +11983,7 @@ h1:hover a:before,h2:hover a:before,h3:hover a:before {
   position: relative;
   list-style: none;
   padding: 50px 20px 20px 30px;
-  margin-top: 40px;
+  margin-top: 0;
   margin-bottom: 0;
   line-height: 30px;
   background-color: #fcfcfc;

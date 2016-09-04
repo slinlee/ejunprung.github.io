@@ -15,14 +15,15 @@ layout: article
     <li><a href="#evaluating">Evaluating The Results</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
   </ol>
+  <p>Estimated time to completion is 30 minutes.</p>
 </header>
 
 <section>
   <h2 id="introduction">Introduction</h2>
-  <img src="/img/mnist_render.png"><br>
+  <img src="/img/mnist_render.png"><br><br>
   <p>MNIST is a database containing images of handwritten digits, with each image labeled by integer. It is used to benchmark the performance of machine learning algorithms. Deep learning performs quite well on MNIST, achieving more than 99.7% accuracy.</p>
   <p>We will use MNIST to train a neural network to look at each image and predict the digit. The first step is to install Deeplearning4j.</p>
-  <a href="quickstart" type="button" class="btn btn-lg btn-success">GET STARTED WITH DEEPLEARNIGN4J</a>
+  <a href="quickstart" type="button" class="btn btn-lg btn-success">GET STARTED WITH DEEPLEARNING4J</a>
 </section>
 
 <section>
@@ -33,11 +34,19 @@ layout: article
 
 <section>
   <h2 id="configuring">Configuring the MNIST Example</h2>
-  <p>MNIST is a database containing images of handwritten digits, with each image labeled by integer. It is used to benchmark the performance of machine learning algorithms. Deep learning performs quite well on MNIST, achieving more than 99.7% accuracy.</p>
-  <p>We will use MNIST to train a neural network to look at each image and predict the digit. The first step is to install Deeplearning4j.</p>
-  <img src="/img/mnist_render.png"><br>
-  <p>MNIST is a database containing images of handwritten digits, with each image labeled by integer. It is used to benchmark the performance of machine learning algorithms. Deep learning performs quite well on MNIST, achieving more than 99.7% accuracy.</p>
+  <p>We’ve packaged the MNIST tutorial into Maven, so there’s no need to write code. Please open IntelliJ to get started. (To download IntelliJ, see our <a href="quickstart">Quickstart…</a>)</p>
+  <p>Open the folder labeled <code>dl4j-examples</code>. Go to the directories src → main → java → feedforward → mnist, and open the file <code>MLPMnistSingleLayerExample.java</code>.</p>
+  <img src="/img/mlp_mnist_single_layer_example_setup.png"><br><br>
+  <p>In this file, we will configure the neural network, train a model and evaluate the results. It will be helpful to view this code alongside the tutorial.</p>
   <h3>Setting Variables</h3>
+  <pre class="line-numbers"><code class="language-markup">
+    final int numRows = 28; // The number of rows of a matrix.
+    final int numColumns = 28; // The number of columns of a matrix.
+    int outputNum = 10; // Number of possible outcomes (e.g. labels 0 through 9).
+    int batchSize = 128; // How many examples to fetch with each step.
+    int rngSeed = 123; // This random-number generator applies a seed to ensure that the same initial weights are used when training. We’ll explain why this matters later.
+    int numEpochs = 15; // An epoch is a complete pass through a given dataset. 
+  </code></pre>
 </section>
 
 <section>
@@ -66,53 +75,4 @@ layout: article
   <img src="/img/mnist_render.png"><br>
   <p>MNIST is a database containing images of handwritten digits, with each image labeled by integer. It is used to benchmark the performance of machine learning algorithms. Deep learning performs quite well on MNIST, achieving more than 99.7% accuracy.</p>
   <p>We will use MNIST to train a neural network to look at each image and predict the digit. The first step is to install Deeplearning4j.</p>
-</section>
-
-<section>
-  <h2 id="page_layout">Page Layout</h2>
-  <p>Please consider that this layout has a bit different html structure that other layouts.</p>
-
-<pre class="line-numbers"><code class="language-markup">
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;&lt;/head&gt;
-&lt;body&gt;
-
-&lt;!-- Site header --&gt;
-&lt;header class=&quot;site-header&quot;&gt;
-
-&lt;/header&gt;
-&lt;!-- END Site header --&gt;
-
-
-&lt;!-- Sidebar --&gt;
-&lt;aside class=&quot;sidebar sidebar-boxed&quot;&gt;
-
-&lt;/aside&gt;
-&lt;!-- END Sidebar --&gt;
-
-
-&lt;main class=&quot;container-fluid&quot;&gt;
-&lt;div class=&quot;row&quot;&gt;
-
-&lt;!-- Main content --&gt;
-&lt;article class=&quot;main-content&quot; role=&quot;main&quot;&gt;
-
-&lt;/article&gt;
-&lt;!-- END Main content --&gt;
-
-
-&lt;!-- Footer --&gt;
-&lt;footer class=&quot;site-footer&quot;&gt;
-
-&lt;/footer&gt;
-&lt;!-- END Footer --&gt;
-
-&lt;/div&gt;
-&lt;/main&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
 </section>
