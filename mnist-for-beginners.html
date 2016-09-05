@@ -125,20 +125,42 @@ layout: article
   <h2 id="evaluating">Evaluating The Results</h2>
   <img src="/img/mlp_mnist_single_layer_example_results.png"><br>
   <p>
-    Accuracy - The percentage of MNIST images that were correctly identified by our model.<br>
-    Precision - The number of true positives divided by the number of true positives and false positives. <br>
-    Recall - The number of true positives divided by the number of true positives and the number of false negatives. <br>
-    F1 Score - Weighted average of precision and recall. <br>
+  <b>Accuracy</b> - The percentage of MNIST images that were correctly identified by our model.<br>
+  <b>Precision</b> - The number of true positives divided by the number of true positives and false positives. <br>
+  <b>Recall</b> - The number of true positives divided by the number of true positives and the number of false negatives. <br>
+  <b>F1 Score</b> - Weighted average of <b>precision</b> and <b>recall</b>. <br>
   </p>
-  <p>Accuracy measures the model over all.</p>
-  <p>Precision, recall and F1 measure a model’s relevance. For example, it would be dangerous to predict that cancer will not reoccur (i.e. a false negative) as the person would not seek further treatment. Because of this, it would be wise to choose a model that avoids false negatives (i.e. a higher precision, recall and F1) even if the overall accuracy lower.</p>
+  <p><b>Accuracy</b> measures the model over all.</p>
+  <p><b>Precision, recall and F1</b> measure a model’s <b>relevance</b>. For example, it would be dangerous to predict that cancer will not reoccur (i.e. a false negative) as the person would not seek further treatment. Because of this, it would be wise to choose a model that avoids false negatives (i.e. a higher precision, recall and F1) even if the overall <b>accuracy</b> lower.</p>
 </section>
 
 <section>
   <h2 id="conclusion">Conclusion</h2>
-  <p></p>
-  <p></p>
-  <p></p>
-  <h3>Other Deeplearning4j Tutorials</h3>
-  <h3>Recommended Resources</h3>
+  <p>And there you have it! At this point, you've successfully trained a neural network with zero domain knowledge of computer vision to achieve 97.1% accuracy. State-of-the-art performance is even better than that, and you can improve the model by adjusting the hyperparameters further.</p>
+  <p>Compared to other frameworks, Deeplearning4j excels at the following.</p>
+  <ul>
+    <li>Integration with major JVM frameworks like Spark, Hadoop and Kafka at scale</li>
+    <li>Optimized to run on distributed CPUs and/or GPUs</li>
+    <li>Serving the Java and Scala communities</li>
+    <li>Commercial support for enterprise deployments</li>
+  </ul>
+  <p>If you have any questions, please join us online in our <a href="https://gitter.im/deeplearning4j/deeplearning4j" target="_blank">Gitter support chat room</a>.</p>
+  <ul class="categorized-view view-col-3">
+    <li>
+      <h5>Other Deeplearning4j Tutorials</h5>
+      <a href="http://deeplearning4j.org/neuralnet-overview">Introduction to Neural Networks</a>
+      <a href="http://deeplearning4j.org/restrictedboltzmannmachine">Restricted Boltzmann Machines</a>
+      <a href="http://deeplearning4j.org/eigenvector">Eigenvectors, Covariance, PCA and Entropy</a>
+      <a href="http://deeplearning4j.org/lstm">LSTMs and Recurrent Networks</a>
+      <a href="http://deeplearning4j.org/linear-regression">Neural Networks and Regression</a>
+      <a href="http://deeplearning4j.org/convolutionalnets">Convolutional Networks</a>
+    </li>
+
+    <li>
+      <h5>Recommended Resources</h5>
+      <a href="https://www.coursera.org/learn/machine-learning/home/week/1">Andrew Ng's Online Machine Learning Course</a>
+      <a href="https://github.com/deeplearning4j/dl4j-examples/blob/master/dl4j-examples/src/main/java/org/deeplearning4j/examples/convolution/LenetMnistExample.java">LeNet Example: MNIST With Convolutional Nets</a>
+    </li>
+
+  </ul>
 </section>
