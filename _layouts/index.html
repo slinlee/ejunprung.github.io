@@ -112,7 +112,30 @@
 
         <h2 id="getting_started">Learn More</h2>
         <p>If you have any questions, please join us on <a href="https://gitter.im/deeplearning4j/deeplearning4j">Gitter</a>; for premium support, contact us at <a href="http://www.skymind.io/contact?__hstc=3042607.139894b8516df47642ec21f9bbc5370b.1470632449068.1473042323084.1473049097372.15&__hssc=3042607.1.1473049097372&__hsfp=1917721602">Skymind</a>. <a href="http://nd4j.org/">ND4J is the Java-based scientific computing engine</a> powering our matrix operations. On large matrices, our benchmarks show <a href="http://nd4j.org/benchmarking">it runs roughly twice as fast as Numpy</a>.</p>
-        
+
+        <div class="faq">
+          <input class="faq-search" type="text" placeholder="Type to search...">
+
+          <ul>
+            <li>
+              <h6>Use cases?</h6>
+              <div>DL4J is applied for <a href="http://www.skymind.io/finance" target="_blank">Fraud detection</a>, <a href="http://www.skymind.io/commerce" target="_blank">Recommender Systems (CRM, adtech, churn prevention)</a>, <a href="http://deeplearning4j.org/linear-regression.html" target="_blank">Regression and predictive analytics</a>, Face/image recognition, Voice search, Speech-to-text (transcription), and preventative hardware monitoring (anomaly detection).</div>
+            </li>
+            <li>
+              <h6>Why Deeplearning4j?</h6>
+              <div>With a versatile <a href="http://nd4j.org/" target="_blank">n-dimensional array</a> class for Java and Scala, DL4J is <a href="http://deeplearning4j.org/spark.html" target="_blank">Scalable on Hadoop</a>, utlizes GPU support for <a href="http://deeplearning4j.org/gpu.html" target="_blank">scaling on AWS</a>, includes <a href="http://deeplearning4j.org/canova.html" target="_blank">a general vectorization tool</a> for machine-learning libs, and most of all relies on <a href="http://nd4j.org/benchmarking" target="_blank">ND4J: A matrix library</a> much faster than Numpy and largely written in C++. We also built <a href="https://github.com/deeplearning4j/rl4j" target="_blank">RL4J: Reinforcement Learning for Java</a> with Deep Q learning and A3C.</div>
+            </li>
+            <li>
+              <h6>How can I contribute?</h6>
+              <div>Developers who would like to contribute to Deeplearning4j can get started by reading our <a href="http://deeplearning4j.org/devguide" target="_blank">Developer's Guide</a>.</div>
+            </li>
+            <li>
+              <h6>Is DL4J parallelized?</h6>
+              <div>Deeplearning4j includes both a distributed, multi-threaded deep-learning framework and a normal single-threaded deep-learning framework. Training takes place in the cluster, which means it can process massive amounts of data quickly. Nets are trained in parallel via <a href="http://deeplearning4j.org/iterativereduce.html" target="_blank">iterative reduce</a>, and they are equally compatible with Java, <a href="http://nd4j.org/scala.html" target="_blank">Scala</a> and <a href="https://github.com/wildermuthn/d4lj-iris-example-clj/blob/master/src/dl4j_clj_example/core.clj" target="_blank">Clojure</a>. Deeplearning4j's role as a modular component in an open stack makes it the first deep-learning framework adapted for a <a href="http://microservices.io/patterns/microservices.html" target="_blank">micro-service architecture</a>.</div>
+            </li>
+          </ul>
+        </div>
+
       </section>
 
 
@@ -165,29 +188,6 @@
 
         </ul>
       </section>
-
-      <div class="faq">
-        <input class="faq-search" type="text" placeholder="Type to search...">
-
-        <ul>
-          <li>
-            <h6>Use cases?</h6>
-            <div>DL4J is applied for Fraud detection, Recommender Systems (CRM, adtech, churn prevention), Regression and predictive analytics, Face/image recognition, Voice search, Speech-to-text (transcription), and preventative hardware monitoring (anomaly detection).</div>
-          </li>
-          <li>
-            <h6>Why Deeplearning4j?</h6>
-            <div>With a versatile n-dimensional array class for Java and Scala, DL4J is Scalable on Hadoop, utlizes GPU support for scaling on AWS, includes a general vectorization tool for machine-learning libs, and most of all relies on ND4J: A matrix library much faster than Numpy and largely written in C++. We also built [RL4J: Reinforcement Learning for Java](https://github.com/deeplearning4j/rl4j) with Deep Q learning and A3C.</div>
-          </li>
-          <li>
-            <h6>How can I contribute?</h6>
-            <div>Developers who would like to contribute to Deeplearning4j can get started by reading our Developer's Guide.</div>
-          </li>
-          <li>
-            <h6>Is DL4J parallelized?</h6>
-            <div>Deeplearning4j includes both a distributed, multi-threaded deep-learning framework and a normal single-threaded deep-learning framework. Training takes place in the cluster, which means it can process massive amounts of data quickly. Nets are trained in parallel via iterative reduce, and they are equally compatible with Java, Scala and Clojure Deeplearning4j's role as a modular component in an open stack makes it the first deep-learning framework adapted for a micro-service architecture.</div>
-          </li>
-        </ul>
-      </div>
 
     </article>
     <!-- END Main content -->
