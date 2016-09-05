@@ -10897,8 +10897,8 @@ body[data-spy] {
 }
 
 .sidebar-boxed~footer .row,.sidebar-boxed~header .banner {
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .sidebar-boxed~main .main-content {
@@ -11009,8 +11009,8 @@ body[data-spy] {
 
 @media screen and (min-width:1170px) {
   .sidebar-boxed~footer .row,.sidebar-boxed~header .banner {
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .sidebar-boxed~main .main-content {
