@@ -50,10 +50,10 @@ layout: default
   <p>The <b>batchSize</b> and <b>numEpochs</b> have to be chosen based on experience; you learn what works through experimentation. A larger batch size results in faster training, while more epochs, or passes through the dataset, result in better accuracy.</p>
   <p>However, there are diminishing returns beyond a certain number of epochs, so there is a trade off between accuracy and training speed. In general, you’ll need to experiment to discover the optimal values. We’ve set reasonable defaults in this example.</p>
   <h3>Fetching the MNIST Data</h3>
-  <div class="code-window"><code class="language-java">
-    DataSetIterator mnistTrain = new MnistDataSetIterator(batchSize, true, rngSeed);
-    DataSetIterator mnistTest = new MnistDataSetIterator(batchSize, false, rngSeed);
-  </code></div>
+  <div class="code-window">
+    <code class="language-java">DataSetIterator mnistTrain = new MnistDataSetIterator(batchSize, true, rngSeed);</code>
+    <code class="language-java">DataSetIterator mnistTest = new MnistDataSetIterator(batchSize, false, rngSeed);</code>
+  </div>
   <p>The class called “DataSetIterator” is used to fetch the MNIST dataset. We create one dataset “mnistTrain” for <b>training the model</b> and another dataset “mnistTest” for <b>evaluating the accuracy</b> of our model after training. The model, by the way, refers to the parameters of the neural network. Those parameters are coefficients that process signal from the input, and they are adjusted as the network learns until they can finally guess the correct label for each image; at that point, you have an accurate model.</p>
 </section>
 
