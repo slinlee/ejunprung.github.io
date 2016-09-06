@@ -38,22 +38,22 @@ layout: default
   <p><img src="/img/mlp_mnist_single_layer_example_setup.png"></p>
   <p>In this file, we will configure the neural network, train a model and evaluate the results. It will be helpful to view this code alongside the tutorial.</p>
   <h3>Setting Variables</h3>
-  <div class="code-window"><code class="language-java">
+  <pre><code class="language-java">
     final int numRows = 28; // The number of rows of a matrix.
     final int numColumns = 28; // The number of columns of a matrix.
     int outputNum = 10; // Number of possible outcomes (e.g. labels 0 through 9).
     int batchSize = 128; // How many examples to fetch with each step.
     int rngSeed = 123; // This random-number generator applies a seed to ensure that the same initial weights are used when training. We’ll explain why this matters later.
     int numEpochs = 15; // An epoch is a complete pass through a given dataset.
-  </code></div>
+  </code></pre>
   <p>In our example, each MNIST image is 28x28 pixels, which means our input data is a 28 <b>numRows</b> x 28 <b>numColumns</b> matrix (matrices are the fundamental data structures of deep learning). Furthermore, MNIST contains 10 possible outcomes (the labels numbered 0 - 9) which is our <b>outputNum</b>.</p>
   <p>The <b>batchSize</b> and <b>numEpochs</b> have to be chosen based on experience; you learn what works through experimentation. A larger batch size results in faster training, while more epochs, or passes through the dataset, result in better accuracy.</p>
   <p>However, there are diminishing returns beyond a certain number of epochs, so there is a trade off between accuracy and training speed. In general, you’ll need to experiment to discover the optimal values. We’ve set reasonable defaults in this example.</p>
   <h3>Fetching the MNIST Data</h3>
-  <div class="code-window"><code class="language-java">
-    DataSetIterator mnistTrain = new MnistDataSetIterator(batchSize, true, rngSeed); \n
+  <pre><code class="language-java">
+    DataSetIterator mnistTrain = new MnistDataSetIterator(batchSize, true, rngSeed);
     DataSetIterator mnistTest = new MnistDataSetIterator(batchSize, false, rngSeed);
-  </code></div>
+  </code></pre>
   <p>The class called “DataSetIterator” is used to fetch the MNIST dataset. We create one dataset “mnistTrain” for <b>training the model</b> and another dataset “mnistTest” for <b>evaluating the accuracy</b> of our model after training. The model, by the way, refers to the parameters of the neural network. Those parameters are coefficients that process signal from the input, and they are adjusted as the network learns until they can finally guess the correct label for each image; at that point, you have an accurate model.</p>
 </section>
 
