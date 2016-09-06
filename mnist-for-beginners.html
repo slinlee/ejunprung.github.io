@@ -34,7 +34,7 @@ layout: default
 <section>
   <h2 id="configuring">Configuring the MNIST Example</h2>
   <p>We’ve packaged the MNIST tutorial into Maven, so there’s no need to write code. Please open IntelliJ to get started. (To download IntelliJ, see our <a href="quickstart">Quickstart…</a>)</p>
-  <p>Open the folder labeled <code>dl4j-examples</code>. Go to the directories src → main → java → feedforward → mnist, and open the file <code>MLPMnistSingleLayerExample.java</code>.</p>
+  <p>Open the folder labeled <code>dl4j-examples</code>. Go to the directories <kbd>src</kbd> → <kbd>main</kbd> → <kbd>java</kbd> → <kbd>feedforward</kbd> → <kbd>mnist</kbd>, and open the file <code>MLPMnistSingleLayerExample.java</code>.</p>
   <p><img src="/img/mlp_mnist_single_layer_example_setup.png"></p>
   <p>In this file, we will configure the neural network, train a model and evaluate the results. It will be helpful to view this code alongside the tutorial.</p>
   <h3>Setting Variables</h3>
@@ -54,7 +54,7 @@ layout: default
     DataSetIterator mnistTrain = new MnistDataSetIterator(batchSize, true, rngSeed);
     DataSetIterator mnistTest = new MnistDataSetIterator(batchSize, false, rngSeed);
   </code></pre>
-  <p>The class called “DataSetIterator” is used to fetch the MNIST dataset. We create one dataset “mnistTrain” for <b>training the model</b> and another dataset “mnistTest” for <b>evaluating the accuracy</b> of our model after training. The model, by the way, refers to the parameters of the neural network. Those parameters are coefficients that process signal from the input, and they are adjusted as the network learns until they can finally guess the correct label for each image; at that point, you have an accurate model.</p>
+  <p>The class called <code>DataSetIterator</code> is used to fetch the MNIST dataset. We create one dataset <code>mnistTrain</code> for <b>training the model</b> and another dataset <code>mnistTest</code> for <b>evaluating the accuracy</b> of our model after training. The model, by the way, refers to the parameters of the neural network. Those parameters are coefficients that process signal from the input, and they are adjusted as the network learns until they can finally guess the correct label for each image; at that point, you have an accurate model.</p>
 </section>
 
 <section>
@@ -64,7 +64,7 @@ layout: default
   <p>Keep this image in mind, because this is what we’re constructing, a single layer neural network.</p>
   <h3>Setting Hyperparameters</h3>
   <p>For any neural network you build in Deeplearning4j, the foundation is the <a href="http://deeplearning4j.org/neuralnet-configuration.html" target="_blank">NeuralNetConfiguration class</a>. This is where you configure hyperparameters, the quantities that define the architecture and how the algorithm learns. Intuitively, each hyperparameter is like one ingredient in a meal, a meal that can go very right, or very wrong… Luckily, you can adjust hyperparameters if they don’t produce the right results.</p>
-  <div class="code-window"><code class="language-java">
+  <pre><code class="language-java">
     MultiLayerConfiguration conf = new NeuralNetConfiguration.Builder()
             .seed(rngSeed)
             .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
@@ -73,27 +73,27 @@ layout: default
             .updater(Updater.NESTEROVS).momentum(0.9)
             .regularization(true).l2(1e-4)
             .list()
-  </code></div>
-  <h4>.seed(rngSeed)</h4>
+  </code></pre>
+  <h5>.seed(rngSeed)</h5>
   <p>This parameter uses a specific, randomly generated weight initialization. If you run an example many times, and generate new, random weights each time you begin, then your net’s results -- accuracy and F1 score -- may vary a great deal, because different initial weights can lead algorithms to different local minima in the errorscape. Keeping the same random weights allows you isolate the effect of adjusting other hyperparameters more clearly, while other conditions remain equal.</p>
-  <h4>.optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)</h4>
+  <h5>.optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)</h4>
   <p>Stochastic gradient descent (SGD) is a common method to optimize the cost function. To learn more about SGD and other optimization algorithms that help minimize error, we recommend <a href="https://www.coursera.org/learn/machine-learning" target="_blank">Andrew Ng’s Machine Learning course</a> and the SGD definition in our <a href="http://deeplearning4j.org/glossary#stochasticgradientdescent" target="_blank">glossary</a>.</p>
-  <h4>.iterations(1)</h4>
+  <h5>.iterations(1)</h5>
   <p>Each iteration, for a neural network, is a learning step; i.e. an update of the model's weights. The network is exposed to data, makes guesses about the data, and then corrects its own parameters based on how wrong its guesses were. So more iterations allow neural networks to take more steps and to learn more, minimizing error.</p>
-  <h4>.learningRate(0.006)</h4>
+  <h5>.learningRate(0.006)</h5>
   <p>This line sets the learning rate, which is the size of the adjustments made to the weights with each iteration, the step size. A high learning rate makes a net traverse the errorscape quickly, but also makes it prone to overshoot the point of minimum error. A low learning rate is more likely to find the minimum, but it will do so very slowly, because it is taking small steps in adjusting the weights.</p>
-  <h4>.updater(Updater.NESTEROVS).momentum(0.9)</h4>
+  <h5>.updater(Updater.NESTEROVS).momentum(0.9)</h5>
   <p>Momentum is an additional factor in determining how fast an optimization algorithm converges on the optimum point. Momentum affects the direction that weights are adjusted in, so in the code we consider it a weight <code>updater</code>.</p>
-  <h4>.regularization(true).l2(1e-4)</h4>
+  <h5>.regularization(true).l2(1e-4)</h5>
   <p>Regularization is a technique to prevent what’s called <b>overfitting</b>. Overfitting is when the model fits the training data really well, but performs poorly in real life as soon as it's exposed to data it hasn’t seen before.</p>
   <p>We use L2 regularization, which prevents individual weights from having too much influence on the overall results.</p>
-  <h4>.list()</h4>
+  <h5>.list()</h5>
   <p>The list specifies the number of layers in the net; this function replicates your configuration n times and builds a layerwise configuration.</p>
   <p>Again, if any of the above was confusing, we recommend <a href="https://www.coursera.org/learn/machine-learning" target="_blank">Andrew Ng’s Machine Learning course</a>.</p>
   <h3>Building Layers</h3>
   <p>We won’t go into the research behind each hyperparameter (i.e. activation, weightInit); we'll just attempt to give brief definitions of what they do. However, feel free to read the <a href="http://jmlr.org/proceedings/papers/v9/glorot10a/glorot10a.pdf" target="_blank">paper by Xavier Glorot and Yoshua Bengio</a> to learn why these matter.</p>
   <img src="/img/onelayer_labeled.png"><br>
-  <div class="code-window"><code class="language-java">
+  <pre><code class="language-java">
     .layer(0, new DenseLayer.Builder()
             .nIn(numRows * numColumns) // Number of input datapoints.
             .nOut(1000) // Number of output datapoints.
@@ -108,7 +108,7 @@ layout: default
             .build())
     .pretrain(false).backprop(true)
     .build();
-  </code></div>
+  </code></pre>
   <p>So what exactly is the hidden layer?</p>
   <p>Each node (the circles) in the hidden layer represents a feature of a handwritten digit in the MNIST dataset. For example, imagine you are looking at the number 6. One node may represent rounded edges, another node may represent the interesection of curly lines, and so on and so forth. Such features are weighted by importance by the model's coefficients, and recombined in each hidden layer to help predict whether the handwritten number is indeed 6. The more layers of nodes you have, the more complexity and nuance they can capture to make better predictions.</p>
   <p>You could think of a layer as "hidden" because, while you can see the input entering a net, and the decisions coming out, it’s difficult for humans to decipher how and why a neural net processes data on the inside. The parameters of a neural net model are simply long vectors of numbers, readable by machines.</p>
@@ -117,13 +117,13 @@ layout: default
 <section>
   <h2 id="training">Training Your Model</h2>
   <p>Now that our model is built, let’s begin training. On the top right in IntelliJ, click the green arrow. This will run the code explained above.</p>
-  <img src="/img/mlp_mnist_single_layer_example_training.png"><br>
+  <img src="/img/mlp_mnist_single_layer_example_training.png"><br><br>
   <p>This may take several minutes to complete, depending on your hardware.</p>
 </section>
 
 <section>
   <h2 id="evaluating">Evaluating The Results</h2>
-  <img src="/img/mlp_mnist_single_layer_example_results.png"><br>
+  <img src="/img/mlp_mnist_single_layer_example_results.png"><br><br>
   <p>
   <b>Accuracy</b> - The percentage of MNIST images that were correctly identified by our model.<br>
   <b>Precision</b> - The number of true positives divided by the number of true positives and false positives. <br>
