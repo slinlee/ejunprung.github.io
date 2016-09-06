@@ -1774,6 +1774,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  max-width: 100%;
 }
 
 @media (min-width:768px) {
@@ -10335,7 +10336,7 @@ body[data-spy] {
 
 @media screen and (max-width:767px) {
   .main-content {
-    padding: 30px 20px!important;
+    padding: 50px 30px!important;
   }
 
   .container-fluid .main-content {
@@ -10651,7 +10652,6 @@ body[data-spy] {
 }
 
 .site-footer {
-  position: relative;
   background-color: #f5f5f5;
   color: #777;
   padding: 30px 15px;
