@@ -18,7 +18,7 @@ Even if they theoretically accepted the argument that we should globally regulat
 So we should not be so naive as to think it will be easy to impose constraints on AI research, even if we speculate on what the ideal constraints should be.
 
 <p align="center">
-<a href="http://deeplearning4j.org/quickstart" class="btn btn-custom" onClick="ga('send', 'event', ‘quickstart', 'click');">Get Started With Deeplearning4j</a>
+<a href="quickstart" type="button" class="btn btn-lg btn-success" onClick="ga('send', 'event', ‘quickstart', 'click');">GET STARTED WITH DEEPLEARNING4J</a>
 </p>
 
 Here are a few thoughts about what we might request of the makers of AI software:
