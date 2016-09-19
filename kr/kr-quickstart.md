@@ -23,7 +23,7 @@ Deeplearning4j는 IntelliJ나 Maven과 같은 IDE와 빌드 자동화 도구 사
 
 ## DL4J 빠르게 둘러보기
 
-위 소프트웨어를 설치한 뒤엔 아래의 단계를 따라 하시면 바로 딥러닝 코드를 실행하실 수 있습니다. 아래의 내용은 맥 사용을 가정하고 쓰여졌습니다. 윈도우 사용자들은 아래 [Walkthrough](http://deeplearning4j.org/kr-quickstart.html#walk) 섹션을 참고하시기 바랍니다
+위 소프트웨어를 설치한 뒤엔 아래의 단계를 따라 하시면 바로 딥러닝 코드를 실행하실 수 있습니다. 아래의 내용은 맥 사용을 가정하고 쓰여졌습니다. 윈도우 사용자들은 아래 [Walkthrough](kr-quickstart.html#walk) 섹션을 참고하시기 바랍니다
 
 * 터미널을 열고 `git clone https://github.com/deeplearning4j/dl4j-examples.git`을 입력 합니다. (예제의 현재 버전은 0.0.4.x 입니다.)
 * IntelliJ에서 File/New/Project from Existing Sources로 가서 위에서 클론한 폴더의 최상위 폴더로 가서 프로젝트를 엽니다.
@@ -67,7 +67,7 @@ Iris 같은 작은 데이터 셋을 사용할 경우 F1-Score가 0.66정도 나�
 ```
 
 
-*nd4j-native*은 모든 예제들과 작동합니다. 추가적인 디펜던시를 설치하기 위해서, OpenBlas, 윈도우, 리눅스 사용자는 [Deeplearning4j Getting Started page](http://deeplearning4j.org/kr-gettingstarted.html)를 참조하시기 바랍니다.
+*nd4j-native*은 모든 예제들과 작동합니다. 추가적인 디펜던시를 설치하기 위해서, OpenBlas, 윈도우, 리눅스 사용자는 [Deeplearning4j Getting Started page](kr-gettingstarted)를 참조하시기 바랍니다.
 
 ## GPUs & CUDA
 
@@ -111,7 +111,7 @@ Iris 같은 작은 데이터 셋을 사용할 경우 F1-Score가 0.66정도 나�
 
 ## 다음 단계
 
-위의 예제보다 더 자세한 내용은 저희의 [Full Installation 페이지](http://deeplearning4j.org/kr-gettingstarted.html)를 참고하십시오.
+위의 예제보다 더 자세한 내용은 저희의 [Full Installation 페이지](kr-gettingstarted)를 참고하십시오.
 
 ## 단계별 Walkthrough
 * 여러분의 컴퓨터에 Git이 설치되어 있는지는 아래의 커맨드를 통해 확인할 수 있습니다.
