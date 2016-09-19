@@ -152,7 +152,7 @@ $(function() {
         offset   = $('.sidebar').offset();
 
       if ($(window).scrollTop() > offset.top) {
-        $sidenav.css({ position: 'fixed', top: '120px', width: '200px' });
+        $sidenav.css({ position: 'fixed', top: '120px', width: '215px' });
       } else {
         $sidenav.css('position', 'static');
       }
