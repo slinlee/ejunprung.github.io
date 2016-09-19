@@ -41,15 +41,15 @@ Deeplearning4jは、NVIDIAのcuDNNをラップし、OpenCVと統合します。�
 
 テンソルの次元は、この二次元平面以上のものです。三次元に並べられたテンソルをイメージするのは簡単です。数字が立体形状に配列されているところを想像すればいいのです。以下は、2x3x2のテンソルを平らに表現したものです（これを感覚的に三次元でイメージするには、これらの数字2つで構成されたグループそれぞれが並んでz軸上にあると考えてみてください。）
 
-![Alt text](./img/tensor.png)
+![Alt text](../img/tensor.png)
 
 コードで表すと、テンソルはこのように表されます。`[[[2,3],[3,5],[4,7]],[[3,4],[4,6],[5,8]]].` また、視覚的に表現すると、次のようになります。
 
-![Alt text](./img/3d_matrix_cube.png)
+![Alt text](../img/3d_matrix_cube.png)
 
 別の言い方をすると、テンソルは配列の中にネストされた配列によって形成されており、このネスティングは無限に行うことができます。我々が空間的に視覚化できる数以上の次元を持つことができるのです。四次元のテンソルは、これらの各スカラーが、レベル一つさらに深くネストされた配列に取って代わっただけのものです。畳み込みネットワークは、以下のように四次元のテンソルを対象としています（ネストされた配列に注目してください）。
 
-![Alt text](./img/3d_matrix.png)
+![Alt text](../img/3d_matrix.png)
 
 ND4JやDeeplearning4jは、`NDArray`とテンソルを同義語として扱います。テンソルの次元`(1、2、3…n)`は階（order）と呼ばれます。例えば、5階（fifth-order）のテンソルには五次元あります。
 
@@ -115,7 +115,7 @@ ND4JやDeeplearning4jは、`NDArray`とテンソルを同義語として扱い�
 
 ところで、画像にはあらゆる方向を向いた線が含まれており、形状や画素のパターンも様々なため、異なるフィルターをスライド移動させてこれらのパターンをサーチする、ということになるのです。例えば、一つの画素にパターンが96個あることもあります。これらの96個のパターンは活性化マップを作成し、新しいボリュームの10x10x96が生み出されます。ここまでご説明した畳み込みネットワークをできるだけ明確に理解していただくために、以下にラベルを再度付与された入力画像、カーネル、出力マップをお見せしましょう。  
 
-![Alt text](./img/karpathy-convnet-labels.png)
+![Alt text](../img/karpathy-convnet-labels.png)
 
 畳み込みとは、信号処理で使用される一風変わった掛け算のようなものだと思っていただいていいでしょう。ドット積を作成する2つの行列について考えるもう一つの方法は、これらを2つの関数として考えることです。画像が基底にある関数で、フィルターがその上を転がせる関数です。
 
@@ -127,7 +127,7 @@ ND4JやDeeplearning4jは、`NDArray`とテンソルを同義語として扱い�
 
 畳み込みネットワーク内の次の層には最大プーリング（max pooling）、ダウンサンプリング、サブサンプリング（subsampling）という3つの名前があります。活性化マップが、ダウンサンプリング層に送られ、畳み込みと同様に、このメソッドは、一回につき一部分に実行されます。この場合、最大プーリングはフィルターをかけた画像の一部から最大値をピックアップし、この新しい値をその前に入れた値の次の位置に入れていきます。そして活性化マップにあったその他の情報は除外します。
 
-![Alt text](./img/maxpool.png)
+![Alt text](../img/maxpool.png)
 *著作権は[Andrej Karpathy](https://cs231n.github.io/)氏に帰属します。*
 
 各特徴との相関関係が最も高かった（最大値）画像の位置のみが保存されます。そしてそれらの最大値が組み合わさって次元数が少なくなった空間を形成します。
@@ -138,7 +138,7 @@ ND4JやDeeplearning4jは、`NDArray`とテンソルを同義語として扱い�
 
 下の画像は、典型的な畳み込みネットワークで行われる変換のシーケンスを別の方法で表現してみたものです。
 
-![Alt text](./img/convnet.png)
+![Alt text](../img/convnet.png)
 
 このプロセスは下図の左から右に向かって以下のような処理が行われます。
 
@@ -158,15 +158,15 @@ ND4JやDeeplearning4jは、`NDArray`とテンソルを同義語として扱い�
 <script src="http://gist-it.appspot.com/https://github.com/deeplearning4j/dl4j-0.4-examples/blob/master/dl4j-examples/src/main/java/org/deeplearning4j/examples/convolution/LenetMnistExample.java?slice=43:87"></script>
 
 ### <a name="beginner">その他のDeeplearning4jのチュートリアル</a>
-* [Introduction to Neural Networks（ディープニューラルネットワークについて）](./neuralnet-overview)
-* [LSTMs and Recurrent Networks（LSTMとリカレントネットワーク）](./lstm)
-* [Word2vec](./word2vec)
-* [Restricted Boltzmann Machines（制限付きボルツマン・マシン）](./restrictedboltzmannmachine)
-* [Eigenvectors, Covariance, PCA and Entropy（固有ベクトル、PCA、共分散、エントロピー）](./eigenvector)
-* [Neural Networks and Regression（ニューラルネットワークと回帰）](./linear-regression)
+* [Introduction to Neural Networks（ディープニューラルネットワークについて）](ja-neuralnet-overview)
+* [LSTMs and Recurrent Networks（LSTMとリカレントネットワーク）](ja-lstm)
+* [Word2vec](ja-word2vec)
+* [Restricted Boltzmann Machines（制限付きボルツマン・マシン）](ja-restrictedboltzmannmachine)
+* [Eigenvectors, Covariance, PCA and Entropy（固有ベクトル、PCA、共分散、エントロピー）](ja-eigenvector)
+* [Neural Networks and Regression（ニューラルネットワークと回帰）](ja-linear-regression)
 
 ## <a name="resource">その他のリソース</a>
 
 * [Yann LeCun](http://yann.lecun.com/exdb/publis/pdf/lecun-iscas-10.pdf)。ニューヨーク大学（New York University）の教授であり、フェイスブックのリサーチ部門のディレクター。機械ビジョン作業で多く使用される畳み込みネットワークの使用を促進させるための多大なる貢献をして来られました。
 * [Andrej Karpathy氏によるスタンフォード大学の畳み込みネットワークに関するコース](https://cs231n.github.io/)は非常に素晴らしいので、畳み込みネットワークの基礎を学びたい方々にはかなりおすすめです。（*Pythonでの練習*）
-* DL4Jの畳み込みネットワークを見たい方は、[Quickstart page（クイックスタートページ）](./quickstart)の指示に従った後、弊社の[examples](https://github.com/deeplearning4j/dl4j-0.4-examples/blob/master/dl4j-examples/src/main/java/org/deeplearning4j/examples/convolution/)をご覧ください。
+* DL4Jの畳み込みネットワークを見たい方は、[Quickstart page（クイックスタートページ）](ja-quickstart)の指示に従った後、弊社の[examples](https://github.com/deeplearning4j/dl4j-0.4-examples/blob/master/dl4j-examples/src/main/java/org/deeplearning4j/examples/convolution/)をご覧ください。
