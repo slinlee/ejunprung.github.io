@@ -1,6 +1,7 @@
 ---
 title: 초보자용 RBM(Restricted Boltzmann Machines) 튜토리알
 layout: kr-default
+redirect_from: /kr-restrictedboltzmannmachine
 ---
 
 # 초보자용 RBM(Restricted Boltzmann Machines) 튜토리알

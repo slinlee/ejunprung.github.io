@@ -1,6 +1,7 @@
 ---
 title: 인공 신경망 및 심층 신경망 소개
 layout: kr-default
+redirect_from: /kr-neuralnet-overview
 ---
 
 # 심층 신경망 소개

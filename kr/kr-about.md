@@ -1,6 +1,7 @@
 ---
 title: "회사 소개"
 layout: kr-default
+redirect_from: /kr-about
 ---
 
 # 회사 소개

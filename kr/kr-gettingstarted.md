@@ -1,6 +1,7 @@
 ---
 title: 전체 설치
 layout: kr-default
+redirect_from: /kr-gettingstarted
 ---
 
 # 전체 설치
@@ -51,9 +52,9 @@ OpenBlas에 대한 자세한 정보는 [이 섹션](http://nd4j.org/kr-getstarte
 
 위의 단계 이후에도 여전히 CUDA가 로딩이 되지 않는다면, 여러분의 코드에 옵션 -D를 추가하셔야 합니다(JVM 입력변수입니다).:
 
-     	java.library.path (settable via -Djava.librarypath=...) 
-     	// ^ for a writable directory, then 
-     	-D appended directly to "<OTHER ARGS>" 
+     	java.library.path (settable via -Djava.librarypath=...)
+     	// ^ for a writable directory, then
+     	-D appended directly to "<OTHER ARGS>"
 
 만일 IDE로 IntelliJ를 사용하신다면, 이 과정이 특별히 필요 없을 것 입니다.
 
@@ -85,7 +86,7 @@ OpenBlas에 대한 자세한 정보는 [이 섹션](http://nd4j.org/kr-getstarte
 
 			sudo cp libopenblas.so liblapack.so.3
 			sudo cp libopenblas.so libblas.so.3
-			
+
 이렇게 하면 [Spark](http://deeplearning4j.org/spark)가 OpenBlas를 사용할 수 있게 됩니다.
 
 만약 OpenBlas가 잘 작동하지 않으면, 아래의 단계들을 따르십시오.
@@ -102,7 +103,7 @@ OpenBlas에 대한 자세한 정보는 [이 섹션](http://nd4j.org/kr-getstarte
 		ln -s TARGET LINK_NAME
 		// 해석: ln -s "여기로" <- "여기에서" 연결이 됨
 * 위의 "LINK_NAME" 여러분이 만드는 새로운 심볼릭 링크 입니다. 여기 [심볼릭 링크를 만드는 방법 (영문)](https://stackoverflow.com/questions/1951742/how-to-symlink-a-file-in-linux)의 StackOverflow링크도 참고하시기 바랍니다. 또한 [리눅스 매뉴얼 페이지](http://linux.die.net/man/1/ln)도 참고하시기 바랍니다.
-* 위의 단계가 마무리되면 IDE를 재시작 하십시오. 
+* 위의 단계가 마무리되면 IDE를 재시작 하십시오.
 * Native Blas를 **Centos 6**에서 사용하는 하는 방법은 [이 페이지](https://gist.github.com/jarutis/912e2a4693accee42a94) 또는 [여기](https://gist.github.com/sato-cloudian/a42892c4235e82c27d0d)에 자세히 나와있습니다.
 
 **Ubuntu** (15.10)에서 OpenBlas를 사용하는 방법은 [이 안내](http://pastebin.com/F0Rv2uEk)를 참고하시기 바랍니다.				
@@ -110,7 +111,7 @@ OpenBlas에 대한 자세한 정보는 [이 섹션](http://nd4j.org/kr-getstarte
 
 *git clone*을 실행하신 후, 다음 커맨드를 입력하십시오.
 
-		mvn eclipse:eclipse 
+		mvn eclipse:eclipse
 
 이 커맨드는 이클립스에 관련된 설정에 필요한 모든 소스를 import합니다.
 
@@ -125,10 +126,10 @@ Michael Depies가 작성한 [Eclipse에서 Deeplearning4j 설치하기](https://
 
 * 다른 오류가 발생할 경우 저희 [Gitter Live Chat](https://gitter.im/deeplearning4j/deeplearning4j)을 통해 문의주시기 바랍니다. 질문을 올리실 때는 빠른 처리를 위해 다음의 정보를 준비해주시기기 바랍니다.
 
-      * 운영 체제 (윈도우, 맥, 리눅스) 및 버전 
+      * 운영 체제 (윈도우, 맥, 리눅스) 및 버전
       * 자바 버전 : 커맨드 라인에서 java -version 을 입력하여 확인
       * Maven 버전 : type mvn --version in your terminal/CMD
-      * Stacktrace 오류: [Gist (https://gist.github.com/)](https://gist.github.com/)에 에러 코드를 올린 뒤 링크를 공유: 
+      * Stacktrace 오류: [Gist (https://gist.github.com/)](https://gist.github.com/)에 에러 코드를 올린 뒤 링크를 공유:
 * 기존에 설치한 DL4J로 예제를 실행했을 때 오류가 발생한다면 우선 라이브러리를 최신 버전으로 업데이트하십시오. Maven을 사용하실 경우 설치된 POM.xml 파일의 내용만 업데이트 하시면 [Maven Central](https://search.maven.org/#search%7Cga%7C1%7Cdeeplearning4j)에 나온 최신 버전으로 업데이트가 됩니다. 소스를 받아서 직접 설치하시는 경우엔 [ND4J](http://nd4j.org/kr-getstarted.html), Canova 및 DL4J 상의 `git clone`을 하신 뒤, 순서대로 각 디렉터리에서 `mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true`을 실행하시면 됩니다.
 * 예제를 실행하다 보면 인공 신경망의 분류가 정확하게 이루어지고 있는지를 측정하는 [F1 점수](http://deeplearning4j.org/glossary.html#f1)가 생각보다 낮을수도 있습니다. 우선 예제는 빠른 실행과 검토를 위해 작은 데이터 셋을 사용하여 학습이 되기 때문에 실제 상황보다 낮은 점수가 나올 수 있습니다. 작은 데이터 셋을 사용할 경우 학습 데이터의 분포가 실제 데이터의 분포와 달라 실제 상황을 잘 반영하지 못할 수도 있고 인공 신경망의 학습엔 데이터의 양이 부족할 수도 있습니다. 예를 들어, 소문자 예제 데이터에서 저희의 DBN(Deep-Belief Net)의 F1 점수는 대체로 0.32 에서 1.0 사이의 값이 나옵니다.
 * Deeplearning4J는 **자도완성 기능**을 갖고 있습니다. 어떤 커맨드를 사용해야 할지 애매한 경우 아무 문자나 누르면 아래 그림처럼 드롭다운 목록이 나옵니다.
@@ -142,7 +143,7 @@ Michael Depies가 작성한 [Eclipse에서 Deeplearning4j 설치하기](https://
 * 일부 ND4J 디펜던시는 C 또는 C++를 위한 몇 가지 **개발 도구**들을 설치해야 컴파일을 할 수 있습니다. [저희의 ND4J guide를 보십시오](http://nd4j.org/kr-getstarted.html#devtools).
 * [Java CPP](https://github.com/bytedeco/javacpp)의 include path는 **Windows**에서 작동하지는 않을 수도 있습니다. 한 가지 해결 방법은 Visual Studio의 include directory에서 header 파일을 Java가 설치되어 있는 Java Run-Time Environment (JRE)의 include directory에 복사하는 것 입니다. (이는 standardio.h와 같은 파일에 영향을 미칠 것 입니다.) 더 많은 정보는 [여기](http://nd4j.org/kr-getstarted.html#windows)를 참고하시기 바랍니다.
 * GPU 모니터링은 [여기](http://nd4j.org/kr-getstarted.html#gpu)를 참고하시기 있습니다.
-* 자바의 강점 중 하나는 **[JVisualVM](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jvisualvm.html)**에서 제공하는 진단 도구(diagnostics) 입니다. 자바를 설치하신 뒤 커맨드 라인에 `jvisualvm`를 입력하면 여러분의 CPU, Heap, PermGen, Classes 및 Threads 의 실시간 정보를 시각화 해서 보여줍니다. 팁: 우측 상단의 `Sampler` 탭을 클릭하시고, 시각화 할 디바이스(CPU 또는 Memory)에 해당하는 버튼을 선택하십시오. 
+* 자바의 강점 중 하나는 **[JVisualVM](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jvisualvm.html)**에서 제공하는 진단 도구(diagnostics) 입니다. 자바를 설치하신 뒤 커맨드 라인에 `jvisualvm`를 입력하면 여러분의 CPU, Heap, PermGen, Classes 및 Threads 의 실시간 정보를 시각화 해서 보여줍니다. 팁: 우측 상단의 `Sampler` 탭을 클릭하시고, 시각화 할 디바이스(CPU 또는 Memory)에 해당하는 버튼을 선택하십시오.
 ![Alt text](./img/jvisualvm.png)
 * 기계 학습의 아이디어 및 원리에 익숙하지 않은 경우 사용중에 몇 가지 문제가 있을 수 있습니다. 저희는 Deeplearning4j 사용자들이 기계 학습의 기초를 이해할 수 있도록 저희의 튜토리알 뿐만 아니라 더 깊은 내용을 이해하시길 강력하게 추천합니다. 우선 [이 페이지](./deeplearningpapers.html)에 저희가 준비한 기계 학습 및 딥 러닝을 공부 목록을 포함시켰습니다. DL4J의 일부는 잘 문서화가 되어있지만, 전부 문서화가 되어있지는 않습니다. 특히 코드의 일부 핵심적인 부분은 문서화 되어있지 않고 코드로만 존재합니다.
 * **Clojure** 에서 `deeplearning4j-nlp`을 사용할 때, 그리고 Leiningen에서 uberjar를 빌드 할 때, `project.clj`에서 akka `reference.conf` 리소스 파일들을 제대로 설정하려면 다음 내용을 따라야 합니다. `:uberjar-merge-with {#"\.properties$" [slurp str spit] "reference.conf" [slurp str spit]}`. (대부분의 경우 .properties 맵의 첫 번째 항목이 디폴트로 설정되어 있습니다.) 이 설정이 되어있지 않으면 uberjar에서 실행하려고 할 때 다음의 exeption 오류가 날 수 있습니다. `Exception in thread "main" com.typesafe.config.ConfigException$Missing: No configuration setting found for key 'akka.version'`.

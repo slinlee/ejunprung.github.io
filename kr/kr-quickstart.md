@@ -1,6 +1,7 @@
 ---
 title: "퀵 스타트 가이드 (Quick Start Guide)"
 layout: kr-default
+redirect_from: /kr-quickstart
 ---
 
 # 퀵 스타트 가이드 (Quick Start Guide)
@@ -35,7 +36,7 @@ Deeplearning4j는 IntelliJ나 Maven과 같은 IDE와 빌드 자동화 도구 사
 만일 Databricks, Domino, Sense.io같은 환경을 사용하신다면 추가적으로 아래의 코드를 터미널에서 실행해야 합니다. 터미널의 예제 디렉토리에서
 
 ```
-mvn clean package 
+mvn clean package
 ```
 
 를 실행하세요. 그러면 사용중인 환경에 JAR파일을 업로드할 수 있습니다.
@@ -120,7 +121,7 @@ Iris 같은 작은 데이터 셋을 사용할 경우 F1-Score가 0.66정도 나�
 ```
 
 * 만일 Git이 설치되어 있지 않다면, [Git 설치 페이지](https://git-scm.herokuapp.com/book/en/v2/Getting-Started-Installing-Git)를 참고하여 Git을 설치하시기 바랍니다.
-* 그리고 [Github 계정](https://github.com/join)을 만드신 뒤 [맥](https://mac.github.com/)이나 [윈도우](https://windows.github.com/)용 GitHub을 다운로드 하십시오. 
+* 그리고 [Github 계정](https://github.com/join)을 만드신 뒤 [맥](https://mac.github.com/)이나 [윈도우](https://windows.github.com/)용 GitHub을 다운로드 하십시오.
 * 윈도우에서는 시작 메뉴에서 “Git Bash”를 찾으신 후 열어주십시오. Git Bash 터미널은 윈도우의 커맨드 cmd.exe와 비슷한 모습의 터미널입니다.
 * 터미널에서 `cd` 명령어를 이용해 DL4J 예제를 다운받을 디렉토리로 이동하십시오. 그리고 `mkdir dl4j-examples`로 새 디렉토리를 만들고 `cd dl4j-examples`를 입력하여 그 디렉토리로 이동하십시오. 그리고 아래의 명령어를 실행하십시오.
 

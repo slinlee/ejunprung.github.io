@@ -1,6 +1,7 @@
 ---
 title: "Word2vec: Java에서 인공 신경망으로 Word Embeddings 구현하기"
 layout: kr-default
+redirect_from: /kr-word2vec
 ---
 
 # Word2Vec
@@ -35,7 +36,7 @@ Word2vec을 이용하면 단어간 유사성을 구할 수 있습니다. 원래 
 
 아래에 Word2vec을 이용해 구한 단어의 embeddings 중에서 '스웨덴'과 가장 거리가 가까운, 즉 가장 유사한 단어를 모아놓았습니다.
 
-![Alt text](./img/sweden_cosine_distance.png) 
+![Alt text](./img/sweden_cosine_distance.png)
 
 스칸디나비아 반도의 여러 국가와 기타 북유럽, 독일계 나라가 가장 가까운 단어 9개를 차지했습니다.
 
@@ -49,21 +50,21 @@ Word2vec을 이용하면 단어간 유사성을 구할 수 있습니다. 원래 
 
 Word2vec의 학습 방법은 두 종류가 있습니다. CBOW(Continous Bag Of Words) 방식은 주변 단어가 만드는 맥락을 이용해 타겟 단어를 예측하는 것이고 skip-gram은 한 단어를 기준으로 주변에 올 수 있는 단어를 예측하는 것 입니다. 대규모 데이터셋에서는 skip-gram이 더 정확한 것으로 알려져있으며 저희도 이 방식을 이용합니다.
 
-![Alt text](./img/word2vec_diagrams.png) 
+![Alt text](./img/word2vec_diagrams.png)
 
 Word2vec의 학습 과정은 큰 틀에서 일반적인 인공 신경망의 학습과 비슷합니다. 한 단어에 이미 할당된 벡터, 즉 word embedding이 있다고 가정하면 이 값을 이용해 주변 문맥을 얼마나 정확하게 예측하는지 계산합니다. 그리고 정확도가 좋지 못한 경우, 즉 추가적인 조정이 필요한 경우에 오차에 따라 벡터의 값을 업데이트합니다. 즉, 학습 과정에서 한 단어를 기준으로 단어 주변의 문맥을 참고하여 현재 embedding 벡터가 얼마나 정확한지, 오차의 값은 어느 정도인지를 알아냅니다. 만일 어떤 두 단어가 비슷한 문맥에서 꾸준하게 사용될 경우 두 단어의 벡터 값은 비슷하게 됩니다.
 
-전체 차원이 500차원일 경우 이 embedding 벡터는 500차원 공간에 있는 점 하나에 해당합니다. 3차원 이상의 공간은 머릿속에서 상상하기 어렵지만 word embedding은 보통 수백차원의 공간을 사용합니다. 
+전체 차원이 500차원일 경우 이 embedding 벡터는 500차원 공간에 있는 점 하나에 해당합니다. 3차원 이상의 공간은 머릿속에서 상상하기 어렵지만 word embedding은 보통 수백차원의 공간을 사용합니다.
 
 학습이 잘 완료되었다면 이 고차원 공간에서 비슷한 단어는 근처에 위치하게 됩니다. 예를 들어 나무의 종류인 *oak*, *elm* 및 *birch* 는 비슷한 곳에 모이게 됩니다. 또 의미에 유사성이 있는 *war*(전쟁), *conflict*(갈등) 및 *strife*(불화)는 다른 위치에 모이게 됩니다.
 
 비슷한 물체나 개념은 가까이에 위치합니다. 그리고 단어의 상대적인 의미와 관계 또한 이 공간의 관계에 잘 변환됩니다. 이 관계를 이용하면 유사성을 넘어서 더 복잡한 일을 할 수 있습니다. 이를 테면 아래 예제와 같은 일 입니다.
 
-![Alt text](./img/word2vec_translation.png) 
+![Alt text](./img/word2vec_translation.png)
 
-이 예제에서 두 가지를 이해하시면 됩니다. 로마, 파리, 베를린, 베이징은 전부 나라의 수도이며 비슷한 의미와 맥락에서 쓰이기 때문에 가까이 위치합니다. 뿐만 아니라, 벡터의 합과 차를 이용하면 재미있는 결과를 얻을 수 있습니다. 각 수도를 뜻하는 단어는 각 나라와 같은 관계에 있습니다. 즉 로마와 이탈리아, 베이징과 중국은 모두 수도와 국가의 관계이므로 각각에 로마-이탈리아와 베이징-중국의 벡터 공간에서의 관계도 유사하게 학습이 되어야 합니다. 실제로 Word2vec을 이용해 로마(의 embedding 벡터) - 이탈리아(의 embedding 벡터) + 중국(의 embedding 벡터)를 수행하면 베이징이 나옵니다. 왜냐하면 `로마-이탈리아`와 `중국-베이징`은 상대적으로 비슷한 벡터이기 때문입니다. 
+이 예제에서 두 가지를 이해하시면 됩니다. 로마, 파리, 베를린, 베이징은 전부 나라의 수도이며 비슷한 의미와 맥락에서 쓰이기 때문에 가까이 위치합니다. 뿐만 아니라, 벡터의 합과 차를 이용하면 재미있는 결과를 얻을 수 있습니다. 각 수도를 뜻하는 단어는 각 나라와 같은 관계에 있습니다. 즉 로마와 이탈리아, 베이징과 중국은 모두 수도와 국가의 관계이므로 각각에 로마-이탈리아와 베이징-중국의 벡터 공간에서의 관계도 유사하게 학습이 되어야 합니다. 실제로 Word2vec을 이용해 로마(의 embedding 벡터) - 이탈리아(의 embedding 벡터) + 중국(의 embedding 벡터)를 수행하면 베이징이 나옵니다. 왜냐하면 `로마-이탈리아`와 `중국-베이징`은 상대적으로 비슷한 벡터이기 때문입니다.
 
-![Alt text](./img/countries_capitals.png) 
+![Alt text](./img/countries_capitals.png)
 
 ## <a name="crazy">재미있는 Word2Vec 사용 예</a>
 
@@ -73,32 +74,32 @@ Word2vec을 이용한 다른 연산을 보겠습니다.
 
     왕:여왕::남자:[여자, 유괴 미수, 10대, 여자 아이]
     //조금 이상한 단어도 있지만 대체로 어느 정도 이해할 수 있습니다.
-    
+
     중국:대만::러시아:[우크라이나, 모스코바, 몰도바, 아르메니아]
     //지정학적 및 외교적 관계를 반영한 결과가 나왔습니다. 모스코바는 조금 이상하지만요.
-    
+
     집:지붕::성:[돔, 종탑, 첨탑, 총탑, 포탑]
-    
+
     무릎:다리::팔꿈치:[팔, 팔뚝, 척골]
-    
+
     뉴욕타임즈::슐츠버그::폭스:[머독, 처닌, 뱅크로프트, 아일즈]
     //슐츠버그는 뉴욕 타임즈의 소유주 및 경영자
     //머독은 폭스 뉴스의 소유주
     //피처 너닌은 폭스 뉴스의 최고업무책임자(COO)였음
     //로저 아일즈는 폭스 뉴스의 회장
     //뱅크로프트가는 월스트리트 저널을 머독에게 판매함
-    
+
     사랑:무관심::공포:[무관심, 냉담, 수줍음, 무력함, 무반응]
-    
+
     도날드 트럼프:공화당::버락 오바마:[민주당, 공화당, 민주당지지자, 매캐인]
     //오바마와 매캐인의 라이벌 관계를 생각하면 Word2vec이 트럼프와 공화당의 관계를 적대적인 관계로도 해석한다고 볼 수 있습니다.
-    
+
     원숭이:사람::공룡:[화석, 화석화, 빙하기포유류]
     //인류는 화석화된 원숭이다? 인류는 원숭이의 잔재다? 인류는 원숭이의 대결에서 승리한 경쟁자이다? 다 조금씩 말이 됩니다.
-    
+
     건물:건축가::소프트웨어:[프로그래머]
 
-이 결과는 구글 뉴스 데이터셋을 사용해 학습한 것이며 이 데이터셋은 DL4J에서 언제든지 [import](#import)할 수 있습니다. 중요한 점은 Word2vec이 영어의 문법을 전혀 모르는 상태에서 이렇게 스스로 학습했다는 것 입니다. Word2vec은 아무런 언어 구조나 사전 없이 단시간에 엄청난 양의 단어를 학습합니다. 
+이 결과는 구글 뉴스 데이터셋을 사용해 학습한 것이며 이 데이터셋은 DL4J에서 언제든지 [import](#import)할 수 있습니다. 중요한 점은 Word2vec이 영어의 문법을 전혀 모르는 상태에서 이렇게 스스로 학습했다는 것 입니다. Word2vec은 아무런 언어 구조나 사전 없이 단시간에 엄청난 양의 단어를 학습합니다.
 
 이번엔 다른 수식으로 Word2vec의 결과로 나온 embedding의 연산을 해봅시다. ([자세한 설명은 아래에서 다룹니다.](#eval))
 
@@ -123,7 +124,7 @@ Deeplearning4je는 자연어 처리 도구는 아래와 같습니다.
 
 Word2vec은 위에서 여러 알고리즘으로 이루어져 있습니다. DL4J의 Word2vec은 <a href="../glossary.html#skipgram">Skip-Gram</a> Negative Sampling을 사용해 구현했습니다.
 
-## <a name="setup">Word2Vec 설정</a> 
+## <a name="setup">Word2Vec 설정</a>
 
 Maven을 사용해 IntelliJ에 새 프로젝트를 만드십시오. 프로젝트를 만드는 자세한 방법은 저희의 [퀵스타트 페이지](./kr-quickstart.html)를 참고하시기 바랍니다. 그리고 아래의 속성과 종속성(dependencies) 설정을 생성한 프로젝트의 루트 디렉토리에 있는 POM.xml 파일에 추가하십시오 ([Maven의 버전은 여기서 확인할 수 있습니다](https://search.maven.org/#search%7Cga%7C1%7Cnd4j). 최신 버전의 Maven 사용을 권장합니다.).
 
@@ -132,7 +133,7 @@ Maven을 사용해 IntelliJ에 새 프로젝트를 만드십시오. 프로젝트
                   <nd4j.version>0.4-rc3.9</nd4j.version> // check Maven Central for latest versions!
                   <dl4j.version>0.4-rc3.9</dl4j.version>
                 </properties>
-                
+
                 <dependencies>
                   <dependency>
                      <groupId>org.deeplearning4j</groupId>
@@ -146,7 +147,7 @@ Maven을 사용해 IntelliJ에 새 프로젝트를 만드십시오. 프로젝트
                    </dependency>
                    <dependency>
                      <groupId>org.nd4j</groupId>
-                     <artifactId>nd4j-native</artifactId> 
+                     <artifactId>nd4j-native</artifactId>
                      <version>${nd4j.version}</version>
                    </dependency>
                 </dependencies>
@@ -210,7 +211,7 @@ Word2vec는 텍스트를 단어별로 받아들입니다. 따라서 위와 같�
         });
 ```
 
-이렇게 하면 한 줄에 토큰 하나씩 결과를 출력합니다. 
+이렇게 하면 한 줄에 토큰 하나씩 결과를 출력합니다.
 
 ### 모델 학습하기
 
@@ -220,15 +221,15 @@ Word2vec는 텍스트를 단어별로 받아들입니다. 따라서 위와 같�
         int batchSize = 1000;
         int iterations = 3;
         int layerSize = 150;
-        
+
         log.info("Build model....");
         Word2Vec vec = new Word2Vec.Builder()
                 .batchSize(batchSize) //# words per minibatch.
-                .minWordFrequency(5) // 
+                .minWordFrequency(5) //
                 .useAdaGrad(false) //
                 .layerSize(layerSize) // word feature vector size
                 .iterations(iterations) // # iterations to train
-                .learningRate(0.025) // 
+                .learningRate(0.025) //
                 .minLearningRate(1e-3) // learning rate decays wrt # words. floor learning
                 .negativeSample(10) // sample size 10 words
                 .iterate(iter) //
@@ -241,7 +242,7 @@ Word2vec는 텍스트를 단어별로 받아들입니다. 따라서 위와 같�
 
 * *batchSize*는 한 하드웨어(GPU나 CPU)에서 iteration 한번에 처리하는 단어의 양입니다. batchSize가 크면 GPU의 최적화된 병렬 프로세싱 덕분에 빠르게 진행이 되지만 한번에 많은 단어를 보기 위해선 많은 메모리가 필요합니다.
 * *minWordFrequency*는 말뭉치에서 유효한 단어로 인정받는데 필요한 최소 단어 개수입니다. 즉, 이 값보다 적게 나타난 단어는 없는 단어로 간주합니다. 이렇게 하는 이유는 우선 단어의 embedding이 잘 학습되려면 단어의 용례가 여러 개 필요하기 때문입니다. 또, 잘 나타나지 않는 희귀한 단어를 제외해주면 메모리와 연산량도 효율적으로 사용하게 됩니다.
-* *useAdaGrad* - Adagrad는 학습 과정의 최적화에 쓰이는 기법 중 하나입니다. 
+* *useAdaGrad* - Adagrad는 학습 과정의 최적화에 쓰이는 기법 중 하나입니다.
 * *layerSize*는 단어 벡터의 차원입니다. 예를 들어 500차원 벡터로 단어를 표현하려면 이 값을 500으로 설정하면 됩니다.
 * *iterations* 이 값은 전체 데이터에 몇 회의 학습을 반복할 것인지를 정합니다. 횟수가 부족하면 데이터에서 추출 가능한 정보를 다 쓰지 않고 학습을 끝내게 되므로 성능이 떨어집니다. 그러나 너무 많은 반복을 하는 것은 비효율 적입니다. 이 값은 상황에 따라 다르기 때문에 우선 학습을 해보고 결과를 관찰하며 조절합니다.
 * *learningRate*(학습 속도)는 매 반복 학습마다 일어나는 업데이트의 크기와 관련된 값입니다. 이 값이 너무 작으면 학습 속도가 너무 느리며, 반대로 너무 크면 정밀하게 학습을 하지 못하거나 심지어 학습에 실패하고 완전히 발산할 수도 있습니다.
@@ -250,7 +251,7 @@ Word2vec는 텍스트를 단어별로 받아들입니다. 따라서 위와 같�
 * *tokenizer*는 배치에 있는 단어를 학습 과정에 공급합니다.
 * *vec.fit()* -  구성이 완료되면 이 명령어를 써서 학습을 시작합니다.
 
-### <a name="eval">Word2vec 모델 학습 결과 평가하</a> 
+### <a name="eval">Word2vec 모델 학습 결과 평가하</a>
 
 아래 코드는 얼마나 모델이 학습이 잘 되었는지를 확인하는 코드입니다.
 
@@ -260,7 +261,7 @@ Word2vec는 텍스트를 단어별로 받아들입니다. 따라서 위와 같�
         log.info("Similarity between people and money: " + sim);
         Collection<String> similar = vec.wordsNearest("day", 10);
         log.info("Similar words to 'day' : " + similar);
-        
+
         //output: [night, week, year, game, season, during, office, until, -]
 ```
 
@@ -316,7 +317,7 @@ Word embeddings 벡터의 차원을 확 줄여서 시각화 하는 방법이 있
         Collection<String> kingList = vec.wordsNearest(Arrays.asList("king", "woman"), Arrays.asList("queen"), 10);
 ```
 
-Word2vec의 벡터를 이용한 가장 유명한 예제는 "king - queen = man - woman" 및 그 확장인 "king - queen + woman = man" 입니다. 
+Word2vec의 벡터를 이용한 가장 유명한 예제는 "king - queen = man - woman" 및 그 확장인 "king - queen + woman = man" 입니다.
 
 위의 예제는 벡터 연산 `king - queen + woman`의 결과에 가장 가까운 10개의 단어를 골라줍니다. 정상적으로 학습이 되었다면 그 단어엔 `man`이 있을 것 입니다. 이 예제에서 `wordsNearest`의 첫 번째 입력 변수는 `king`과 `woman`, 두 번째 입력 변수는 `queen`입니다. 일반적인 규칙을 생각해보면, 위의 식 `king - queen + woman`의 단어 중 부호가 +인 단어를 첫 번째 입력 변수로, 부호가 -인 단어를 두 번째 입력 변수로 넣으면 됩니다. 마지막으로 들어간 입력변수 10은 총 10개의 단어르 출력하라는 의미입니다. 이 코드를 `import java.util.Arrays;`파일 상단에 추가하십시오.
 
@@ -356,7 +357,7 @@ Word2vec의 벡터를 이용한 가장 유명한 예제는 "king - queen = man -
 
 ``` java
     //아래 메뉴를 실행한 뒤,
-    IntelliJ Preferences > Compiler > Command Line Options 
+    IntelliJ Preferences > Compiler > Command Line Options
     //아래 내용을 붙여넣으세요.
     -Xms1024m
     -Xmx10g
@@ -365,11 +366,11 @@ Word2vec의 벡터를 이용한 가장 유명한 예제는 "king - queen = man -
 
 ### <a name="grams">N-grams & Skip-grams</a>
 
-학습 과정에서 단어는 우선 하나의 벡터에 할당이 되고, *그 단어를 중심으로 전후의 몇 단어를 같이 읽습니다*. 이렇게 연속된 n개의 단어를 통째로 n-그램이라고 합니다. n-그램의 특수한 케이스로, 단어를 띄어쓰기 기준으로 하나의 단어를 하나의 개체로 보는 것을 유니그램(unigram, n=1), 두 개씩 이어서 생각하는 것을 바이그램(bigram, n=2)이라고 합니다. 즉 n-그램은 문서를 n개의 연속된 단어 단위로 자른 것 입니다. 예를 들어 문장이 '하나의 벡터에 할당이 된다.'라면 여기에는 4개의 유니그램 '하나의', '벡터에', '할당이', '된다'이 있는 것 입니다 (토큰화하는 과정은 생략하였습니다). 바이그램으로 표현하면 '하나의 벡터에', '벡터에 할당이' '할당이 된다' 이렇게 3개의 바이그램을 만들 수 있습니다. 스킵그램(skip-gram)은 n-그램에서 기준이 되는 단어를 제외한 것 입니다. 
+학습 과정에서 단어는 우선 하나의 벡터에 할당이 되고, *그 단어를 중심으로 전후의 몇 단어를 같이 읽습니다*. 이렇게 연속된 n개의 단어를 통째로 n-그램이라고 합니다. n-그램의 특수한 케이스로, 단어를 띄어쓰기 기준으로 하나의 단어를 하나의 개체로 보는 것을 유니그램(unigram, n=1), 두 개씩 이어서 생각하는 것을 바이그램(bigram, n=2)이라고 합니다. 즉 n-그램은 문서를 n개의 연속된 단어 단위로 자른 것 입니다. 예를 들어 문장이 '하나의 벡터에 할당이 된다.'라면 여기에는 4개의 유니그램 '하나의', '벡터에', '할당이', '된다'이 있는 것 입니다 (토큰화하는 과정은 생략하였습니다). 바이그램으로 표현하면 '하나의 벡터에', '벡터에 할당이' '할당이 된다' 이렇게 3개의 바이그램을 만들 수 있습니다. 스킵그램(skip-gram)은 n-그램에서 기준이 되는 단어를 제외한 것 입니다.
 
 DL4J가 구현한 스킵그램은 Mikolov가 발표한 방법으로, CBOW보다 더 정확한 것으로 알려져있습니다.
 
-말뭉치에서 추출한 n-그램을 Word2vec 신경망에 공급하면 단어의 벡터값을 찾아줍니다. 
+말뭉치에서 추출한 n-그램을 Word2vec 신경망에 공급하면 단어의 벡터값을 찾아줍니다.
 
 ### <a name="code">코드 예제</a>
 
@@ -377,7 +378,7 @@ DL4J가 구현한 스킵그램은 Mikolov가 발표한 방법으로, CBOW보다 
 
 <script src="http://gist-it.appspot.com/https://github.com/deeplearning4j/dl4j-examples/blob/master/src/main/java/org/deeplearning4j/examples/word2vec/Word2VecRawTextExample.java?slice=22:64"></script>
 
-[퀵 스타트 가이드](./kr-quickstart.html)의 설명을 참고해 IDE를 설정하셨다면, 이제 IntelliJ에서 이 예제를 열고 실행해보십시오. 만약 학습에 사용한 말뭉치에 없는 단어를 입력에 넣으면 모델은 `null`값을 반환할 것 입니다. 
+[퀵 스타트 가이드](./kr-quickstart.html)의 설명을 참고해 IDE를 설정하셨다면, 이제 IntelliJ에서 이 예제를 열고 실행해보십시오. 만약 학습에 사용한 말뭉치에 없는 단어를 입력에 넣으면 모델은 `null`값을 반환할 것 입니다.
 
 ### <a name="trouble">문제 해결 및 Word2Vec 튜닝하기</a>
 
@@ -415,7 +416,7 @@ DL4J가 구현한 스킵그램은 Mikolov가 발표한 방법으로, CBOW보다 
 
 *질문: 어떻게 하면 제 데이터를 로딩하나요? 왜 이렇게 학습이 오래 걸리나요?*
 
-*답:* 만일 여러분이 입력한 데이터가 단 하나의 문장으로 이루어져 있다면 학습하는데 시간이 아주 오래 걸립니다. 왜냐하면 Word2vec은 문장 단위로 작동하기 때문입니다. (GloVe알고리즘은 문장 단위가 아니라 말뭉치 전체를 보기 때문에 이런 문제가 없습니다.) 따라서 데이터셋엔 문장과 문장 사이에 마침표가 잘 찍혀있어야 합니다. 만일 마침표를 생략한 데이터셋을 가지고 있다면 예를 들어 10,000단어를 하나의 문장으로 보도록 임의로 지정할 수 있습니다. 이렇게 하려면 `SentenceInterator`와 `Tokenizer`를 별도로 수정해야 합니다. 
+*답:* 만일 여러분이 입력한 데이터가 단 하나의 문장으로 이루어져 있다면 학습하는데 시간이 아주 오래 걸립니다. 왜냐하면 Word2vec은 문장 단위로 작동하기 때문입니다. (GloVe알고리즘은 문장 단위가 아니라 말뭉치 전체를 보기 때문에 이런 문제가 없습니다.) 따라서 데이터셋엔 문장과 문장 사이에 마침표가 잘 찍혀있어야 합니다. 만일 마침표를 생략한 데이터셋을 가지고 있다면 예를 들어 10,000단어를 하나의 문장으로 보도록 임의로 지정할 수 있습니다. 이렇게 하려면 `SentenceInterator`와 `Tokenizer`를 별도로 수정해야 합니다.
 
 *질문: 전부 시키는대로 했는데도 결과가 이상합니다.*
 
@@ -460,7 +461,7 @@ Deeplearning4j는 [SequenceVectors](https://github.com/deeplearning4j/deeplearni
 * Epochs와 Iterations 값을 변경할 수 있습니다. (그러나 "1"로 두는 경우가 일반적입니다.)
 * `Word2Vec.Builder`는 `hugeModelExpected` 옵션을 가지고 있습니다. 이 값을 `true`로 설정하면 모델을 빌드하는 과정에서 주기적으로 단어를 잘라냅니다.
 * `minWordFrequency`를 적절히 설정할 수 있습니다.
-* WordVectorsSerialiaztion 방식은 두 가지가 있습니다. `writeFullModel` 와 `loadFullModel`입니다. 
+* WordVectorsSerialiaztion 방식은 두 가지가 있습니다. `writeFullModel` 와 `loadFullModel`입니다.
 * 최신 워크스테이션은 몇 백만개의 단어를 처리합니다. Deeplearning4j의 Word2vec 구현은 단일 머신에서 수 테라 바이트의 데이터를 모델링 할 수 있습니다. 데이터의 크기는 대략 `vectorSize * 4 * 3 * vocab.size()`으로 계산합니다.
 
 ### 학습 자료
