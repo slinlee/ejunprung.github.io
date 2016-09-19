@@ -10731,7 +10731,7 @@ body[data-spy] {
 }
 
 .sidenav {
-  min-width: 250px;
+  max-width: 230px;
 }
 
 .sidenav.nav>li>a {
