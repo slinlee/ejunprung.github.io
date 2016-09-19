@@ -9,7 +9,7 @@ redirect_from: /ja-use_cases
 ディープラーニングの優れた点は、画像、音声、ビデオ、テキストなどのメディアとして知られる構造化されていないデータのパターンを識別できるというところです。
 ここでは、サンプルとなるユースケースをその関連部門とともにご紹介しましょう。
 
-![Alt text](./img/ja-use_cases.png)
+![Alt text](../img/ja-use_cases.png)
 
 ## 特徴のイントロスペクション（内省）
 
@@ -35,7 +35,7 @@ redirect_from: /ja-use_cases
 
 以下はニューラルネットワークによりクラスタリングされた顔画像の一例です。
 
-![Alt text](./img/faces_tsne.jpg)
+![Alt text](../img/faces_tsne.jpg)
 
 ### マシンビジョン＋自然言語処理
 

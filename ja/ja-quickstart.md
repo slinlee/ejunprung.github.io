@@ -20,7 +20,7 @@ setTimeout(ldinsp, 500); document.readyState != "complete" ?(window.attachEvent 
 
 このページでは、DL4Jのexampleを動作させるために必要な事柄すべてをご説明します。
 
-弊社の[Gitter Live Chat（Gitterライブチャット）](https://gitter.im/deeplearning4j/deeplearning4j)に参加されることをおすすめします。Gitterでは、ヘルプが必要な方へのサポートの提供やフィードバックの受付を行っております。なお、質問のある方は、以下のガイドにいくつかの質問に対する回答をご紹介しておりますので、こちらを先にお読みいただければ幸いです。ディープラーニングの初心者の方には[a road map for beginners（ディープラーニングの初心者ガイド）](./deeplearningforbeginners.html)、ディープラーニングに関するコースのサイト、読み物、その他のリソースもご紹介しています。
+弊社の[Gitter Live Chat（Gitterライブチャット）](https://gitter.im/deeplearning4j/deeplearning4j)に参加されることをおすすめします。Gitterでは、ヘルプが必要な方へのサポートの提供やフィードバックの受付を行っております。なお、質問のある方は、以下のガイドにいくつかの質問に対する回答をご紹介しておりますので、こちらを先にお読みいただければ幸いです。ディープラーニングの初心者の方には[a road map for beginners（ディープラーニングの初心者ガイド）](../deeplearningforbeginners.html)、ディープラーニングに関するコースのサイト、読み物、その他のリソースもご紹介しています。
 
 #### コードについて
 
@@ -110,15 +110,15 @@ $ git clone git://git.kernel.org/pub/scm/git/git.git
 
 2.IntelliJを開き、「Import Project（プロジェクトをインポート）」を選んでください。次に、メインディレクトリの'dl4j-examples'を選んでください。
 
-![select directory](./img/Install_IntJ_1.png)
+![select directory](../img/Install_IntJ_1.png)
 
 3.'Import project from external model（外部モデルからプロジェクトをインポート）'を選び、Mavenが選択されているようにしてください。
-![import project](./img/Install_IntJ_2.png)
+![import project](../img/Install_IntJ_2.png)
 
 4.ウィザードのオプションを続けます。`jdk`で始まるSDK（ソフトウェア開発キット）を選びます。（オプションを見えない場合は、プラス記号をクリックすると見れます。）そして、「Finish（完了）」をクリックします。IntelliJがすべての依存関係をダウンロードするのを待ちます。右下にある横線のバーが使えるようになっているのが見えます。
 
 5.左側のファイルツリーから例をピックアップします。
-![run IntelliJ example](./img/Install_IntJ_3.png)
+![run IntelliJ example](../img/Install_IntJ_3.png)
 ファイルを右クリックして作動させます。
 
 ## Using DL4J In Your Own Projects:POM.xmlファイルの設定
@@ -135,11 +135,11 @@ IntelliJ内では、最初に実行するDeeplearning4jを選ぶ必要があり�
 
 このexampleを実行するには、右クリックして、ドロップダウンメニューにある緑色のボタンを選択します。すると、IntelliJの下部のウインドウにスコアの連続が見えます。右端にある数字はネットワークの分類のためのエラースコアです。ネットワークが学習している場合は、時間の経過とともに各バッチが処理されていくにしたがってその数字は減少していきます。最後に、このウィンドウは、ニューラルネットワークのモデルがどのくらい正確になったかを報告します。
 
-![run IntelliJ example](./img/mlp_classifier_results.png)
+![run IntelliJ example](../img/mlp_classifier_results.png)
 
 別のウィンドウでは、グラフによって、多層パーセプトロン（MLP）exampleのデータをどのように分類したかが表示されます。以下はその例です。
 
-![run IntelliJ example](./img/mlp_classifier_viz.png)
+![run IntelliJ example](../img/mlp_classifier_viz.png)
 
 お疲れ様でした！たった今、Deeplearning4jでの初めてのニューラルネットワークの訓練が完了しました。ほっと一息着いたところで、次のチュートリアルに進んでみませんか?[**MNIST for Beginners（初心者のためのMNIST）**](./mnist-for-beginners)では、画像の分類方法が学習できます。
 
@@ -149,8 +149,8 @@ IntelliJ内では、最初に実行するDeeplearning4jを選ぶ必要があり�
   * [DL4J Live Chat（ライブチャット）](https://gitter.im/deeplearning4j/deeplearning4j)は、DL4Jのすべてのことについてを扱うメインチャンネルです。ほとんどの人々はこのチャットを使っています。
   * [Tunning Help](https://gitter.im/deeplearning4j/deeplearning4j/tuninghelp)は、ニューラルネットワークを始めた人々のために設けられています。初心者の方々は是非ご参加ください!
   * [Early Adopters](https://gitter.im/deeplearning4j/deeplearning4j/earlyadopters)は、弊社の次のリリースのチェックや改善のお手伝いをしてくださっている方々向けです。注意：このコミュニティーは経験者向けです。
-2.[Introduction to deep neural networks（ディープニューラルネットワークについて）](./neuralnet-overview)または[弊社の詳細チュートリアルの一つ](./tutorials)をお読みください。
-3.より詳細の[Comprehensive Setup Guide（セットアップ全ガイド）](./gettingstarted)をお読みください。
+2.[Introduction to deep neural networks（ディープニューラルネットワークについて）](ja-neuralnet-overview)または[弊社の詳細チュートリアルの一つ](../tutorials)をお読みください。
+3.より詳細の[Comprehensive Setup Guide（セットアップ全ガイド）](ja-gettingstarted)をお読みください。
 4.[DL4Jのガイド集](./documentation)をご覧ください。
 
 ### その他のリンク

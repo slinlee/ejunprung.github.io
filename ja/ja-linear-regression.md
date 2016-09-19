@@ -6,7 +6,7 @@ redirect_from: /ja-linear-regression
 
 # 回帰を使ったニューラルネットワーク
 
-一般に、ニューラルネットワークは、[教師なしの学習](./unsupervised-learning)、分類、回帰を目的として使用されます。つまり、教師付きの学習を終えた後、ラベル付けされていないデータのグループ化、そのデータの分類、または連続的な値の予測を行います。
+一般に、ニューラルネットワークは、[教師なしの学習](../unsupervised-learning)、分類、回帰を目的として使用されます。つまり、教師付きの学習を終えた後、ラベル付けされていないデータのグループ化、そのデータの分類、または連続的な値の予測を行います。
 
 分類作業は、最終層でロジスティック回帰を使い、連続的データを0や1などのダミーの変数に変換します。ある人の身長、体重、年齢の情報を基に心臓病の可能性があるかどうかに分類します。一方、真の回帰を使って、ある連続的な入力のセットが別の連続的な出力のセットに変換されます。
 
@@ -14,7 +14,7 @@ redirect_from: /ja-linear-regression
 
 分別のある人には回帰にニューラルネットワークを使用することがやり過ぎかどうかについての意見があることでしょうが、ここではそれがどのように行われるのかということを説明することだけを目的としています。
 
-![Alt text](./img/neural-network-regression.png)
+![Alt text](../img/neural-network-regression.png)
 
 上図では、`x`は入力される特徴であり、ネットワーク内の一つ前の層から前方に通過してきたものです。xの多くは、最後の隠れ層の各ノード（節）に提供され、各々に該当する重み`w`が掛け合わされます。
 
@@ -44,10 +44,10 @@ Deeplearning4jにあるニューラルネットワークを使って回帰を行
 より簡単な数学関数に近似させるための回帰を使ったニューラルネットワークについてをより網羅した例は、[こちら](https://github.com/deeplearning4j/dl4j-examples/tree/master/src/main/java/org/deeplearning4j/examples/feedforward/regression)をご覧ください。
 
 ### <a name="beginner">その他の Deeplearning4jのチュートリアル</a>
-* [Restricted Boltzmann Machines（制限付きボルツマン・マシン）](../ja/ja-restrictedboltzmannmachine)
-* [Eigenvectors, Covariance, PCA and Entropy（固有ベクトル、共分散、PCA、エントロピー）](../ja/ja-eigenvector)
-* [LSTMs and Recurrent Networks（長・短期記憶ユニットと再帰型ネットワーク）](./lstm)
-* [Neural Networks（ニューラルネットワーク）](../ja/ja-neuralnet-overview)
-* [Convolutional Networks（畳み込みネットワーク）](./convolutionalnets)
-* [Deeplearning4j Quickstart Examples（クイックスタートで見るDeeplearning4jの例）](../ja/ja-quickstart)
-* [ND4J:Numpy for the JVM（ND4J:Java仮想マシンで使用するNumpy）](http://nd4j.org/)
+* [Restricted Boltzmann Machines（制限付きボルツマン・マシン）](ja-restrictedboltzmannmachine)
+* [Eigenvectors, Covariance, PCA and Entropy（固有ベクトル、共分散、PCA、エントロピー）](ja-eigenvector)
+* [LSTMs and Recurrent Networks（長・短期記憶ユニットと再帰型ネットワーク）](ja-lstm)
+* [Neural Networks（ニューラルネットワーク）](ja-neuralnet-overview)
+* [Convolutional Networks（畳み込みネットワーク）](ja-convolutionalnets)
+* [Deeplearning4j Quickstart Examples（クイックスタートで見るDeeplearning4jの例）](ja-quickstart)
+* [ND4J:Numpy for the JVM（ND4J:Java仮想マシンで使用するNumpy）](http://nd4j.org/ja-getstarted)
