@@ -1,6 +1,7 @@
 ---
 title: "制限付きボルツマンマシンの初心者向けガイド"
 layout: ja-default
+redirect_from: /ja-restrictedboltzmannmachine
 ---
 
 # 制限付きボルツマンマシンの初心者向けガイド

@@ -1,6 +1,7 @@
 ---
 title: "固有ベクトル、主成分分析、共分散、エントロピー入門"
 layout: ja-default
+redirect_from: /ja-eigenvector
 ---
 
 # 固有ベクトル、主成分分析、共分散、エントロピー入門

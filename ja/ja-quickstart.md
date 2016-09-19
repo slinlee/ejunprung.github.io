@@ -1,6 +1,7 @@
 ---
 title: "Deeplearning 4 j のクイックスタートガイド"
 layout: ja-default
+redirect_from: /ja-quickstart
 ---
 
 <!-- Begin Inspectlet Embed Code -->
@@ -19,13 +20,13 @@ setTimeout(ldinsp, 500); document.readyState != "complete" ?(window.attachEvent 
 
 このページでは、DL4Jのexampleを動作させるために必要な事柄すべてをご説明します。
 
-弊社の[Gitter Live Chat（Gitterライブチャット）](https://gitter.im/deeplearning4j/deeplearning4j)に参加されることをおすすめします。Gitterでは、ヘルプが必要な方へのサポートの提供やフィードバックの受付を行っております。なお、質問のある方は、以下のガイドにいくつかの質問に対する回答をご紹介しておりますので、こちらを先にお読みいただければ幸いです。ディープラーニングの初心者の方には[a road map for beginners（ディープラーニングの初心者ガイド）](./deeplearningforbeginners.html)、ディープラーニングに関するコースのサイト、読み物、その他のリソースもご紹介しています。 
+弊社の[Gitter Live Chat（Gitterライブチャット）](https://gitter.im/deeplearning4j/deeplearning4j)に参加されることをおすすめします。Gitterでは、ヘルプが必要な方へのサポートの提供やフィードバックの受付を行っております。なお、質問のある方は、以下のガイドにいくつかの質問に対する回答をご紹介しておりますので、こちらを先にお読みいただければ幸いです。ディープラーニングの初心者の方には[a road map for beginners（ディープラーニングの初心者ガイド）](./deeplearningforbeginners.html)、ディープラーニングに関するコースのサイト、読み物、その他のリソースもご紹介しています。
 
 #### コードについて
 
 Deeplearning4jはディープ・ニューラル・ネットワークを構成するドメイン固有の言語で、複数層で構成されています。すべては、これらの層やそれらのハイパーパラメータを組織化する`MultiLayerConfiguration`で開始します。
 
-ハイパーパラメータとはニューラルネットワークがどのように学習するかを決定する変数です。ハイパーパラメータには、モデルの重みの更新回数、それらの重みの初期化方法、ノードに付与する活性化関数、使用すべき最適化アルゴリズム、モデルの学習速度に関する情報などが含まれています。以下は、設定の一例です。 
+ハイパーパラメータとはニューラルネットワークがどのように学習するかを決定する変数です。ハイパーパラメータには、モデルの重みの更新回数、それらの重みの初期化方法、ノードに付与する活性化関数、使用すべき最適化アルゴリズム、モデルの学習速度に関する情報などが含まれています。以下は、設定の一例です。
 
 ``` java
     MultiLayerConfiguration conf = new NeuralNetConfiguration.Builder()
@@ -51,7 +52,7 @@ Deeplearning4jでは、層を追加するには`NeuralNetConfiguration.Builder()
 ## 必要なもの
 
 * [Java （開発者バージョン）](#Java) 17、それ以降（**64ビットバージョンのみに対応しています。**）
-* [Apache Maven](#Maven) 
+* [Apache Maven](#Maven)
 * [IntelliJ IDEA]（#IntelliJ）またはEclipse
 * [Git](#Git)
 
@@ -87,7 +88,7 @@ MavenはJavaの開発者には広く使用されており、 DL4Jには必要不
 
 #### <a name="IntelliJ">IntelliJ IDEA</a>
 
-統合開発環境（[IDE](http://encyclopedia.thefreedictionary.com/integrated+development+environment)）を使うとAPI（アプリケーションプログラムインタフェース)を使ってニューラルネットワークをいくつかのステップを踏むだけで設定することができます。是非、[IntelliJ](https://www.jetbrains.com/idea/download/)を使用することをおすすめします。Mavenと連携して依存関係を処理することができるからです。[IntelliJのコミュニティ版](https://www.jetbrains.com/idea/download/)は無料です。 
+統合開発環境（[IDE](http://encyclopedia.thefreedictionary.com/integrated+development+environment)）を使うとAPI（アプリケーションプログラムインタフェース)を使ってニューラルネットワークをいくつかのステップを踏むだけで設定することができます。是非、[IntelliJ](https://www.jetbrains.com/idea/download/)を使用することをおすすめします。Mavenと連携して依存関係を処理することができるからです。[IntelliJのコミュニティ版](https://www.jetbrains.com/idea/download/)は無料です。
 
 IDEといえば、他にも[Eclipse](http://books.sonatype.com/m2eclipse-book/reference/creating-sect-importing-projects.html)や[Netbeans](http://wiki.netbeans.org/MavenBestPractices)などが知られていますが、IntelliJの方がおすすめです。[Gitter Live Chat](https://gitter.im/deeplearning4j/deeplearning4j)で分からないことなどを聞きたい場合も、IntelliJの方がより簡単に回答が得られます。
 
@@ -107,18 +108,18 @@ $ git clone git://git.kernel.org/pub/scm/git/git.git
         $ cd dl4j-examples/
         $ mvn clean install
 
-2.IntelliJを開き、「Import Project（プロジェクトをインポート）」を選んでください。次に、メインディレクトリの'dl4j-examples'を選んでください。 
+2.IntelliJを開き、「Import Project（プロジェクトをインポート）」を選んでください。次に、メインディレクトリの'dl4j-examples'を選んでください。
 
 ![select directory](./img/Install_IntJ_1.png)
 
-3.'Import project from external model（外部モデルからプロジェクトをインポート）'を選び、Mavenが選択されているようにしてください。 
+3.'Import project from external model（外部モデルからプロジェクトをインポート）'を選び、Mavenが選択されているようにしてください。
 ![import project](./img/Install_IntJ_2.png)
 
 4.ウィザードのオプションを続けます。`jdk`で始まるSDK（ソフトウェア開発キット）を選びます。（オプションを見えない場合は、プラス記号をクリックすると見れます。）そして、「Finish（完了）」をクリックします。IntelliJがすべての依存関係をダウンロードするのを待ちます。右下にある横線のバーが使えるようになっているのが見えます。
 
 5.左側のファイルツリーから例をピックアップします。
 ![run IntelliJ example](./img/Install_IntJ_3.png)
-ファイルを右クリックして作動させます。 
+ファイルを右クリックして作動させます。
 
 ## Using DL4J In Your Own Projects:POM.xmlファイルの設定
 
@@ -130,7 +131,7 @@ $ git clone git://git.kernel.org/pub/scm/git/git.git
 
 Mavenの各プロジェクトにはPOMファイルがあります。exampleを作動させると、POMファイルは、[こちら](https://github.com/deeplearning4j/dl4j-examples/blob/master/pom.xml)のようになります。
 
-IntelliJ内では、最初に実行するDeeplearning4jを選ぶ必要があります。`MLPLinearClassifier`がおすすめです。ネットワークがすぐに弊社のユーザー・インターフェースにある2つのデータグループを分類するのを確認できるからです。Githubにあるファイルは[こちら](https://github.com/deeplearning4j/dl4j-examples/blob/master/src/main/java/org/deeplearning4j/examples/feedforward/classification/MLPClassifierLinear.java)からアクセスできます。 
+IntelliJ内では、最初に実行するDeeplearning4jを選ぶ必要があります。`MLPLinearClassifier`がおすすめです。ネットワークがすぐに弊社のユーザー・インターフェースにある2つのデータグループを分類するのを確認できるからです。Githubにあるファイルは[こちら](https://github.com/deeplearning4j/dl4j-examples/blob/master/src/main/java/org/deeplearning4j/examples/feedforward/classification/MLPClassifierLinear.java)からアクセスできます。
 
 このexampleを実行するには、右クリックして、ドロップダウンメニューにある緑色のボタンを選択します。すると、IntelliJの下部のウインドウにスコアの連続が見えます。右端にある数字はネットワークの分類のためのエラースコアです。ネットワークが学習している場合は、時間の経過とともに各バッチが処理されていくにしたがってその数字は減少していきます。最後に、このウィンドウは、ニューラルネットワークのモデルがどのくらい正確になったかを報告します。
 
@@ -140,15 +141,15 @@ IntelliJ内では、最初に実行するDeeplearning4jを選ぶ必要があり�
 
 ![run IntelliJ example](./img/mlp_classifier_viz.png)
 
-お疲れ様でした！たった今、Deeplearning4jでの初めてのニューラルネットワークの訓練が完了しました。ほっと一息着いたところで、次のチュートリアルに進んでみませんか?[**MNIST for Beginners（初心者のためのMNIST）**](./mnist-for-beginners)では、画像の分類方法が学習できます。 
+お疲れ様でした！たった今、Deeplearning4jでの初めてのニューラルネットワークの訓練が完了しました。ほっと一息着いたところで、次のチュートリアルに進んでみませんか?[**MNIST for Beginners（初心者のためのMNIST）**](./mnist-for-beginners)では、画像の分類方法が学習できます。
 
 ## 次のステップ
 
 1.Gitterに参加しましょう。Gitterには3つの大きなコミュニティチャンネルがあります。
   * [DL4J Live Chat（ライブチャット）](https://gitter.im/deeplearning4j/deeplearning4j)は、DL4Jのすべてのことについてを扱うメインチャンネルです。ほとんどの人々はこのチャットを使っています。
   * [Tunning Help](https://gitter.im/deeplearning4j/deeplearning4j/tuninghelp)は、ニューラルネットワークを始めた人々のために設けられています。初心者の方々は是非ご参加ください!
-  * [Early Adopters](https://gitter.im/deeplearning4j/deeplearning4j/earlyadopters)は、弊社の次のリリースのチェックや改善のお手伝いをしてくださっている方々向けです。注意：このコミュニティーは経験者向けです。 
-2.[Introduction to deep neural networks（ディープニューラルネットワークについて）](./neuralnet-overview)または[弊社の詳細チュートリアルの一つ](./tutorials)をお読みください。 
+  * [Early Adopters](https://gitter.im/deeplearning4j/deeplearning4j/earlyadopters)は、弊社の次のリリースのチェックや改善のお手伝いをしてくださっている方々向けです。注意：このコミュニティーは経験者向けです。
+2.[Introduction to deep neural networks（ディープニューラルネットワークについて）](./neuralnet-overview)または[弊社の詳細チュートリアルの一つ](./tutorials)をお読みください。
 3.より詳細の[Comprehensive Setup Guide（セットアップ全ガイド）](./gettingstarted)をお読みください。
 4.[DL4Jのガイド集](./documentation)をご覧ください。
 

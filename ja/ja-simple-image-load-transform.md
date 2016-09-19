@@ -1,21 +1,22 @@
 ---
 title: ディープニューラルネットワークに画像を読み込むためにカスタマイズされたデータパイプライン
 layout: ja-default
+redirect_from: /ja-simple-image-load-transform
 ---
 
 # 画像向け等にカスタマイズされたデータパイプライン
 
-Deeplearning4jのexamplesに使用する標準データセットは抽象化されているため、データパイプラインに全く障害が生じません。しかし、実際のユーザーが最初に手を付けるのは生の乱雑なデータであるため、前処理やベクトル化を行い、ニューラルネットワークがクラスタリングや分類を行うための訓練をする必要があります。 
+Deeplearning4jのexamplesに使用する標準データセットは抽象化されているため、データパイプラインに全く障害が生じません。しかし、実際のユーザーが最初に手を付けるのは生の乱雑なデータであるため、前処理やベクトル化を行い、ニューラルネットワークがクラスタリングや分類を行うための訓練をする必要があります。
 
 *DataVec*は、弊社の機械学習ベクトル化ライブラリで、ニューラルネットワークが学習できるデータを準備するための方法をカスタマイズするのに役に立ちます。([DataVecのJavadocはこちらをご参照ください。](http://deeplearning4j.org/datavecdoc/).)
 
-こちらのチュートリアルでは、画像のデータセットの読み込み方法、変換の実行についてご説明します。ここでは簡単に*Oxford flower dataset（オックスフォードの花のデータセット）*の3クラスの画像10個のみを使用します。下記のコードは参照用のみとしてご利用いただき、コピー・ペーストはご遠慮願います。 
+こちらのチュートリアルでは、画像のデータセットの読み込み方法、変換の実行についてご説明します。ここでは簡単に*Oxford flower dataset（オックスフォードの花のデータセット）*の3クラスの画像10個のみを使用します。下記のコードは参照用のみとしてご利用いただき、コピー・ペーストはご遠慮願います。
 [こちらから全exampleのコードをご利用ください。](https://github.com/deeplearning4j/dl4j-examples/blob/master/dl4j-examples/src/main/java/org/deeplearning4j/examples/dataExamples/ImagePipelineExample.java)
 
 ## 該当するディレクトリ構造に画像を収納
 手短に言うと、データセット内の画像は、ディレクトリのクラス/ラベルにより整理され、これらのクラス/ラベルのディレクトリは、親ディレクトリ内に収められている必要があります。
 
-* データセットをダウンロードします 
+* データセットをダウンロードします
 
 * 親ディレクトリを作成します。
 
@@ -35,16 +36,16 @@ Deeplearning4jのexamplesに使用する標準データセットは抽象化さ�
 >                      label_0 label_1....label_n-1 label_n
 
 
-この例では、parentDir（親ディレクトリ）は `$PWD/src/main/resources/DataExamples/ImagePipeline/`と対応しており、サブディレクトリであるlabelA、labelB、labelCにはそれぞれ画像が10個づつ含まれています。 
+この例では、parentDir（親ディレクトリ）は `$PWD/src/main/resources/DataExamples/ImagePipeline/`と対応しており、サブディレクトリであるlabelA、labelB、labelCにはそれぞれ画像が10個づつ含まれています。
 
 ## 画像を読み込む前に詳細事項を指定
 * それぞれ別のディレクトリにあるラベルが付与された画像の親ディレクトリのパスを指定します。
- 
+
 ~~~java
 File parentDir = new File(System.getProperty("user.dir"), "src/main/resources/DataExamples/ImagePipeline/");
 ~~~
 
-* データセットをテストや訓練に分割する際に使用するために、適用可能な拡張子と乱数発生器を指定します。 
+* データセットをテストや訓練に分割する際に使用するために、適用可能な拡張子と乱数発生器を指定します。
 
 ~~~java
 FileSplit filesInDir = new FileSplit(parentDir, allowedExtensions, randNumGen);
@@ -72,7 +73,7 @@ InputSplit testData = filesInDirSplit[1];
 
 ## 画像パイプライン変換の詳細事項を指定
 
-* 画像記録リーダーで全体のサイズ変更をしたいデータセットの高さと幅を指定します。 
+* 画像記録リーダーで全体のサイズ変更をしたいデータセットの高さと幅を指定します。
 
 ~~~java
 ImageRecordReader recordReader = new ImageRecordReader(height,width,channels,labelMaker);
@@ -107,5 +108,3 @@ DataSetIterator dataIter = new RecordReaderDataSetIterator(recordReader, 10, 1, 
 ~~~
 
 DataSetIteratorは入力データベースをrecordReader経由でイテレートします。各イテレーションにつき、新しいexampleを1つ、またはそれ以上取り入れ、それらをニューラルネットワークが使用できるDataSetオブジェクトに読み込みます。
-
-
