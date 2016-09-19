@@ -1,6 +1,7 @@
 ---
 layout: ja-default
 title: "デフォルト"
+redirect_from: "/ja-about"
 ---
 
 # Skymindについて
