@@ -10304,7 +10304,7 @@ body[data-spy] {
 }
 
 .sidebar+.main-content {
-  padding-left: 50px;
+  padding-left: 75px;
   padding-right: 0;
 }
 
@@ -10731,7 +10731,7 @@ body[data-spy] {
 }
 
 .sidenav {
-  min-width: 180px;
+  min-width: 225px;
 }
 
 .sidenav.nav>li>a {
