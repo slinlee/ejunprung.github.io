@@ -110,15 +110,15 @@ $ git clone git://git.kernel.org/pub/scm/git/git.git
 
 2.打开IntelliJ，选择“导入项目”。然后选择“dl4j-examples”主目录。
 
-![select directory](./img/Install_IntJ_1.png)
+![select directory](../img/Install_IntJ_1.png)
 
 3.选择“从外部模型导入项目”，确保已选中Maven。
-![import project](./img/Install_IntJ_2.png)
+![import project](../img/Install_IntJ_2.png)
 
 4.继续按向导选项操作。选中以`jdk`开头的SDK。（可能需要点击加号才能看到相关选项……）随后点“完成”。稍等片刻，让IntelliJ下载所有的依赖项。右下方会显示进度条。
 
 5.在左边的树形目录中选择一个示例。
-![run IntelliJ example](./img/Install_IntJ_3.png)
+![run IntelliJ example](../img/Install_IntJ_3.png)
 右击文件，运行。
 
 ## 在您自己的项目中使用DL4J：配置POM.xml文件
@@ -135,11 +135,11 @@ $ git clone git://git.kernel.org/pub/scm/git/git.git
 
 右击示例，在下拉菜单中选择绿色按钮即可运行。你会在IntelliJ底部的窗口中看到一系列分值。最右边的数字是网络分类的误差得分。如果网络在进行学习，该数字就会随着处理批次的增加而减少。最后，该窗口会告诉你神经网络模型最终的准确度。
 
-![run IntelliJ example](./img/mlp_classifier_results.png)
+![run IntelliJ example](../img/mlp_classifier_results.png)
 
 另一个窗口中的图像会显示多层感知器（MLP）对示例数据的分类结果，如下图所示：
 
-![run IntelliJ example](./img/mlp_classifier_viz.png)
+![run IntelliJ example](../img/mlp_classifier_viz.png)
 
 祝贺您！您已经用Deeplearning4j成功定型了第一个神经网络……
 
@@ -155,9 +155,9 @@ $ git clone git://git.kernel.org/pub/scm/git/git.git
     * [DL4J线上交流群](https://gitter.im/deeplearning4j/deeplearning4j)是有关DL4J的主要交流渠道。大多数人都在此出没。
     * [调试帮助](https://gitter.im/deeplearning4j/deeplearning4j/tuninghelp)面向刚开始接触神经网络的用户。初学者请访问这个交流群！
     * [早期用户交流群](https://gitter.im/deeplearning4j/deeplearning4j/earlyadopters)面向那些帮助我们检查并改进新版本的用户。注意：这个群供经验更丰富的用户交流。
-2. 阅读[深度神经网络简介](./zh-neuralnet-overview)或其他详细教程。
-3. 查看更详细的[完全安装指南](./gettingstarted)。
-4. 浏览[DL4J文档](./documentation)。
+2. 阅读[深度神经网络简介](zh-neuralnet-overview)或其他详细教程。
+3. 查看更详细的[完全安装指南](zh-gettingstarted)。
+4. 浏览[DL4J文档](zh-documentation)。
 
 
 ### 疑难解答

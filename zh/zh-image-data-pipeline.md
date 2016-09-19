@@ -47,7 +47,7 @@ RecordReader是Canova中的一个类，可以帮助将字节式输入转换为�
 
 上一例中还包括一些其他的参数：`true`指示加载器为记录追加一个标签，`labels`是一组用于验证神经网络模型结果的监督值（目标值）。以下是Canova中所有预设的RecordReader扩展（显示方式是在IntelliJ中右击`RecordReader`，点击下拉菜单中的`Go To`，再选择`Implementations`）：
 
-![Alt text](./img/recordreader_extensions.png)
+![Alt text](../img/recordreader_extensions.png)
 
 DataSetIterator是用于遍历列表元素的一个Deeplearning4J类。迭代器按顺序访问数据列表中的每个项目，同时通过指向当前的元素来记录进度，在遍历过程中每前进一步就自动指向下一个元素。
 
@@ -60,7 +60,7 @@ DataSetIterator对输入数据集进行迭代，每次迭代均抓取一个或�
 
 ## 配置模型
 
-以下是一个神经网络的配置示例。本例的许多超参数都已在[鸢尾花数据集教程](./neuralnet-configuration.html)中介绍过，所以此处仅对部分特殊属性作一概述。
+以下是一个神经网络的配置示例。本例的许多超参数都已在[鸢尾花数据集教程](../neuralnet-configuration)中介绍过，所以此处仅对部分特殊属性作一概述。
 
 <script src="http://gist-it.appspot.com/https://github.com/deeplearning4j/dl4j-examples/blob/master/src/main/java/org/deeplearning4j/examples/unsupervised/deepbelief/DeepAutoEncoderExample.java?slice=29:71"></script>
 

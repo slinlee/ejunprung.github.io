@@ -23,7 +23,7 @@ redirect_from: /zh-word2vec
 
 ## <a name="intro">Word2Vec简介</a>
 
-Word2vec是一个用于处理文本的双层神经网络。它的输入是文本语料，输出则是一组向量：该语料中词语的特征向量。虽然Word2vec并不是[深度神经网络](./zh-neuralnet-overview.html)，但它可以将文本转换为深度神经网络能够理解的数值形式。[Deeplearning4j](http://deeplearning4j.org/zh-quickstart.html)用Java和[Scala](./scala.html)语言实现分布式的Word2vec，通过Spark在GPU上运行。
+Word2vec是一个用于处理文本的双层神经网络。它的输入是文本语料，输出则是一组向量：该语料中词语的特征向量。虽然Word2vec并不是[深度神经网络](zh-neuralnet-overview)，但它可以将文本转换为深度神经网络能够理解的数值形式。[Deeplearning4j](zh-quickstart)用Java和[Scala](../scala)语言实现分布式的Word2vec，通过Spark在GPU上运行。
 
 Word2vec的应用不止于解析自然语句。它还可以用于<a href="#sequence"><a href="#sequence">基因组、代码、[点赞](https://docs.google.com/presentation/d/19QDuPmxB9RzQWKXp_t3yqxCvMBSMaOQk19KNZqUUgYQ/edit#slide=id.g11a4ba0c5c_0_6)、播放列表、社交媒体图像等其他语言或符号序列</a>，同样能够有效识别其中存在的模式。
 
@@ -32,18 +32,18 @@ Word2vec的应用不止于解析自然语句。它还可以用于<a href="#seque
 Word2vec的目的和功用是在向量空间内将词的向量按相似性进行分组。它能够识别出数学上的相似性。Word2vec能生成向量，以分布式的数值形式来表示词的上下文等特征。而这一过程无需人工干预。
 
 <p align="center">
-<a href="http://deeplearning4j.org/zh-quickstart" class="btn btn-custom" onClick="ga('send', 'event', a?quickstart', 'click');">Deeplearning4j入门教程</a>
+<a href="zh-quickstart" class="btn btn-custom" onClick="ga('send', 'event', a?quickstart', 'click');">Deeplearning4j入门教程</a>
 </p>
 
 给出足够的数据、用法和上下文，Word2vec就能根据过去经验对词的意义进行高度准确的预测。这样的预测结果可以用于建立一个词与其他词之间的联系（例如，“男人”和“男孩”的关系与“女人”和“女孩”的关系相同），或者可以将文档聚类并按主题分类。而这些聚类结果是搜索、[情感分析](https://github.com/deeplearning4j/dl4j-examples/blob/master/src/main/java/org/deeplearning4j/examples/recurrent/word2vecsentiment/Word2VecSentimentRNN.java)和推荐算法的基础，广泛应用于科研、调查取证、电子商务、客户关系管理等领域。
 
 Word2vec神经网络的输出是一个词汇表，其中每个词都有一个对应的向量，可以将这些向量输入深度学习网络，也可以只是通过查询这些向量来识别词之间的关系。
 
-Word2vec衡量词的[余弦相似性](./glossary.html#cosine)，无相似性表示为90度角，而相似度为1的完全相似则表示为0度角，即完全重合；例如，瑞典与瑞典完全相同，而挪威与瑞典的余弦距离为0.760124，高于其他任何国家。
+Word2vec衡量词的[余弦相似性](../glossary.html#cosine)，无相似性表示为90度角，而相似度为1的完全相似则表示为0度角，即完全重合；例如，瑞典与瑞典完全相同，而挪威与瑞典的余弦距离为0.760124，高于其他任何国家。
 
 以下是用Word2vec生成的“瑞典”的相关词列表：
 
-![Alt text](./img/sweden_cosine_distance.png)
+![Alt text](../img/sweden_cosine_distance.png)
 
 前九位中包括斯堪的纳维亚半岛国家和几个富裕的北欧及日耳曼语系国家。
 
@@ -53,11 +53,11 @@ Word2vec衡量词的[余弦相似性](./glossary.html#cosine)，无相似性表�
 
 所以神经词向量用数字来表示词。这是一种简单而又不可思议的“翻译”。
 
-Word2vec与自动编码器相似，它将每个词编码为向量，但Word2vec不会像[受限玻尔兹曼机](./zh-restrictedboltzmannmachine.html)那样通过[重构](./zh-restrictedboltzmannmachine.html#reconstruct)输入的词语来定型，而是根据输入语料中相邻的其他词来进行每个词的定型。
+Word2vec与自动编码器相似，它将每个词编码为向量，但Word2vec不会像[受限玻尔兹曼机](zh-restrictedboltzmannmachine)那样通过[重构](zh-restrictedboltzmannmachine.html#reconstruct)输入的词语来定型，而是根据输入语料中相邻的其他词来进行每个词的定型。
 
 具体的方式有两种，一种是用上下文预测目标词（连续词袋法，简称CBOW），另一种则是用一个词来预测一段目标上下文，称为skip-gram方法。我们使用后一种方法，因为它处理大规模数据集的结果更为准确。
 
-![Alt text](./img/word2vec_diagrams.png)
+![Alt text](../img/word2vec_diagrams.png)
 
 若指定给一个词的特征向量无法准确预测出这个词的上下文，则向量的要素会被调整。语料中每个词的上下文就是传回误差信号以调整特征向量的*老师*。若不同词的向量按上下文判定为相似，则会调整向量中的数字，使这些向量靠得更近。
 
@@ -69,11 +69,11 @@ Word2vec与自动编码器相似，它将每个词编码为向量，但Word2vec�
 
 类似的事物与概念也会比较“靠近”。他们的相对意义被转译为可衡量的距离。质量变为数量，让算法得以运行。但相似性只是Word2vec可以学习的许多种关联的基础。举例而言，Word2vec还可以衡量一种语言的词语之间的关系，并且将这些词相互映射。
 
-![Alt text](./img/word2vec_translation.png)
+![Alt text](../img/word2vec_translation.png)
 
 以这些向量为基础，可以得到更全面的词的几何分布。罗马、巴黎、柏林、北京这些首都的名称不仅会聚集在一处，彼此靠近，同时每个词在向量空间内到其对应国家名称的距离也是相似的；例如：罗马－意大利 = 北京－中国。如果你只知道意大利的首都是罗马，而不知道中国的首都在哪里，那么可以由计算式罗马－意大利 + 中国得出是北京。不骗你。
 
-![Alt text](./img/countries_capitals.png)
+![Alt text](../img/countries_capitals.png)
 
 ## <a name="crazy">有趣的Word2Vec结果</a>
 
@@ -132,14 +132,14 @@ Word2vec与自动编码器相似，它将每个词编码为向量，但Word2vec�
 
 * **SentenceIterator/DocumentIterator**：用于数据集的迭代。SentenceIterator返回字符串，而DocumentIterator则处理输入流。尽可能使用SentenceIterator。
 * **Tokenizer/TokenizerFactory**：用于对文本进行分词。在NLP术语中，一个句子表示为一系列词例（token）。TokenizerFactory为一个"句子"创建一个分词器（tokenizer）实例。
-* **VocabCache**：用于跟踪元数据，包括词数、文档中的出现次数、词例的集合（不是词汇，而是已经出现过的词例），词汇（[词袋](./bagofwords-tf-idf.html)以及词向量查找表中包含的特征）
+* **VocabCache**：用于跟踪元数据，包括词数、文档中的出现次数、词例的集合（不是词汇，而是已经出现过的词例），词汇（[词袋](../bagofwords-tf-idf)以及词向量查找表中包含的特征）
 * **倒排索引**：存储有关词的出现位置的元数据。可用于理解数据集。会自动创建以Lucene实现[1]的索引。
 
 Word2vec指一类彼此相关的算法，而以下是采用<a href="../glossary.html#skipgram">Skip-Gram</a>负样本采样模型的实现方法。
 
 ## <a name="setup">Word2Vec设置</a>
 
-用Maven在IntelliJ中创建新项目。如果你不知道这一步如何操作，请查看[快速入门页](./quickstart.html)。随后在项目根目录下的POM.xml文件中指定以下属性和依赖关系（可以[在Maven上查看](https://search.maven.org/#search%7Cga%7C1%7Cnd4j)最新版本－请使用那些版本…）。
+用Maven在IntelliJ中创建新项目。如果你不知道这一步如何操作，请查看[快速入门页](zh-quickstart)。随后在项目根目录下的POM.xml文件中指定以下属性和依赖关系（可以[在Maven上查看](https://search.maven.org/#search%7Cga%7C1%7Cnd4j)最新版本－请使用那些版本…）。
 
 ``` xml
 <properties>
@@ -366,7 +366,7 @@ WordVectors wordVectors = WordVectorSerializer.loadTxtVectors(new File("words.tx
 
 记得为导入的包添加`import java.io.File;`。
 
-较大的模型可能会遇到堆空间的问题。谷歌模型可能会占据多达10G的RAM，而JVM只能以256MB的RAM启动，所以必须调整你的堆空间。方法可以是使用一个`bash_profile`文件（参见[疑难解答](./gettingstarted.html#trouble)），或通过IntelliJ本身来解决：
+较大的模型可能会遇到堆空间的问题。谷歌模型可能会占据多达10G的RAM，而JVM只能以256MB的RAM启动，所以必须调整你的堆空间。方法可以是使用一个`bash_profile`文件（参见[疑难解答](zh-gettingstarted.html#trouble)），或通过IntelliJ本身来解决：
 
 ``` java
     //Click:
@@ -391,7 +391,7 @@ WordVectors wordVectors = WordVectorSerializer.loadTxtVectors(new File("words.tx
 
 <script src="http://gist-it.appspot.com/https://github.com/deeplearning4j/dl4j-examples/blob/master/src/main/java/org/deeplearning4j/examples/nlp/word2vec/Word2VecRawTextExample.java?slice=22:64"></script>
 
-你可以参照[快速入门](./quickstart.html)中的指示在IntelliJ中打开这一示例，点击运行，看它如何运作。如果你向Word2vec模型查询一个定型语料中没有的词，那么返回的结果会是零。
+你可以参照[快速入门](zh-quickstart)中的指示在IntelliJ中打开这一示例，点击运行，看它如何运作。如果你向Word2vec模型查询一个定型语料中没有的词，那么返回的结果会是零。
 
 ### <a name="trouble">Word2Vec疑难解答与调试</a>
 
@@ -491,12 +491,12 @@ Deeplearning4j有一个叫做[SequenceVectors](https://github.com/deeplearning4j
 * [词袋与词频－逆文档频率（TF-IDF）](./bagofwords-tf-idf.html)
 
 ### <a name="beginner">其他Deeplearning4j教程</a>
-* [神经网络简介](./zh-neuralnet-overview)
-* [受限玻尔兹曼机](./zh-restrictedboltzmannmachine)
-* [本征向量、协方差、PCA和熵](./zh-eigenvector)
-* [LSTM和递归网络](./zh-lstm)
-* [神经网络与回归分析](./linear-regression)
-* [卷积网络](./zh-convolutionalnets)
+* [神经网络简介](zh-neuralnet-overview)
+* [受限玻尔兹曼机](zh-restrictedboltzmannmachine)
+* [本征向量、协方差、PCA和熵](zh-eigenvector)
+* [LSTM和递归网络](zh-lstm)
+* [神经网络与回归分析](../linear-regression)
+* [卷积网络](zh-convolutionalnets)
 
 ### <a name="doctorow">文学中的Word2Vec</a>
 
