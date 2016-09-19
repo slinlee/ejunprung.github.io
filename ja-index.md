@@ -23,9 +23,9 @@ DL4Jは最先端のプラグ＆プレイテクノロジーを駆使し、設定�
 
 ### なぜDeeplearning4jなのか?
 
-* JavaとScalaにとって汎用的な[n次元配列](http://nd4j.org/ja-index)クラス
-* [GPU](http://nd4j.org/gpu_native_backends.html)と連携
-* [Hadoop](https://github.com/deeplearning4j/deeplearning4j/tree/master/deeplearning4j-scaleout/hadoop-yarn)や[Spark](./spark.html)で動作するスケーラビリティ
+* JavaとScalaにとって汎用的な[n次元配列](http://nd4j.org/ja-getstarted)クラス
+* [GPU](http://nd4j.org/gpu_native_backends)と連携
+* [Hadoop](https://github.com/deeplearning4j/deeplearning4j/tree/master/deeplearning4j-scaleout/hadoop-yarn)や[Spark](spark)で動作するスケーラビリティ
 * [Canova](canova): 機械学習に使用する一般的なベクトル化ツール
 * [ND4J: Numpyの2倍ほども迅速な線形代数ライブラリ](http://nd4j.org/benchmarking)
 
