@@ -207,9 +207,9 @@ vs.
 
 ## その他の初心者用手引
 
-* [Word2Vecとは？](./ja/ja-word2vec)
+* [Word2Vecとは？](../ja/ja-word2vec)
 * [制限付きボルツマンマシンの初心者向けガイド](http://deeplearning4j.org/ja-restrictedboltzmannmachine)
-* [ディープニューラルネットワークについて](./ja/ja-neuralnet-overview)
+* [ディープニューラルネットワークについて](../ja/ja-neuralnet-overview)
 * [Regression & Neural Networks](./linear-regression.html)
 
 場合によっては、行列に固有ベクトルがフルセットで存在しないかもしれません。行列には、対応する固有値あるいは次元の数だけの線形従属の固有ベクトルが存在できます。
