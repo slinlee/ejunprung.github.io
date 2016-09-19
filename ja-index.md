@@ -9,7 +9,7 @@ Deeplearning4j（以下DL4J）はJava, Scalaで書かれた世界初商用グレ
 
 DL4Jは最先端のプラグ＆プレイテクノロジーを駆使し、設定よりも非研究者でも手軽にプロトタイピングできるように作られています。DL4Jはスケーラブルでカスタマイズ可能です。Apache 2.0で配布されており、DL4Jの派生物はすべてその著者に帰属します。
 
-弊社の[クイックスタート](./ja-quickstart)にある手順に従いさえすれば、初めてのニューラルネットワークのexampleを数分で使用することができます。
+弊社の[クイックスタート](./ja/ja-quickstart)にある手順に従いさえすれば、初めてのニューラルネットワークのexampleを数分で使用することができます。
 
 ### [Deep Learningのユースケース](./use_cases.html)
 
@@ -33,9 +33,9 @@ Deeplearning4jは、分散型で、マルチスレッドであるディープラ
 
 ### DL4Jのニューラルネットワーク
 
-* [制限付きボルツマン・マシン](./ja-restrictedboltzmannmachine.html)
+* [制限付きボルツマン・マシン](./ja/ja-restrictedboltzmannmachine.html)
 * [畳込みネットワーク](./convolutionalnets.html) （画像）
-* [回帰ネットワーク](./usingrnns.html)/[LSTMs](./ja-lstm.html) （時系列、センサーデータ）
+* [回帰ネットワーク](./usingrnns.html)/[LSTMs](./ja/ja-lstm.html) （時系列、センサーデータ）
 * [再帰的オートエンコーダー](https://github.com/deeplearning4j/deeplearning4j/blob/master/deeplearning4j-core/src/main/java/org/deeplearning4j/nn/layers/feedforward/autoencoder/recursive/RecursiveAutoEncoder.java)
 * [ディープ・ビリーフ・ネットワーク](./deepbeliefnetwork.html)
 * [Deepオートエンコーダー](http://deeplearning4j.org/deepautoencoder.html) （質問-回答/データ圧縮）
@@ -43,7 +43,7 @@ Deeplearning4jは、分散型で、マルチスレッドであるディープラ
 * [Stacked Denoising Autoencoders (sdA)](./stackeddenoisingautoencoder.html)
 * 詳細については、[「How to Choose a Neural Net（ニューラルネットワークの選び方）」](./neuralnetworktable.html)をお読みください。
 
-ディープ・ニューラル・ネットワークは、[驚異的な精確さ](./accuracy)を実現します。ニューラルネットワークの概要を簡単に知りたい方は、[こちら](./ja-neuralnet-overview)をお読みください。手短に言うと、Deeplearning4jにより、様々な浅いネットワークを使って「レイヤー（層）」と呼ばれるものを形成し、ディープ・ニューラル・ネットワークを構成することができます。このように柔軟性が高いため、分散型のCPU、GPU、そしてSparkやHadhoopと連携した分散型フレームワークが必要に応じて、制限付きボルツマン・マシン、その他のオートエンコーダー、畳込みネットワーク、または再帰ネットワークを組み合わせることができます。
+ディープ・ニューラル・ネットワークは、[驚異的な精確さ](./accuracy)を実現します。ニューラルネットワークの概要を簡単に知りたい方は、[こちら](./ja/ja-neuralnet-overview)をお読みください。手短に言うと、Deeplearning4jにより、様々な浅いネットワークを使って「レイヤー（層）」と呼ばれるものを形成し、ディープ・ニューラル・ネットワークを構成することができます。このように柔軟性が高いため、分散型のCPU、GPU、そしてSparkやHadhoopと連携した分散型フレームワークが必要に応じて、制限付きボルツマン・マシン、その他のオートエンコーダー、畳込みネットワーク、または再帰ネットワークを組み合わせることができます。
 
 以下は、弊社が構築した様々なライブラリ、そして、それらのライブラリがそれらを取り巻くシステムのどこに位置するのかを図式化したものです。
 
@@ -55,12 +55,12 @@ Deeplearning4jは、分散型で、マルチスレッドであるディープラ
 
 ### Deeplearning4jのチュートリアル
 
-* [ディープ・ニューラル・ネットワークのご紹介](./ja-neuralnet-overview.html)
-* [制限付きボルツマン・マシン](./ja-restrictedboltzmannmachine.html)
-* [固有ベクトル、PCA（主成分分析）、エントリピー](./ja-eigenvector.html)
-* [Word2vec](./ja-word2vec)
+* [ディープ・ニューラル・ネットワークのご紹介](./ja/ja-neuralnet-overview.html)
+* [制限付きボルツマン・マシン](./ja/ja-restrictedboltzmannmachine.html)
+* [固有ベクトル、PCA（主成分分析）、エントリピー](./ja/ja-eigenvector.html)
+* [Word2vec](./ja/ja-word2vec)
 * [畳込みネットワークのチュートリアル](./convolutionalnets.html)
-* [LSTMと回帰ネットワークのチュートリアル](./ja-lstm.html)
+* [LSTMと回帰ネットワークのチュートリアル](./ja/ja-lstm.html)
 * [回帰ネットワークをDL4Jに使用しましょう](./usingrnns.html)
 * [ディープ・ビリーフ・ネットワークとMNIST](./deepbeliefnetwork)
 * [Customizing Data Pipelines With Canovaを使った Data Pipelineのカスタマイズ](./image-data-pipeline.html)

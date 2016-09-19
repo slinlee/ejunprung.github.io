@@ -43,11 +43,11 @@ Deeplearning4jにあるニューラルネットワークを使って回帰を行
 より簡単な数学関数に近似させるための回帰を使ったニューラルネットワークについてをより網羅した例は、[こちら](https://github.com/deeplearning4j/dl4j-examples/tree/master/src/main/java/org/deeplearning4j/examples/feedforward/regression)をご覧ください。 
 
 ### <a name="beginner">その他の Deeplearning4jのチュートリアル</a>
-* [Restricted Boltzmann Machines（制限付きボルツマン・マシン）](./ja-restrictedboltzmannmachine)
-* [Eigenvectors, Covariance, PCA and Entropy（固有ベクトル、共分散、PCA、エントロピー）](./ja-eigenvector)
+* [Restricted Boltzmann Machines（制限付きボルツマン・マシン）](./ja/ja-restrictedboltzmannmachine)
+* [Eigenvectors, Covariance, PCA and Entropy（固有ベクトル、共分散、PCA、エントロピー）](./ja/ja-eigenvector)
 * [LSTMs and Recurrent Networks（長・短期記憶ユニットと再帰型ネットワーク）](./lstm)
-* [Neural Networks（ニューラルネットワーク）](./ja-neuralnet-overview)
+* [Neural Networks（ニューラルネットワーク）](./ja/ja-neuralnet-overview)
 * [Convolutional Networks（畳み込みネットワーク）](./convolutionalnets)
-* [Deeplearning4j Quickstart Examples（クイックスタートで見るDeeplearning4jの例）](./ja-quickstart)
+* [Deeplearning4j Quickstart Examples（クイックスタートで見るDeeplearning4jの例）](./ja/ja-quickstart)
 * [ND4J:Numpy for the JVM（ND4J:Java仮想マシンで使用するNumpy）](http://nd4j.org/)
 

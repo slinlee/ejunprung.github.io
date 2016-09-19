@@ -196,11 +196,11 @@ layout: ja-default
 * [LSTM: A Search Space Oddyssey（長・短期記憶：検索スペースオデュッセイア）](http://arxiv.org/pdf/1503.04069.pdf); Klaus Greff et al
 
 ## <a name="beginner">その他の初心者用ガイド</a>
-* [Restricted Boltzmann Machines（制限付きボルツマン・マシン）](./ja-restrictedboltzmannmachine)
-* [Eigenvectors, Covariance, PCA and Entropy（固有値、共分散、PCA、エントロピー）](./ja-eigenvector)
-* [Word2vec](./ja-word2vec)
-* [Neural Networks（ニューラルネットワーク）](./ja-neuralnet-overview)
-* [Neural Networks and Regression（ニューラルネットワークと回帰）](./ja-linear-regression)
+* [Restricted Boltzmann Machines（制限付きボルツマン・マシン）](./ja/ja-restrictedboltzmannmachine)
+* [Eigenvectors, Covariance, PCA and Entropy（固有値、共分散、PCA、エントロピー）](./ja/ja-eigenvector)
+* [Word2vec](./ja/ja-word2vec)
+* [Neural Networks（ニューラルネットワーク）](./ja/ja-neuralnet-overview)
+* [Neural Networks and Regression（ニューラルネットワークと回帰）](./ja/ja-linear-regression)
 * [Convolutional Networks（畳み込みネットワーク）](../convolutionalnets.html)
 
 ### 脚注

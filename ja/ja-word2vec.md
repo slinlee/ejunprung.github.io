@@ -21,7 +21,7 @@ layout: ja-default
 
 ## <a name="intro">Word2Vecとは？</a>
 
-Word2vecは、テキスト処理を行い、2層から成るニューラルネットワークです。  テキストコーパスを入力すると、出力結果には、ベクトルのセット、つまりコーパスにある単語の特徴量ベクトル（feature vector）が出されます。Word2vecは、[ディープ・ニューラル・ネットワーク](./ja-neuralnet-overview)ではありませんが、テキストをdeepネットワークが解釈できる数値形式に変えます。 
+Word2vecは、テキスト処理を行い、2層から成るニューラルネットワークです。  テキストコーパスを入力すると、出力結果には、ベクトルのセット、つまりコーパスにある単語の特徴量ベクトル（feature vector）が出されます。Word2vecは、[ディープ・ニューラル・ネットワーク](./ja/ja-neuralnet-overview)ではありませんが、テキストをdeepネットワークが解釈できる数値形式に変えます。 
 
 Word2vecのアプリケーションが適用できる分野は、世間で使われる文の構文解析だけにとどまりません。パターンが識別される可能性のある<a href="#sequence">遺伝子、コード、再生リスト、ソーシャルメディアのグラフ、その他の文字列や記号列</a>にも適用できるのです。[Deeplearning4j](http://deeplearning4j.org/ja-quickstart.html)は、SparkやGPUで動作するJavaや[Scala](./scala.html)用の分散型Word2vecを実装しています。 
 
@@ -45,7 +45,7 @@ Word2vecのニューラルネットワークで出力されるものは、語の
 
 つまり、ニューラルネットワーク語の埋め込みとは、数値の付与された語のことなのです。シンプルですが、翻訳とはまた異なります。 
 
-Word2vecは、各語をベクトル化してエンコードするオートエンコーダーと似てはいますが、[制限付きボルツマン・マシン](./ja-restrictedboltzmannmachine.html)のように、入力された語を[再構成](./ja-restrictedboltzmannmachine.html#reconstruct)させてトレーニングするのではなく、word2vecはある語をその語に近い語との関連性に基づいてトレーニングします。 
+Word2vecは、各語をベクトル化してエンコードするオートエンコーダーと似てはいますが、[制限付きボルツマン・マシン](./ja/ja-restrictedboltzmannmachine.html)のように、入力された語を[再構成](./ja/ja-restrictedboltzmannmachine.html#reconstruct)させてトレーニングするのではなく、word2vecはある語をその語に近い語との関連性に基づいてトレーニングします。 
 
 一般に語のトレーニングには、2つの方法があります。コンテクストを使って対象語を推測する方法（continuous bag of words、CBOWと呼ばれる）、そして、ある語を使って、対象であるコンテクストを推測する方法です。後者の方法は、skip-gramと呼ばれますが、この方法を弊社は使用しています。こちらの方が、大きなデータセットでは、より精確な結果を生み出すからです。
 
@@ -358,7 +358,7 @@ Word2vecの算術に一般に使用している語は、"king - queen = man - wo
 
 インポートしたパッケージに`import java.io.File;`と入力することを忘れないようにしてください。
 
-大規模なモデルでは、ヒープスペースの問題が生じるかもしれません。Googleモデルだと、RAMが10G必要なことがあり、JVMは、RAMが256 MB確保されていないと作動しません。このため、これに応じてヒープスペースを調整する必要が出てくるかもしれません。これは、`bash_profile`ファイル（ [トラブルシューティング](./ja-gettingstarted.html#trouble)をお読みください。）、またはIntelliJで調整可能です。 
+大規模なモデルでは、ヒープスペースの問題が生じるかもしれません。Googleモデルだと、RAMが10G必要なことがあり、JVMは、RAMが256 MB確保されていないと作動しません。このため、これに応じてヒープスペースを調整する必要が出てくるかもしれません。これは、`bash_profile`ファイル（ [トラブルシューティング](./ja/ja-gettingstarted.html#trouble)をお読みください。）、またはIntelliJで調整可能です。 
 
     //以下をクリックし、
     IntelliJ Preferences > Compiler > Command Line Options 
@@ -381,7 +381,7 @@ Word2Vecのセットアップ方法の基本を説明して参りましたが、
 
 <script src="http://gist-it.appspot.com/https://github.com/deeplearning4j/dl4j-examples/blob/master/src/main/java/org/deeplearning4j/examples/word2vec/Word2VecRawTextExample.java?slice=22:64"></script>
 
-[クイックスタート](./ja-quickstart.html)にある手順に従った後、この例をIntelliJで開き、それが動作するかを調べてみてください。トレーニングのコーパスにない語でクエリを行うと、Word2vecモデルは結果をゼロと返します。 
+[クイックスタート](./ja/ja-quickstart.html)にある手順に従った後、この例をIntelliJで開き、それが動作するかを調べてみてください。トレーニングのコーパスにない語でクエリを行うと、Word2vecモデルは結果をゼロと返します。 
 
 ### <a name="trouble">トラブルシューティング & Word2Vecの調整</a>
 

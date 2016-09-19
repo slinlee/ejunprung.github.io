@@ -243,7 +243,7 @@ RBMの出力数は割合として解釈することができます。復元の�
 
 ### Other Beginner's Guides
 
-* [Neural Networks](./ja-neuralnet-overview)
-* [Eigenvectors, PCA and Entropy](./ja-eigenvector)
+* [Neural Networks](./ja/ja-neuralnet-overview)
+* [Eigenvectors, PCA and Entropy](./ja/ja-eigenvector)
 * [Neural Networks & Regression](./linear-regression)
 * [Convolutional Networks](./convolutionalnets)
