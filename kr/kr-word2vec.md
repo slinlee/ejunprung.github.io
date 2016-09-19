@@ -488,5 +488,5 @@ Deeplearning4j는 [SequenceVectors](https://github.com/deeplearning4j/deeplearni
 
 ### <a name="doctorow">문학 속의 Word2Vec</a>
 
-    수식은 마치 언어와 같다. 단어를 숫자로 번역하면 누구나 정확히 그 말을 이해할 수 있다. 목소리, 억양, 아, 어, 오 등 모든 발음이 사라지고 모든 오해가 해결되며 정확한 숫자로 생각을 포현한다. 모든 개념을 명확하게 표현하는 것이다.
-        -- E.L. Doctorow, Billy Bathgate
+수식은 마치 언어와 같다. 단어를 숫자로 번역하면 누구나 정확히 그 말을 이해할 수 있다. 목소리, 억양, 아, 어, 오 등 모든 발음이 사라지고 모든 오해가 해결되며 정확한 숫자로 생각을 포현한다. 모든 개념을 명확하게 표현하는 것이다.
+    -- E.L. Doctorow, Billy Bathgate
