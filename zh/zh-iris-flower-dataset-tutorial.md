@@ -1,6 +1,7 @@
 ---
 title: "使用深度信念网来运行鸢尾花分类"
 layout: zh-default
+redirect_from: /zh-iris-flower-dataset-tutorial
 ---
 
 # 使用深度信念网来运行鸢尾花分类
@@ -65,7 +66,7 @@ DL4J使用一个称为DataSet的对象将数据加载到一个神经网络。Dat
 
 可变的结果将是一个双二维阵列,这双二维阵列具有我们所有记录的行(即在iris.dat线),也具有我们所有标签的列(即3种种类)。这也将包含我们的二值化标签。
 
-看看这段代码: 
+看看这段代码:
 
     for(int i = from; i < to; i++) {
         String line = lines.get(i);

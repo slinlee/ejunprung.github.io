@@ -1,6 +1,7 @@
 ---
 title:
 layout: zh-default
+redirect_from: /XX-zh-sentiment_analysis_word2vec
 ---
 
 # 使用Word2Vec ,DBNS和RNTNs来进行电影评论情感分析

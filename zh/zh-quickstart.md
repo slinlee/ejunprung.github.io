@@ -1,6 +1,7 @@
 ---
 title: Deeplearning4j快速入门指南
 layout: zh-default
+redirect_from: /zh-quickstart
 ---
 
 <!-- Begin Inspectlet Embed Code -->
@@ -19,13 +20,13 @@ setTimeout(ldinsp, 500); document.readyState != "complete" ?(window.attachEvent 
 
 本页将向您全面介绍如何运行DL4J示例，启动您自己的项目。
 
-建议您加入我们的[Gitter线上交流群](https://gitter.im/deeplearning4j/deeplearning4j)。您可以在Gitter上请求帮助、提出反馈，不过也请您在遇到问题时先参考本指南中已列出的疑难解答。如果您是初次接触深度学习，我们准备了[一份初学者学习计划](./deeplearningforbeginners.html)，包括课程、阅读材料和其他资源的链接。 
+建议您加入我们的[Gitter线上交流群](https://gitter.im/deeplearning4j/deeplearning4j)。您可以在Gitter上请求帮助、提出反馈，不过也请您在遇到问题时先参考本指南中已列出的疑难解答。如果您是初次接触深度学习，我们准备了[一份初学者学习计划](./deeplearningforbeginners.html)，包括课程、阅读材料和其他资源的链接。
 
 #### 代码一瞥
 
 Deeplearning4j是一种用于配置深度多层神经网络的领域专用语言。首先都需要用`MultiLayerConfiguration`来设定网络的层及其超参数。
 
-超参数是决定神经网络学习方式的变量，包括模型的权重更新次数、如何初始化权重、为节点添加哪些激活函数、使用哪些优化算法以及模型的学习速度。网络配置的示例如下： 
+超参数是决定神经网络学习方式的变量，包括模型的权重更新次数、如何初始化权重、为节点添加哪些激活函数、使用哪些优化算法以及模型的学习速度。网络配置的示例如下：
 
 ``` java
     MultiLayerConfiguration conf = new NeuralNetConfiguration.Builder()
@@ -51,7 +52,7 @@ Deeplearning4j是一种用于配置深度多层神经网络的领域专用语言
 ## 系统要求
 
 * [Java（开发者版）](#Java) 1.7或更新版本（**仅支持64位版本**）
-* [Apache Maven](#Maven) 
+* [Apache Maven](#Maven)
 * [IntelliJ IDEA](#IntelliJ)或Eclipse
 * [Git](#Git)
 
@@ -87,7 +88,7 @@ Maven被Java开发者广泛使用，可以说是DL4J的必备条件。如果您�
 
 #### <a name="IntelliJ">IntelliJ IDEA</a>
 
-集成开发环境（[IDE](http://encyclopedia.thefreedictionary.com/integrated+development+environment)）让您能使用我们的API，只需要几个步骤就能配置神经网络。我们强烈推荐使用[IntelliJ](https://www.jetbrains.com/idea/download/)，它能与Maven相结合，有效管理依赖项。[IntelliJ社区版](https://www.jetbrains.com/idea/download/)是免费的。 
+集成开发环境（[IDE](http://encyclopedia.thefreedictionary.com/integrated+development+environment)）让您能使用我们的API，只需要几个步骤就能配置神经网络。我们强烈推荐使用[IntelliJ](https://www.jetbrains.com/idea/download/)，它能与Maven相结合，有效管理依赖项。[IntelliJ社区版](https://www.jetbrains.com/idea/download/)是免费的。
 
 其他较为流行的IDE包括[Eclipse](http://books.sonatype.com/m2eclipse-book/reference/creating-sect-importing-projects.html)和[Netbeans](http://wiki.netbeans.org/MavenBestPractices)。我们推荐使用IntelliJ，遇到问题时在[Gitter线上交流群](https://gitter.im/deeplearning4j/deeplearning4j)中也更容易得到帮助。
 
@@ -107,18 +108,18 @@ $ git clone git://git.kernel.org/pub/scm/git/git.git
         $ cd dl4j-examples/
         $ mvn clean install
 
-2.打开IntelliJ，选择“导入项目”。然后选择“dl4j-examples”主目录。 
+2.打开IntelliJ，选择“导入项目”。然后选择“dl4j-examples”主目录。
 
 ![select directory](./img/Install_IntJ_1.png)
 
-3.选择“从外部模型导入项目”，确保已选中Maven。 
+3.选择“从外部模型导入项目”，确保已选中Maven。
 ![import project](./img/Install_IntJ_2.png)
 
 4.继续按向导选项操作。选中以`jdk`开头的SDK。（可能需要点击加号才能看到相关选项……）随后点“完成”。稍等片刻，让IntelliJ下载所有的依赖项。右下方会显示进度条。
 
 5.在左边的树形目录中选择一个示例。
 ![run IntelliJ example](./img/Install_IntJ_3.png)
-右击文件，运行。 
+右击文件，运行。
 
 ## 在您自己的项目中使用DL4J：配置POM.xml文件
 
@@ -130,7 +131,7 @@ $ git clone git://git.kernel.org/pub/scm/git/git.git
 
 每个Maven项目都有一个POM文件。运行示例时，[POM文件的内容应当如此处所示](https://github.com/deeplearning4j/dl4j-examples/blob/master/pom.xml)。
 
-在IntelliJ中，你需要选择将要运行的第一个Deeplearning4j示例。我们建议选择`MLPLinearClassifier`，在我们的用户界面中几乎能立即看到该网络将数据分类为两组。文件可以[在Github上找到](https://github.com/deeplearning4j/dl4j-examples/blob/master/src/main/java/org/deeplearning4j/examples/feedforward/classification/MLPClassifierLinear.java)。 
+在IntelliJ中，你需要选择将要运行的第一个Deeplearning4j示例。我们建议选择`MLPLinearClassifier`，在我们的用户界面中几乎能立即看到该网络将数据分类为两组。文件可以[在Github上找到](https://github.com/deeplearning4j/dl4j-examples/blob/master/src/main/java/org/deeplearning4j/examples/feedforward/classification/MLPClassifierLinear.java)。
 
 右击示例，在下拉菜单中选择绿色按钮即可运行。你会在IntelliJ底部的窗口中看到一系列分值。最右边的数字是网络分类的误差得分。如果网络在进行学习，该数字就会随着处理批次的增加而减少。最后，该窗口会告诉你神经网络模型最终的准确度。
 
@@ -153,8 +154,8 @@ $ git clone git://git.kernel.org/pub/scm/git/git.git
 1. 在Gitter上加入我们。我们有三大社区交流渠道。
     * [DL4J线上交流群](https://gitter.im/deeplearning4j/deeplearning4j)是有关DL4J的主要交流渠道。大多数人都在此出没。
     * [调试帮助](https://gitter.im/deeplearning4j/deeplearning4j/tuninghelp)面向刚开始接触神经网络的用户。初学者请访问这个交流群！
-    * [早期用户交流群](https://gitter.im/deeplearning4j/deeplearning4j/earlyadopters)面向那些帮助我们检查并改进新版本的用户。注意：这个群供经验更丰富的用户交流。 
-2. 阅读[深度神经网络简介](./zh-neuralnet-overview)或其他详细教程。 
+    * [早期用户交流群](https://gitter.im/deeplearning4j/deeplearning4j/earlyadopters)面向那些帮助我们检查并改进新版本的用户。注意：这个群供经验更丰富的用户交流。
+2. 阅读[深度神经网络简介](./zh-neuralnet-overview)或其他详细教程。
 3. 查看更详细的[完全安装指南](./gettingstarted)。
 4. 浏览[DL4J文档](./documentation)。
 

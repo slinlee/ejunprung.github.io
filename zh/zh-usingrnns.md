@@ -1,6 +1,7 @@
 ---
 title: 通过DL4J使用递归网络
 layout: zh-default
+redirect_from: /zh-usingrnns
 ---
 
 # DL4J中的递归网络

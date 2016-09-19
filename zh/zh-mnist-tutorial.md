@@ -1,6 +1,7 @@
 ---
 title: "深信度网络的MNIST"
 layout: zh-default
+redirect_from: /zh-mnist-tutorial
 ---
 
 # 深信度网络的MNIST

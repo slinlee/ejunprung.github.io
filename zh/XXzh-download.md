@@ -1,6 +1,7 @@
 ---
-title: 
+title:
 layout: zh-default
+redirect_from: /XXzh-download
 ---
 
 # ND4J
