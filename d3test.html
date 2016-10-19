@@ -73,11 +73,6 @@ d3.tsv("data.tsv", function(error, data) {
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis);
-      .append("text")
-        .attr("transform", "rotate(-180)")
-        .attr("x", 6)
-        .style("text-anchor", "end")
-        .text("Score");
 
   svg.append("g")
       .attr("class", "y axis")
