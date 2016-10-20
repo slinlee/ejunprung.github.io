@@ -13,6 +13,10 @@ body {
   shape-rendering: crispEdges;
 }
 
+.axis .minor line {
+  stroke: #777;
+  stroke-dasharray: 2,2;
+}
 .area {
   fill:  url(#gradient);
 }
@@ -52,24 +56,24 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 //Graph gradient colors
-    var gradient = svg.append("defs")
-        .append("linearGradient")
-          .attr("id", "gradient")
-          .attr("x1", "0%")
-          .attr("y1", "0%")
-          .attr("x2", "0%")
-          .attr("y2", "110%")
-          .attr("spreadMethod", "pad");
+var gradient = svg.append("defs")
+    .append("linearGradient")
+      .attr("id", "gradient")
+      .attr("x1", "0%")
+      .attr("y1", "0%")
+      .attr("x2", "0%")
+      .attr("y2", "125%")
+      .attr("spreadMethod", "pad");
 
-    gradient.append("stop")
-        .attr("offset", "0%")
-        .attr("stop-color", "#c00")
-        .attr("stop-opacity", 1);
+gradient.append("stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#c00")
+    .attr("stop-opacity", 1);
 
-    gradient.append("stop")
-        .attr("offset", "100%")
-        .attr("stop-color", "#0c0")
-        .attr("stop-opacity", 1);
+gradient.append("stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#0c0")
+    .attr("stop-opacity", 1);
 
 //Get data
 d3.tsv("data.tsv", function(error, data) {
