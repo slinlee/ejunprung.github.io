@@ -107,12 +107,12 @@ d3.tsv("data.tsv", function(error, data) {
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
+      .call(xAxis)
       .append("text")
           .attr("x", width - 6)
           .attr("y", height - 6)
           .style("text-anchor", "end")
-          .text("Iterations");      
+          .text("Iterations");
 
   svg.append("g")
       .attr("class", "y axis")
