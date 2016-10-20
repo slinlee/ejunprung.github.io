@@ -14,14 +14,14 @@ body {
 }
 
 .area {
-  fill: #1a2949;
+  fill:  url(#gradient);
 }
 
 </style>
 <body>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
-
+//Set graph specs
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -51,6 +51,27 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+//Graph gradient colors
+    var gradient = svg.append("defs")
+        .append("linearGradient")
+          .attr("id", "gradient")
+          .attr("x1", "0%")
+          .attr("y1", "0%")
+          .attr("x2", "0%")
+          .attr("y2", "110%")
+          .attr("spreadMethod", "pad");
+
+    gradient.append("stop")
+        .attr("offset", "0%")
+        .attr("stop-color", "#c00")
+        .attr("stop-opacity", 1);
+
+    gradient.append("stop")
+        .attr("offset", "100%")
+        .attr("stop-color", "#0c0")
+        .attr("stop-opacity", 1);
+
+//Get data
 d3.tsv("data.tsv", function(error, data) {
   if (error) throw error;
 
