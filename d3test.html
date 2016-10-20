@@ -67,12 +67,6 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.iteration); })
     .y(function(d) { return y(d.score); });
 
-svg.append("clipPath")
-    .attr("id", "clip")
-    .append("rect")
-      .attr("width", width)
-      .attr("height", height);
-
 var area = d3.svg.area()
     .x(function(d) { return x(d.iteration); })
     .y0(height)
