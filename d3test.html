@@ -101,6 +101,7 @@ d3.tsv("data.tsv", function(error, data) {
 
   svg.append("path")
       .attr("class", "area")
+      .attr("clip-path", "url(#clip)")
       .attr("d", area);
 
   svg.append("g")
