@@ -48,7 +48,7 @@ var yAxis = d3.svg.axis()
     .scale(y)
     .tickSize(width)
     .tickFormat(formatCurrency)
-    .orient("right");
+    .orient("left");
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
