@@ -4,32 +4,18 @@
 
 body {
   font: 12px sans-serif;
-  font-weight: bold;
 }
 
-/*.axis path,
+.axis path,
 .axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
-}*/
-
-.axis path {
-  display: none;
-}
-
-.axis line {
-  shape-rendering: crispEdges;
-  stroke: #000;
-}
-
-.axis .minor line {
-  stroke: #777;
-  stroke-dasharray: 2,2;
 }
 
 .area {
   fill:  #1a2949;
+  opacity: 0.5;
 }
 
 </style>
@@ -53,7 +39,6 @@ var xAxis = d3.svg.axis()
 
 var yAxis = d3.svg.axis()
     .scale(y)
-    .tickSize(width)
     .orient("right");
 
 var area = d3.svg.area()
@@ -92,11 +77,11 @@ d3.tsv("data.tsv", function(error, data) {
   svg.append("g")
       .attr("class", "y axis")
       .call(yAxis)
-    .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Score");
+      .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Score");
 });
 </script>
