@@ -95,6 +95,10 @@ d3.tsv("data.tsv", function(error, data) {
       .attr("class", "area")
       .attr("d", area);
 
+  svg.append("path")
+      .attr("class", "line")
+      .attr("d", line);
+
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
