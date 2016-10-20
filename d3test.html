@@ -74,10 +74,9 @@ d3.tsv("data.tsv", function(error, data) {
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
       .append("text")
-        .attr("transform", "rotate(360)")
-        .attr("x", 100)
-        .style("text-anchor", "end")
-        .text("Iteration");
+        .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
+        .attr("transform", "translate("+ (width/2) +","+(height-(padding/3))+")")  // centre below axis
+        .text("Iterations");  
 
   svg.append("g")
       .attr("class", "y axis")
