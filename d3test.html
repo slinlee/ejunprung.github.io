@@ -26,8 +26,6 @@ var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-var parseDate = d3.time.format("%d-%b-%y").parse;
-
 var x = d3.time.scale()
     .range([0, width]);
 
@@ -76,11 +74,11 @@ d3.tsv("data.tsv", function(error, data) {
   if (error) throw error;
 
   data.forEach(function(d) {
-    d.score = parseDate(d.score);
+    d.score = +d.score;
     d.iteration = +d.iteration;
   });
 
-  x.domain(d3.extent(data, function(d) { return d.score; }));
+  x.domain([0, d3.max(data, function(d) { return d.score; })]);
   y.domain([0, d3.max(data, function(d) { return d.iteration; })]);
 
   svg.append("path")
