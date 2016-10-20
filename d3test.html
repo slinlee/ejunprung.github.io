@@ -99,4 +99,10 @@ d3.tsv("data.tsv", function(error, data) {
       .text("Score");
 });
 
+gy.selectAll("g").filter(function(d) { return d; })
+    .classed("minor", true);
+
+gy.selectAll("text")
+    .attr("x", 4)
+    .attr("dy", -4);
 </script>
