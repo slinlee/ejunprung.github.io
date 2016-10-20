@@ -74,11 +74,10 @@ d3.tsv("data.tsv", function(error, data) {
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
       .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("x", 6)
-        .attr("dx", ".71em")
+        .attr("transform", "rotate(360)")
+        .attr("x", 100)
         .style("text-anchor", "end")
-        .text("Iteration");      
+        .text("Iteration");
 
   svg.append("g")
       .attr("class", "y axis")
