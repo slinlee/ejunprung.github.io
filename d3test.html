@@ -22,11 +22,12 @@ body {
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
+//Chart specs
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-var x = d3.scale.linear().range([0, width]);
+//var x = d3.scale.linear().range([0, width]);
 var y = d3.scale.linear().range([height, 0]);
 
 var xAxis = d3.svg.axis()
@@ -47,7 +48,7 @@ var svg = d3.select("body").append("svg")
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
+//Graph gradient fill
 var gradient = svg.append("defs")
     .append("linearGradient")
       .attr("id", "gradient")
@@ -67,6 +68,7 @@ gradient.append("stop")
     .attr("stop-color", "#0c0")
     .attr("stop-opacity", 1);
 
+//Parsing data
 d3.tsv("data.tsv", function(error, data) {
   if (error) throw error;
 
