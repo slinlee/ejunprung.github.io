@@ -53,6 +53,30 @@ var svg = d3.select("body").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var gradient = svg.append("defs")
+    .append("linearGradient")
+      .attr("id", "gradient")
+      .attr("x1", "0%")
+      .attr("y1", "0%")
+      .attr("x2", "100%")
+      .attr("y2", "100%")
+      .attr("spreadMethod", "pad");
+
+gradient.append("stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#c00")
+    .attr("stop-opacity", 1);
+
+gradient.append("stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#0c0")
+    .attr("stop-opacity", 1);
+
+svg.append("rect")
+    .attr("width", width)
+    .attr("height", height)
+    .style("fill", "url(#gradient)");
+
 d3.tsv("data.tsv", function(error, data) {
   if (error) throw error;
 
@@ -78,7 +102,7 @@ d3.tsv("data.tsv", function(error, data) {
       .attr("class", "y axis")
       .call(yAxis)
       .append("text")
-        .attr("transform", "rotate(-180)")
+        .attr("transform", "rotate(360)")
         .attr("y", 6)
         .style("text-anchor", "end")
         .text("Score");
