@@ -109,8 +109,8 @@ d3.tsv("data.tsv", function(error, data) {
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
       .append("text")
-          .attr("x", width - 6)
-          .attr("y", height - 6)
+          .attr("x", 85)
+          .attr("dx", ".71em")
           .style("text-anchor", "end")
           .text("Iterations");
 
