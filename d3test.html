@@ -45,7 +45,7 @@ var yAxis = d3.svg.axis()
 var area = d3.svg.area()
     .x(function(d) { return x(d.date); })
     .y0(height)
-    .y1(function(d) { return y(d.close); });
+    .y1(function(d) { return y(d.score); });
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -58,11 +58,11 @@ d3.tsv("data.tsv", function(error, data) {
 
   data.forEach(function(d) {
     d.date = parseDate(d.date);
-    d.close = +d.close;
+    d.score = +d.score;
   });
 
   x.domain(d3.extent(data, function(d) { return d.date; }));
-  y.domain([0, d3.max(data, function(d) { return d.close; })]);
+  y.domain([0, d3.max(data, function(d) { return d.score; })]);
 
   svg.append("path")
       .datum(data)
@@ -82,7 +82,7 @@ d3.tsv("data.tsv", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Price ($)");
+      .text("Score");
 });
 
 </script>
