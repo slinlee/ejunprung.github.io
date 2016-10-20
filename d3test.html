@@ -72,11 +72,6 @@ gradient.append("stop")
     .attr("stop-color", "#0c0")
     .attr("stop-opacity", 1);
 
-svg.append("rect")
-    .attr("width", width)
-    .attr("height", height)
-    .style("fill", "url(#gradient)");
-
 d3.tsv("data.tsv", function(error, data) {
   if (error) throw error;
 
