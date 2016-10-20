@@ -14,7 +14,7 @@ body {
 }
 
 .area {
-  fill: steelblue;
+  fill: url(#gradient);
 }
 
 </style>
@@ -22,17 +22,13 @@ body {
 <script src="d3.js"></script>
 <script>
 
+//Chart specs
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-var parseDate = d3.time.format("%d-%b-%y").parse;
-
-var x = d3.time.scale()
-    .range([0, width]);
-
-var y = d3.scale.linear()
-    .range([height, 0]);
+var y = d3.scale.linear().range([0, width]);
+var x = d3.scale.linear().range([height, 0]);
 
 var xAxis = d3.svg.axis()
     .scale(x)
@@ -43,26 +39,46 @@ var yAxis = d3.svg.axis()
     .orient("left");
 
 var area = d3.svg.area()
-    .x(function(d) { return x(d.date); })
+    .x(function(d) { return x(d.score); })
     .y0(height)
-    .y1(function(d) { return y(d.close); });
+    .y1(function(d) { return y(d.iteration); });
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-  .append("g")
+    .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+//Graph gradient fill
+var gradient = svg.append("defs")
+    .append("linearGradient")
+      .attr("id", "gradient")
+      .attr("x1", "0%")
+      .attr("y1", "0%")
+      .attr("x2", "0%")
+      .attr("y2", "110%")
+      .attr("spreadMethod", "pad");
 
+gradient.append("stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#c00")
+    .attr("stop-opacity", 1);
+
+gradient.append("stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#0c0")
+    .attr("stop-opacity", 1);
+
+//Parsing data
 d3.tsv("data.tsv", function(error, data) {
   if (error) throw error;
 
   data.forEach(function(d) {
-    d.date = parseDate(d.date);
-    d.close = +d.close;
+    d.score = +d.score;
+    d.iteration = +d.iteration;
   });
 
-  x.domain(d3.extent(data, function(d) { return d.date; }));
-  y.domain([0, d3.max(data, function(d) { return d.close; })]);
+  x.domain([0, d3.max(data, function(d) { return d.score; })]);
+  y.domain([0, d3.max(data, function(d) { return d.iteration; })]);
 
   svg.append("path")
       .datum(data)
@@ -77,12 +93,11 @@ d3.tsv("data.tsv", function(error, data) {
   svg.append("g")
       .attr("class", "y axis")
       .call(yAxis)
-    .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Price ($)");
+      .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .style("text-anchor", "end")
+        .text("Score");
 });
 
 </script>
