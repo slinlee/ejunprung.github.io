@@ -51,11 +51,11 @@ var y = d3.scaleLinear()
     .range([height, 0]);
 
 var xAxis = d3.axisBottom()
-    .scale(xScale)
+    .scale(x)
     .tickSize(-height);
 
 var yAxis = d3.axisLeft()
-    .scale(yScale)
+    .scale(y)
     .ticks(6)
     .orient("left");
 
