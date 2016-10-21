@@ -56,8 +56,7 @@ var xAxis = d3.axisBottom()
 
 var yAxis = d3.axisLeft()
     .scale(y)
-    .ticks(6)
-    .orient("left");
+    .ticks(6);
 
 var line = d3.svg.line()
     .interpolate("monotone")
