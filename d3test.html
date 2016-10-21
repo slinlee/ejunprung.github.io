@@ -59,7 +59,7 @@ var yAxis = d3.axisLeft()
     .ticks(6);
 
 var line = d3.line()
-    .interpolate("monotone")
+    curve(d3.curveBasis)
     .x(function(d) { return x(d.iteration); })
     .y(function(d) { return y(d.score); });
 
