@@ -58,12 +58,12 @@ var yAxis = d3.axisLeft()
     .scale(y)
     .ticks(6);
 
-var line = d3.svg.line()
+var line = d3.line()
     .interpolate("monotone")
     .x(function(d) { return x(d.iteration); })
     .y(function(d) { return y(d.score); });
 
-var area = d3.svg.area()
+var area = d3.area()
     .x(function(d) { return x(d.iteration); })
     .y0(height)
     .y1(function(d) { return y(d.score); });
