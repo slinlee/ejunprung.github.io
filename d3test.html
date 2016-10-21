@@ -59,9 +59,9 @@ var yAxis = d3.axisLeft()
     .ticks(6);
 
 var line = d3.line()
-    curve(d3.curveBasis)
     .x(function(d) { return x(d.iteration); })
-    .y(function(d) { return y(d.score); });
+    .y(function(d) { return y(d.score); })
+    .curve(d3.curveBasis);
 
 var area = d3.area()
     .x(function(d) { return x(d.iteration); })
