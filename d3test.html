@@ -1,0 +1,134 @@
+<style>
+
+svg {
+  font: 12px sans-serif;
+}
+
+path.line {
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.5px;
+}
+
+path.area {
+  fill: #e7e7e7;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+}
+
+.x.axis line {
+  stroke: #fff;
+}
+
+.x.axis .minor {
+  stroke-opacity: .5;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.y.axis line,
+.y.axis path {
+  fill: none;
+  stroke: #000;
+}
+
+</style>
+<body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+//Set dimensions and margins of the graph
+var margin = {top: 20, right: 20, bottom: 30, left: 50},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+// Set the range
+var x = d3.scaleLinear().range([0, width]);
+var y = d3.scaleLinear().range([height, 0]);
+
+// Set the axis
+var xAxis = d3.axisBottom()
+    .scale(x)
+    .tickSize(-height);
+
+var yAxis = d3.axisLeft()
+    .scale(y)
+    .ticks(6);
+
+// Define line
+var line = d3.line()
+    .x(function(d) { return x(d.iteration); })
+    .y(function(d) { return y(d.score); })
+    .curve(d3.curveBasis);
+
+// Define area
+var area = d3.area()
+    .x(function(d) { return x(d.iteration); })
+    .y0(height)
+    .y1(function(d) { return y(d.score); });
+
+// Append SVG Object to the page body
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+svg.append("clipPath")
+    .attr("id", "clip")
+    .append("rect")
+      .attr("width", width)
+      .attr("height", height);
+
+//Get data
+d3.tsv("data.tsv", function(error, data) {
+  if (error) throw error;
+
+  data.forEach(function(d) {
+    d.iteration = +d.iteration;
+    d.score = +d.score;
+    //console.log(data[0]);
+  });
+
+//Set data range
+  x.domain([0, d3.max(data, function(d) { return d.iteration; })]);
+  y.domain([0, d3.max(data, function(d) { return d.score; })]);
+
+//Construct SVG
+  svg
+      .datum(data);
+
+//Create Area
+  svg.append("path")
+      .attr("class", "area")
+      .attr("clip-path", "url(#clip)")
+      .attr("d", area);
+//Create X Axis
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+      .append("text")
+          .attr("x", 890)
+          .attr("y", -5)
+          .style("text-anchor", "end")
+          .text("Iterations");
+//Create Y Axis
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+      .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 15)
+        .style("text-anchor", "end")
+        .text("Score");
+//Create Line
+  svg.append("path")
+      .attr("class", "line")
+      .attr("clip-path", "url(#clip)")
+      .attr("d", line);
+});
+</script>
