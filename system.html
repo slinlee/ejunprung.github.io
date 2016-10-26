@@ -90,233 +90,95 @@
 							<div class="row-fluid">
 
 								<div class="span8 widget blue" onTablet="span7" onDesktop="span8">
-									<h1>Memory Utilization</h1>
+									<h1>JVM Memory Utilization</h1>
 									<div id="stats-chart2"  style="height:282px" ></div>
 								</div>
 
 								<!-- Start System Statistics -->
 								<div class="sparkLineStats span4 widget green" onTablet="span5" onDesktop="span4">
-									<h1>System Statistics</h1>
+									<h1>Hardware Information</h1>
 			              <ul class="unstyled">
 		                  <li><span class="sparkLineStats3"></span>
-		                      Memory:
-		                      <span class="number">781</span>
+		                      JVM Current Memory:
+		                      <span class="number">699400192</span>
+		                  </li>
+		                  <li><span class="sparkLineStats3"></span>
+		                      JVM Max Memory:
+		                      <span class="number">1908932608</span>
+		                  </li>
+		                  <li><span class="sparkLineStats3"></span>
+		                      Off-Head Current Memory:
+		                      <span class="number">498762</span>
 		                  </li>
 		                  <li><span class="sparkLineStats4"></span>
-		                      Series Name:
-		                      <span class="number">2,19</span>
+		                      Off-Heap Max Memory:
+		                      <span class="number">1908932608</span>
 		                  </li>
 		                  <li><span class="sparkLineStats5"></span>
-		                      Device:
-		                      <span class="number">00:02:58</span>
+		                      JVM Available Processors:
+		                      <span class="number">4</span>
 		                  </li>
 		                  <li><span class="sparkLineStats6"></span>
-		                      Times: <span class="number">59,83%</span>
-		                  </li>
-		                  <li><span class="sparkLineStats7"></span>
-		                      Values:
-		                      <span class="number">70,79%</span>
-		                  </li>
-		                  <li><span class="sparkLineStats8"></span>
-		                      Max Bytes:
-		                      <span class="number">29,21%</span>
+		                      # Compute Devices: <span class="number">0</span>
 		                  </li>
 			              </ul>
 								</div>
 							</div>
-							<div class="row-fluid hideInIE8 circleStats">
-
-								<div class="span2" onTablet="span4" onDesktop="span2">
-				          <div class="circleStatsItemBox yellow">
-										<div class="header">Disk Space Usage</div>
-										<span class="percent">percent</span>
-										<div class="circleStat"><input type="text" value="58" class="whiteCircle" /></div>
-										<div class="footer">
-											<span class="count">
-												<span class="number">20000</span>
-												<span class="unit">MB</span>
-											</span>
-											<span class="sep"> / </span>
-											<span class="value">
-												<span class="number">50000</span>
-												<span class="unit">MB</span>
-											</span>
-										</div>
-				          </div>
+							<div class="row-fluid">
+								<div class="span8 widget yellow" onTablet="span7" onDesktop="span8">
+									<h1>Off-Heap Memory Utilization</h1>
+									<div id="stats-chart2"  style="height:282px" ></div>
 								</div>
 
-								<div class="span2" onTablet="span4" onDesktop="span2">
-				          <div class="circleStatsItemBox green">
-										<div class="header">Bandwidth</div>
-										<span class="percent">percent</span>
-										<div class="circleStat"><input type="text" value="78" class="whiteCircle" /></div>
-										<div class="footer">
-											<span class="count">
-												<span class="number">5000</span>
-												<span class="unit">GB</span>
-											</span>
-											<span class="sep"> / </span>
-											<span class="value">
-												<span class="number">5000</span>
-												<span class="unit">GB</span>
-											</span>
-										</div>
-				        	</div>
-								</div>
+								<div class="row-fluid hideInIE8 circleStats">
 
-								<div class="span2" onTablet="span4" onDesktop="span2">
-				          <div class="circleStatsItemBox greenDark">
-										<div class="header">Memory</div>
-										<span class="percent">percent</span>
-				            <div class="circleStat"><input type="text" value="100" class="whiteCircle" /></div>
-										<div class="footer">
-											<span class="count">
-												<span class="number">64</span>
-												<span class="unit">GB</span>
-											</span>
-											<span class="sep"> / </span>
-											<span class="value">
-												<span class="number">64</span>
-												<span class="unit">GB</span>
-											</span>
-										</div>
-				          </div>
-								</div>
+									<div class="span2" onTablet="span4" onDesktop="span2">
+					          <div class="circleStatsItemBox pink">
+											<div class="header">JVM Memory</div>
+											<span class="percent">percent</span>
+											<div class="circleStat"><input type="text" value="58" class="whiteCircle" /></div>
+											<div class="footer">
+												<span class="count">
+													<span class="number">699400192</span>
+													<span class="unit">Bytes</span>
+												</span>
+												<span class="sep"> / </span>
+												<span class="value">
+													<span class="number">699400192</span>
+													<span class="unit">Bytes</span>
+												</span>
+											</div>
+					          </div>
+									</div>
 
-								<div class="span2 noMargin" onTablet="span4" onDesktop="span2">
-				          <div class="circleStatsItemBox pink">
-										<div class="header">CPU</div>
-										<span class="percent">percent</span>
-				            <div class="circleStat"><input type="text" value="83" class="whiteCircle" /></div>
-										<div class="footer">
-											<span class="count">
-												<span class="number">64</span>
-												<span class="unit">GHz</span>
-											</span>
-											<span class="sep"> / </span>
-											<span class="value">
-												<span class="number">3.2</span>
-												<span class="unit">GHz</span>
-											</span>
-										</div>
-				          </div>
-								</div>
+									<div class="span2" onTablet="span4" onDesktop="span2">
+					          <div class="circleStatsItemBox red">
+											<div class="header">Off-Heap Memory</div>
+											<span class="percent">percent</span>
+											<div class="circleStat"><input type="text" value="78" class="whiteCircle" /></div>
+											<div class="footer">
+												<span class="count">
+													<span class="number">498762</span>
+													<span class="unit">Bytes</span>
+												</span>
+												<span class="sep"> / </span>
+												<span class="value">
+													<span class="number">1908932608</span>
+													<span class="unit">Bytes</span>
+												</span>
+											</div>
+					        	</div>
+									</div>
 
-								<div class="span2" onTablet="span4" onDesktop="span2">
-				          <div class="circleStatsItemBox orange">
-										<div class="header">Memory</div>
-										<span class="percent">percent</span>
-				            <div class="circleStat"><input type="text" value="100" class="whiteCircle" /></div>
-										<div class="footer">
-											<span class="count">
-												<span class="number">64</span>
-												<span class="unit">GB</span>
-											</span>
-											<span class="sep"> / </span>
-											<span class="value">
-												<span class="number">64</span>
-												<span class="unit">GB</span>
-											</span>
-										</div>
-				          </div>
-								</div>
-
-								<div class="span2" onTablet="span4" onDesktop="span2">
-				          <div class="circleStatsItemBox greenLight">
-										<div class="header">GPU</div>
-										<span class="percent">percent</span>
-				            <div class="circleStat"><input type="text" value="100" class="whiteCircle" /></div>
-										<div class="footer">
-											<span class="count">
-												<span class="number">64</span>
-												<span class="unit">GB</span>
-											</span>
-											<span class="sep"> / </span>
-											<span class="value">
-												<span class="number">64</span>
-												<span class="unit">GB</span>
-											</span>
-										</div>
-				          </div>
 								</div>
 
 							</div>
 
 								<!-- Start Charts -->
 								<div class="row-fluid">
-								<!-- Start Software Information -->
-									<div class="box span6">
-										<div class="box-header">
-											<h2><b>Hardware Information</b></h2>
-										</div>
-										<div class="box-content">
-											<table class="table table-striped">
-												  <thead>
-													  <tr>
-														  <th>HwJvmMaxMemory</th>
-														  <th>HwOffHeapMaxMemory</th>
-														  <th>HwJvmAvailableProcessor</th>
-														  <th>numDevices</th>
-														  <th>deviceName</th>
-														  <th>deviceMemory</th>
-													  </tr>
-												  </thead>
-												  <tbody>
-													<tr>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>device123</td>
-														<td>12313123</td>
-													</tr>
-													<tr>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>device123</td>
-														<td>12313123</td>
-													</tr>
-													<tr>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>device123</td>
-														<td>12313123</td>
-													</tr>
-													<tr>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>device123</td>
-														<td>12313123</td>
-													</tr>
-													<tr>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>device123</td>
-														<td>12313123</td>
-													</tr>
-													<tr>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>12313123</td>
-														<td>device123</td>
-														<td>12313123</td>
-													</tr>
-												  </tbody>
-											 </table>
-										</div>
-									</div>
 
 									<!-- Start Software Information -->
-									<div class="box span6">
+									<div class="box span12">
 										<div class="box-header">
 											<h2><b>Software Information</b></h2>
 										</div>
@@ -325,50 +187,23 @@
 												  <thead>
 													  <tr>
 														  <th>OS</th>
-														  <th>Hostname</th>
-														  <th>Architecture</th>
+														  <th>Host Name</th>
+														  <th>OS Architecture</th>
 														  <th>JVM Name</th>
 														  <th>JVM Version</th>
 														  <th>ND4J Backend</th>
-														  <th>ND4J DataType</th>
+														  <th>ND4J Data Type</th>
 													  </tr>
 												  </thead>
 												  <tbody>
 													<tr>
-														<td>OS123</td>
-														<td class="center">Hostname 123</td>
-														<td class="center">Architecture 123</td>
-														<td class="center">JVM 123</td>
-														<td class="center">JVM Version 123</td>
-														<td class="center">ND4J Backend 123</td>
-														<td class="center">ND4J Datatype 123</td>
-													</tr>
-													<tr>
-														<td>OS123</td>
-														<td class="center">Hostname 123</td>
-														<td class="center">Architecture 123</td>
-														<td class="center">JVM 123</td>
-														<td class="center">JVM Version 123</td>
-														<td class="center">ND4J Backend 123</td>
-														<td class="center">ND4J Datatype 123</td>
-													</tr>
-													<tr>
-														<td>OS123</td>
-														<td class="center">Hostname 123</td>
-														<td class="center">Architecture 123</td>
-														<td class="center">JVM 123</td>
-														<td class="center">JVM Version 123</td>
-														<td class="center">ND4J Backend 123</td>
-														<td class="center">ND4J Datatype 123</td>
-													</tr>
-													<tr>
-														<td>OS123</td>
-														<td class="center">Hostname 123</td>
-														<td class="center">Architecture 123</td>
-														<td class="center">JVM 123</td>
-														<td class="center">JVM Version 123</td>
-														<td class="center">ND4J Backend 123</td>
-														<td class="center">ND4J Datatype 123</td>
+														<td>Mac OS X</td>
+														<td>Edwards-Air</td>
+														<td>x86_64</td>
+														<td>Java HotSpot(TM) 64-Bit Server VM</td>
+														<td>1.8.0_74</td>
+														<td>org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory</td>
+														<td>FLOAT</td>
 													</tr>
 												  </tbody>
 											 </table>
