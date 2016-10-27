@@ -1,0 +1,95 @@
+$(function(){ // on dom ready
+
+$('#cy').cytoscape({
+  layout: {
+    name: 'dagre',
+    padding: 10
+  },
+
+  style: cytoscape.stylesheet()
+    .selector('node')
+      .css({
+        'shape': 'data(faveShape)',
+        'width': 'mapData(weight, 40, 80, 20, 60)',
+        'content': 'data(name)',
+        'text-valign': 'center',
+        'text-outline-width': 2,
+        'text-outline-color': 'data(faveColor)',
+        'background-color': 'data(faveColor)',
+        'color': '#fff'
+      })
+    .selector(':selected')
+      .css({
+        'border-width': 3,
+        'border-color': '#333'
+      })
+    .selector('edge')
+      .css({
+        'curve-style': 'bezier',
+        'opacity': 0.666,
+        'width': 'mapData(strength, 70, 100, 2, 6)',
+        'target-arrow-shape': 'triangle',
+        'source-arrow-shape': 'circle',
+        'line-color': 'data(faveColor)',
+        'source-arrow-color': 'data(faveColor)',
+        'target-arrow-color': 'data(faveColor)'
+      })
+    .selector('edge.questionable')
+      .css({
+        'line-style': 'dotted',
+        'target-arrow-shape': 'diamond'
+      })
+    .selector('.faded')
+      .css({
+        'opacity': 0.25,
+        'text-opacity': 0
+      }),
+
+  elements: {
+    nodes: [
+      { data: { id: '0', name: 'Input', weight: 100, faveColor: '#6FB1FC', faveShape: 'triangle', href: '#' } },
+      { data: { id: '1', name: 'Dense', weight: 100, faveColor: '#EDA1ED', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '2', name: 'Convolution', weight: 100, faveColor: '#86B342', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '3', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '4', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '5', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '6', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '7', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '8', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '9', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '10', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '11', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '12', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '13', name: 'Output', weight: 100, faveColor: '#FF0000', faveShape: 'ellipse', href: '#' } }
+    ],
+    edges: [
+      { data: { source: '0', target: '1', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '1', target: '2', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '2', target: '3', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '3', target: '4', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '4', target: '5', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '5', target: '6', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '6', target: '7', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '7', target: '8', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '8', target: '9', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '9', target: '10', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '10', target: '11', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '11', target: '12', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '12', target: '13', faveColor: '#A9A9A9', strength: 100 } }
+    ]
+  },
+
+  ready: function(){
+    window.cy = this;
+    cy.zoomingEnabled( false );
+    cy.panningEnabled( false );
+    cy.autoungrabify( true );
+  }
+
+});
+
+cy.on('tap', 'node', function(){
+    window.location.href = this.data('href');
+});
+
+}); // on dom ready
