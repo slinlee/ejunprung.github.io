@@ -81,7 +81,7 @@ $('#layers').cytoscape({
 
   ready: function(){
     window.cy = this;
-    // cy.panningEnabled( false );
+    cy.panningEnabled( false );
     cy.autoungrabify( true );
   }
 
