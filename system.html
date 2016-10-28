@@ -77,14 +77,14 @@
 					</div>
 					<div class="box-content">
 						<ul class="nav tab-menu nav-tabs" id="myTab">
-							<li class="active"><a href="#system1">System 1</a></li>
-							<li><a href="#system2">System 2</a></li>
-							<li><a href="#system3">System 3</a></li>
+							<li class="active"><a href="#machine1">Machine 1</a></li>
+							<li><a href="#machine2">Machine 2</a></li>
+							<li><a href="#machine3">Machine 3</a></li>
 						</ul>
 
 						<!--Start System Tab -->
 						<div id="myTabContent" class="tab-content">
-							<div class="tab-pane active" id="system1">
+							<div class="tab-pane active" id="machine1">
 
 							<!-- Start Memory Utilization -->
 							<div class="row-fluid">
@@ -98,27 +98,27 @@
 								<div class="sparkLineStats span4 widget green" onTablet="span5" onDesktop="span4">
 									<h1>Hardware Information</h1>
 			              <ul class="unstyled">
-		                  <li><span class="sparkLineStats3"></span>
-		                      JVM Current Memory:
+		                  <li>
+													JVM Current Memory:
 		                      <span class="number">699400192</span>
 		                  </li>
-		                  <li><span class="sparkLineStats3"></span>
+		                  <li>
 		                      JVM Max Memory:
 		                      <span class="number">1908932608</span>
 		                  </li>
-		                  <li><span class="sparkLineStats3"></span>
+		                  <li>
 		                      Off-Head Current Memory:
 		                      <span class="number">498762</span>
 		                  </li>
-		                  <li><span class="sparkLineStats4"></span>
+		                  <li>
 		                      Off-Heap Max Memory:
 		                      <span class="number">1908932608</span>
 		                  </li>
-		                  <li><span class="sparkLineStats5"></span>
+		                  <li>
 		                      JVM Available Processors:
 		                      <span class="number">4</span>
 		                  </li>
-		                  <li><span class="sparkLineStats6"></span>
+		                  <li>
 		                      # Compute Devices: <span class="number">0</span>
 		                  </li>
 			              </ul>
@@ -132,7 +132,7 @@
 
 								<div class="row-fluid hideInIE8 circleStats">
 
-									<div class="span2" onTablet="span4" onDesktop="span2">
+									<div class="span2">
 					          <div class="circleStatsItemBox pink">
 											<div class="header">JVM Memory</div>
 											<span class="percent">percent</span>
@@ -151,7 +151,7 @@
 					          </div>
 									</div>
 
-									<div class="span2" onTablet="span4" onDesktop="span2">
+									<div class="span2">
 					          <div class="circleStatsItemBox red">
 											<div class="header">Off-Heap Memory</div>
 											<span class="percent">percent</span>
@@ -212,15 +212,50 @@
 
 								</div>
 							<!--End System Tab -->
+							<!--Start GPU Tab -->
+						<div class="row-fluid">
+							<div class="box span12">
+								<div class="box-header">
+									<h2><b>GPU Information (if isDevice == true)</b></h2>
+								</div>
+								<div class="box-content">
+									<table class="table table-striped">
+											<thead>
+												<tr>
+													<th>OS</th>
+													<th>Host Name</th>
+													<th>OS Architecture</th>
+													<th>JVM Name</th>
+													<th>JVM Version</th>
+													<th>ND4J Backend</th>
+													<th>ND4J Data Type</th>
+												</tr>
+											</thead>
+											<tbody>
+											<tr>
+												<td>Mac OS X</td>
+												<td>Edwards-Air</td>
+												<td>x86_64</td>
+												<td>Java HotSpot(TM) 64-Bit Server VM</td>
+												<td>1.8.0_74</td>
+												<td>org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory</td>
+												<td>FLOAT</td>
+											</tr>
+											</tbody>
+									 </table>
+								</div>
 							</div>
-
-							<div class="tab-pane" id="system2">
+						</div>
+							<!--End GPU Tab -->
+							</div>
+							<!-- End Machine 1 -->
+							<div class="tab-pane" id="machine2">
 								<p>
 									Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 								</p>
 							</div>
 
-							<div class="tab-pane" id="system3">
+							<div class="tab-pane" id="machine3">
 								<p>
 									Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
 								</p>
