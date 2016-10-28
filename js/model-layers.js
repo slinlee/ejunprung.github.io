@@ -1,6 +1,6 @@
 $(function(){ // on dom ready
 
-$('#cy').cytoscape({
+$('#layers').cytoscape({
   layout: {
     name: 'dagre',
     padding: 10
@@ -47,8 +47,8 @@ $('#cy').cytoscape({
 
   elements: {
     nodes: [
-      { data: { id: '0', name: 'Input', weight: 100, faveColor: '#6FB1FC', faveShape: 'triangle', href: '#' } },
-      { data: { id: '1', name: 'Dense', weight: 100, faveColor: '#EDA1ED', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '0', name: 'Input', weight: 100, faveColor: '#6FB1FC', faveShape: 'triangle', href: '?layer=0' } },
+      { data: { id: '1', name: 'Dense', weight: 100, faveColor: '#EDA1ED', faveShape: 'rectangle', href: '?layer=1' } },
       { data: { id: '2', name: 'Convolution', weight: 100, faveColor: '#86B342', faveShape: 'rectangle', href: '#' } },
       { data: { id: '3', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
       { data: { id: '4', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
@@ -81,8 +81,7 @@ $('#cy').cytoscape({
 
   ready: function(){
     window.cy = this;
-    cy.zoomingEnabled( false );
-    cy.panningEnabled( false );
+    // cy.panningEnabled( false );
     cy.autoungrabify( true );
   }
 
