@@ -60,7 +60,17 @@ $('#layers').cytoscape({
       { data: { id: '10', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
       { data: { id: '11', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
       { data: { id: '12', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
-      { data: { id: '13', name: 'Output', weight: 100, faveColor: '#FF0000', faveShape: 'ellipse', href: '#' } }
+      { data: { id: '13', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '14', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '15', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '16', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '17', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '18', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '19', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '20', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '21', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '22', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '23', name: 'Output', weight: 100, faveColor: '#FF0000', faveShape: 'ellipse', href: '#' } }
     ],
     edges: [
       { data: { source: '0', target: '1', faveColor: '#A9A9A9', strength: 100 } },
@@ -75,16 +85,29 @@ $('#layers').cytoscape({
       { data: { source: '9', target: '10', faveColor: '#A9A9A9', strength: 100 } },
       { data: { source: '10', target: '11', faveColor: '#A9A9A9', strength: 100 } },
       { data: { source: '11', target: '12', faveColor: '#A9A9A9', strength: 100 } },
-      { data: { source: '12', target: '13', faveColor: '#A9A9A9', strength: 100 } }
+      { data: { source: '12', target: '13', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '13', target: '14', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '14', target: '15', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '15', target: '16', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '16', target: '17', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '17', target: '18', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '18', target: '19', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '19', target: '20', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '20', target: '21', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '21', target: '22', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '22', target: '23', faveColor: '#A9A9A9', strength: 100 } },
+      { data: { source: '23', target: '24', faveColor: '#A9A9A9', strength: 100 } }
     ]
   },
 
   ready: function(){
     window.cy = this;
-    cy.panningEnabled( false );
+    cy.panningEnabled( true );
     cy.autoungrabify( true );
+    cy.maxZoom(5);
+    cy.minZoom(1);
+    cy.wheelSensitivity(0);
   }
-
 });
 
 cy.on('tap', 'node', function(){
