@@ -10,13 +10,16 @@ $('#layers').cytoscape({
     .selector('node')
       .css({
         'shape': 'data(faveShape)',
-        'width': 'mapData(weight, 40, 80, 20, 60)',
+        'width': '100',
+        'height': '50',
         'content': 'data(name)',
         'text-valign': 'center',
         'text-outline-width': 2,
         'text-outline-color': 'data(faveColor)',
         'background-color': 'data(faveColor)',
-        'color': '#fff'
+        'color': '#fff',
+        'text-wrap': 'wrap',
+        'font-size': '17px'
       })
     .selector(':selected')
       .css({
@@ -34,23 +37,19 @@ $('#layers').cytoscape({
         'source-arrow-color': 'data(faveColor)',
         'target-arrow-color': 'data(faveColor)'
       })
-    .selector('edge.questionable')
-      .css({
-        'line-style': 'dotted',
-        'target-arrow-shape': 'diamond'
-      })
     .selector('.faded')
       .css({
         'opacity': 0.25,
         'text-opacity': 0
       }),
 
+
   elements: {
     nodes: [
-      { data: { id: '0', name: 'Input', weight: 100, faveColor: '#6FB1FC', faveShape: 'triangle', href: '?layer=0' } },
-      { data: { id: '1', name: 'Dense', weight: 100, faveColor: '#EDA1ED', faveShape: 'rectangle', href: '?layer=1' } },
-      { data: { id: '2', name: 'Convolution', weight: 100, faveColor: '#86B342', faveShape: 'rectangle', href: '#' } },
-      { data: { id: '3', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
+      { data: { id: '0', name: 'Input\n(MultiLayerNetwork)', weight: 100, faveColor: '#6FB1FC', faveShape: 'triangle' } },
+      { data: { id: '1', name: 'Dense\n(MultiLayerNetwork)', weight: 100, faveColor: '#EDA1ED', faveShape: 'rectangle' } },
+      { data: { id: '2', name: 'Convolution\n(MultiLayerNetwork)', weight: 100, faveColor: '#86B342', faveShape: 'rectangle' } },
+      { data: { id: '3', name: 'Layer\n(MultiLayerNetwork)', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
       { data: { id: '4', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
       { data: { id: '5', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
       { data: { id: '6', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle', href: '#' } },
@@ -102,16 +101,13 @@ $('#layers').cytoscape({
 
   ready: function(){
     window.cy = this;
-    cy.panningEnabled( true );
-    cy.autoungrabify( true );
-    cy.maxZoom(5);
+    cy.panningEnabled(true);
+    cy.autoungrabify(true);
+    cy.maxZoom(1);
     cy.minZoom(1);
-    cy.wheelSensitivity(0);
+    cy.zoom(0);
+    cy.panBy({x: -50, y:0});
   }
-});
-
-cy.on('tap', 'node', function(){
-    window.location.href = this.data('href');
 });
 
 }); // on dom ready
