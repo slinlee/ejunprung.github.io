@@ -103,9 +103,8 @@ $('#layers').cytoscape({
     window.cy = this;
     cy.panningEnabled(true);
     cy.autoungrabify(true);
-    cy.maxZoom(1);
-    cy.minZoom(1);
-    cy.zoom(0);
+    cy.zoom(1);
+    cy.zoomingEnabled(false);
     cy.panBy({x: -50, y:0});
   }
 });
