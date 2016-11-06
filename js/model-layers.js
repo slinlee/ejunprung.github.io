@@ -101,6 +101,7 @@ $('#layers').cytoscape({
     cy.zoom(1);
     cy.zoomingEnabled(false);
     cy.panBy({x: -50, y:0});
+    
   }
 });
 
