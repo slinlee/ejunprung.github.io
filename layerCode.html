@@ -1,25 +1,39 @@
-layerColors = ['#800000','#2874A6','#2ECC71','#9A7D0A','#212F3D','#008080','#424949','#000080','#CD5C5C','#9B59B6','#0B5345','#2b0b06','#DFB391','#F1948A','#FF0000','#F5A45D','#7D3C98','#7FB3D5','#000000'];
-layerShapes = ['vee','rectangle','triangle','ellipse','octagon'];
+var layerStyles = {
+  "Activation": ["#800000", "rectangle"],
+  "AutoEncoder": ["#2874A6","rectangle"],
+  "BaseOutput": ["#2ECC71","rectangle"],
+  "BasePretrainNetwork": ["#9A7D0A","rectangle"],
+  "BaseRecurrent": ["#212F3D","rectangle"],
+  "BatchNormalization": ["#008080","rectangle"],
+  "Convolution": ["#424949","rectangle"],
+  "Dense": ["#000080","rectangle"],
+  "Embedding": ["#CD5C5C","rectangle"],
+  "FeedForward": ["#9B59B6","rectangle"],
+  "GravesBidirectionalLSTM": ["#0B5345","rectangle"],
+  "GravesLSTM": ["#2b0b06","rectangle"],
+  "Input": ["#008000","vee"],
+  "InputTypeUtil": ["#DFB391","rectangle"],
+  "LocalResponseNormalization": ["#F1948A","rectangle"],
+  "Output": ["#FF0000","ellipse"],
+  "RBM": ["#F5A45D","rectangle"],
+  "RnnOutput": ["#7D3C98","rectangle"],
+  "Subsampling": ["#7FB3D5","rectangle"],
+  "L2Vertex": ["#800000","triangle"],
+  "LayerVertex": ["#2874A6","triangle"],
+  "MergeVertex": ["#2ECC71","triangle"],
+  "PreprocessorVertex": ["#9A7D0A","triangle"],
+  "StackVertex": ["#212F3D","triangle"],
+  "SubsetVertex": ["#008080","triangle"],
+  "UnstackVertex": ["#424949","triangle"],
+  "DuplicateToTimeSeriesVertex": ["#000080","triangle"],
+  "LastTimeStepVertex": ["#CD5C5C","triangle"]
+};
 
-switch (vertexTypes[i]){
-    case 0:
-        layerColor = "";
-        layerShape = "";
-        break;
-    case 1:
-        layerColor = "";
-        layerShape = "";
-        break;
-    case 2:
-        layerColor = "";
-        layerShape = "";
-        break;
-    case 3:
-        layerColor = "";
-        layerShape = "";
-        break;
-    case 4:
-        layerColor = "";
-        layerShape = "";
-        break;
+if (vertexTypes[i].indexOf(layerStyles) > 0 ) {
+  layerColor = layerStyles[vertexType[i]][0];
+  layerShape = layerStyles[vertexType[i]][1];
+
+} else {
+  layerColor = "#000000";
+  layerShape = "octagon";
 }
