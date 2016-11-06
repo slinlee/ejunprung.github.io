@@ -47,24 +47,24 @@ $('#layers').cytoscape({
   elements: {
     nodes: [
       { data: { id: '0', name: 'Input\n(MultiLayerNetwork)', weight: 100, faveColor: '#008000', faveShape: 'vee' } },
-      { data: { id: '1', name: 'Dense\n(MultiLayerNetwork)', weight: 100, faveColor: '#800000', faveShape: 'rectangle' } },
-      { data: { id: '2', name: 'Convolution\n(MultiLayerNetwork)', weight: 100, faveColor: '#2874A6', faveShape: 'rectangle' } },
-      { data: { id: '3', name: 'Layer\n(MultiLayerNetwork)', weight: 100, faveColor: '#2ECC71', faveShape: 'rectangle' } },
-      { data: { id: '4', name: 'Layer', weight: 100, faveColor: '#9A7D0A', faveShape: 'rectangle' } },
-      { data: { id: '5', name: 'Layer', weight: 100, faveColor: '#212F3D', faveShape: 'rectangle' } },
-      { data: { id: '6', name: 'Layer', weight: 100, faveColor: '#008080', faveShape: 'rectangle'} },
-      { data: { id: '7', name: 'Layer', weight: 100, faveColor: '#424949', faveShape: 'rectangle'} },
-      { data: { id: '8', name: 'Layer', weight: 100, faveColor: '#000080', faveShape: 'triangle'} },
-      { data: { id: '9', name: 'Layer', weight: 100, faveColor: '#CD5C5C', faveShape: 'rectangle'} },
-      { data: { id: '10', name: 'Layer', weight: 100, faveColor: '#9B59B6', faveShape: 'rectangle'} },
-      { data: { id: '11', name: 'Layer', weight: 100, faveColor: '#0B5345', faveShape: 'rectangle'} },
-      { data: { id: '12', name: 'Layer', weight: 100, faveColor: '#2b0b06', faveShape: 'rectangle'} },
-      { data: { id: '13', name: 'Layer', weight: 100, faveColor: '#dfb391', faveShape: 'rectangle'} },
-      { data: { id: '14', name: 'Layer\n(MultiLayerNetwork)', weight: 100, faveColor: '#F1948A', faveShape: 'triangle'} },
-      { data: { id: '15', name: 'Layer', weight: 100, faveColor: '#F5A45D', faveShape: 'rectangle'} },
-      { data: { id: '16', name: 'Layer', weight: 100, faveColor: '#7D3C98', faveShape: 'rectangle'} },
-      { data: { id: '17', name: 'Layer', weight: 100, faveColor: '#000000', faveShape: 'octagon'} },
-      { data: { id: '18', name: 'Output', weight: 100, faveColor: '#FF0000', faveShape: 'ellipse'} }
+      { data: { id: '1', name: 'Dense\n(MultiLayerNetwork)', weight: 100, faveColor: '#EC7063', faveShape: 'rectangle' } },
+      { data: { id: '2', name: 'Convolution\n(MultiLayerNetwork)', weight: 100, faveColor: '#641E16', faveShape: 'rectangle' } },
+      { data: { id: '3', name: 'Layer\n(MultiLayerNetwork)', weight: 100, faveColor: '#A569BD', faveShape: 'rectangle' } },
+      { data: { id: '4', name: 'Layer', weight: 100, faveColor: '#512E5F', faveShape: 'rectangle' } },
+      { data: { id: '5', name: 'Layer', weight: 100, faveColor: '#5DADE2', faveShape: 'rectangle' } },
+      { data: { id: '6', name: 'Layer', weight: 100, faveColor: '#154360', faveShape: 'rectangle'} },
+      { data: { id: '7', name: 'Layer', weight: 100, faveColor: '#45B39D', faveShape: 'rectangle'} },
+      { data: { id: '8', name: 'Layer', weight: 100, faveColor: '#0E6251', faveShape: 'triangle'} },
+      { data: { id: '9', name: 'Layer', weight: 100, faveColor: '#45B39D', faveShape: 'rectangle'} },
+      { data: { id: '10', name: 'Layer', weight: 100, faveColor: '#0E6251', faveShape: 'rectangle'} },
+      { data: { id: '11', name: 'Layer', weight: 100, faveColor: '#58D68D', faveShape: 'rectangle'} },
+      { data: { id: '12', name: 'Layer', weight: 100, faveColor: '#145A32', faveShape: 'rectangle'} },
+      { data: { id: '13', name: 'Layer', weight: 100, faveColor: '#F5B041', faveShape: 'rectangle'} },
+      { data: { id: '14', name: 'Layer\n(MultiLayerNetwork)', weight: 100, faveColor: '#7D6608', faveShape: 'triangle'} },
+      { data: { id: '15', name: 'Layer', weight: 100, faveColor: '#DC7633', faveShape: 'rectangle'} },
+      { data: { id: '16', name: 'Layer', weight: 100, faveColor: '#784212', faveShape: 'rectangle'} },
+      { data: { id: '17', name: 'Layer', weight: 100, faveColor: '#566573', faveShape: 'octagon'} },
+      { data: { id: '18', name: 'Output', weight: 100, faveColor: '#1B2631', faveShape: 'ellipse'} }
     ],
     edges: [
       { data: { source: '0', target: '1', faveColor: '#A9A9A9', strength: 100 } },
@@ -101,7 +101,7 @@ $('#layers').cytoscape({
     cy.zoom(1);
     cy.zoomingEnabled(false);
     cy.panBy({x: -50, y:0});
-    
+
   }
 });
 
